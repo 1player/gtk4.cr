@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.3.0">
-<meta name="crystal_docs.project_version" content="0.5.0">
+<meta name="generator" content="Crystal Docs 1.3.2">
+<meta name="crystal_docs.project_version" content="0.7.0">
 <meta name="crystal_docs.project_name" content="GTK4.cr">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="js/doc.js"></script>
 
   <meta name="repository-name" content="GTK4.cr">
-  <title>GLib - GTK4.cr 0.5.0</title>
+  <title>GLib - GTK4.cr 0.7.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        0.5.0
+        0.7.0
       </span>
     </div>
   </div>
@@ -1145,6 +1145,11 @@
       <a href="GICrystal.html">GICrystal</a>
       
         <ul>
+  
+  <li class=" " data-id="GTK4.cr/GICrystal/ObjectCollectedError" data-name="gicrystal::objectcollectederror">
+      <a href="GICrystal/ObjectCollectedError.html">ObjectCollectedError</a>
+      
+    </li>
   
   <li class=" " data-id="GTK4.cr/GICrystal/Transfer" data-name="gicrystal::transfer">
       <a href="GICrystal/Transfer.html">Transfer</a>
@@ -5241,8 +5246,18 @@
       
     </li>
   
+  <li class=" " data-id="GTK4.cr/GObject/ParamSpecPool" data-name="gobject::paramspecpool">
+      <a href="GObject/ParamSpecPool.html">ParamSpecPool</a>
+      
+    </li>
+  
   <li class=" " data-id="GTK4.cr/GObject/ParamSpecString" data-name="gobject::paramspecstring">
       <a href="GObject/ParamSpecString.html">ParamSpecString</a>
+      
+    </li>
+  
+  <li class=" " data-id="GTK4.cr/GObject/ParamSpecTypeInfo" data-name="gobject::paramspectypeinfo">
+      <a href="GObject/ParamSpecTypeInfo.html">ParamSpecTypeInfo</a>
       
     </li>
   
@@ -12456,7 +12471,152 @@ using functions deprecated in later releases will not).</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
+        <a href="#application_name%3AString%3F-class-method" class="signature"><strong>.application_name</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#application_name%3D%28application_name%3AString%29%3ANil-class-method" class="signature"><strong>.application_name=</strong>(application_name : String) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bit_nth_lsf%28mask%3AUInt64%2Cnth_bit%3AInt32%29%3AInt32-class-method" class="signature"><strong>.bit_nth_lsf</strong>(mask : UInt64, nth_bit : Int32) : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bit_nth_msf%28mask%3AUInt64%2Cnth_bit%3AInt32%29%3AInt32-class-method" class="signature"><strong>.bit_nth_msf</strong>(mask : UInt64, nth_bit : Int32) : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bit_storage%28number%3AUInt64%29%3AUInt32-class-method" class="signature"><strong>.bit_storage</strong>(number : UInt64) : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#check_version%28required_major%3AUInt32%2Crequired_minor%3AUInt32%2Crequired_micro%3AUInt32%29%3AString%3F-class-method" class="signature"><strong>.check_version</strong>(required_major : UInt32, required_minor : UInt32, required_micro : UInt32) : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#format_size_for_display%28size%3AInt64%29%3AString-class-method" class="signature"><strong>.format_size_for_display</strong>(size : Int64) : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#idle_add%28priority%3APriority%3DPriority%3A%3ADefault%2C%26block%3A-%3EBool%29-class-method" class="signature"><strong>.idle_add</strong>(priority : Priority = <span class="t">Priority</span><span class="t">::</span><span class="t">Default</span>, &block :  -> Bool)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#idle_remove_by_data%28data%3APointer%28Void%29%3F%29%3ABool-class-method" class="signature"><strong>.idle_remove_by_data</strong>(data : Pointer(Void)?) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#idle_source_new%3AGLib%3A%3ASource-class-method" class="signature"><strong>.idle_source_new</strong> : GLib::Source</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#main_context_default%3AGLib%3A%3AMainContext-class-method" class="signature"><strong>.main_context_default</strong> : GLib::MainContext</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#main_context_get_thread_default%3AGLib%3A%3AMainContext%3F-class-method" class="signature"><strong>.main_context_get_thread_default</strong> : GLib::MainContext?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#main_context_ref_thread_default%3AGLib%3A%3AMainContext-class-method" class="signature"><strong>.main_context_ref_thread_default</strong> : GLib::MainContext</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#main_current_source%3AGLib%3A%3ASource%3F-class-method" class="signature"><strong>.main_current_source</strong> : GLib::Source?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#main_depth%3AInt32-class-method" class="signature"><strong>.main_depth</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#markup_escape_text%28text%3AString%2Clength%3AInt64%29%3AString-class-method" class="signature"><strong>.markup_escape_text</strong>(text : String, length : Int64) : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_error_query%28prg_name%3AString%29%3ANil-class-method" class="signature"><strong>.on_error_query</strong>(prg_name : String) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_error_stack_trace%28prg_name%3AString%29%3ANil-class-method" class="signature"><strong>.on_error_stack_trace</strong>(prg_name : String) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#os_info%28key_name%3AString%29%3AString%3F-class-method" class="signature"><strong>.os_info</strong>(key_name : String) : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#prgname%3AString%3F-class-method" class="signature"><strong>.prgname</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#prgname%3D%28prgname%3AString%29%3ANil-class-method" class="signature"><strong>.prgname=</strong>(prgname : String) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#quark_from_string%28string%3AString%3F%29%3AUInt32-class-method" class="signature"><strong>.quark_from_string</strong>(string : String?) : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#quark_to_string%28quark%3AUInt32%29%3AString-class-method" class="signature"><strong>.quark_to_string</strong>(quark : UInt32) : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#quark_try_string%28string%3AString%3F%29%3AUInt32-class-method" class="signature"><strong>.quark_try_string</strong>(string : String?) : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reload_user_special_dirs_cache%3ANil-class-method" class="signature"><strong>.reload_user_special_dirs_cache</strong> : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#source_remove%28tag%3AUInt32%29%3ABool-class-method" class="signature"><strong>.source_remove</strong>(tag : UInt32) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#source_set_name_by_id%28tag%3AUInt32%2Cname%3AString%29%3ANil-class-method" class="signature"><strong>.source_set_name_by_id</strong>(tag : UInt32, name : String) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#spaced_primes_closest%28num%3AUInt32%29%3AUInt32-class-method" class="signature"><strong>.spaced_primes_closest</strong>(num : UInt32) : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#system_config_dirs%3AEnumerable%28String%29-class-method" class="signature"><strong>.system_config_dirs</strong> : Enumerable(String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#system_data_dirs%3AEnumerable%28String%29-class-method" class="signature"><strong>.system_data_dirs</strong> : Enumerable(String)</a>
         
       </li>
     
@@ -12475,9 +12635,116 @@ using functions deprecated in later releases will not).</p>
         
       </li>
     
+      <li class="entry-summary">
+        <a href="#timeout_source_new%28interval%3AUInt32%29%3AGLib%3A%3ASource-class-method" class="signature"><strong>.timeout_source_new</strong>(interval : UInt32) : GLib::Source</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#timeout_source_new_seconds%28interval%3AUInt32%29%3AGLib%3A%3ASource-class-method" class="signature"><strong>.timeout_source_new_seconds</strong>(interval : UInt32) : GLib::Source</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#user_cache_dir%3APath-class-method" class="signature"><strong>.user_cache_dir</strong> : Path</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#user_config_dir%3APath-class-method" class="signature"><strong>.user_config_dir</strong> : Path</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#user_data_dir%3APath-class-method" class="signature"><strong>.user_data_dir</strong> : Path</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#user_runtime_dir%3APath-class-method" class="signature"><strong>.user_runtime_dir</strong> : Path</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#user_special_dir%28directory%3AGLib%3A%3AUserDirectory%29%3APath%3F-class-method" class="signature"><strong>.user_special_dir</strong>(directory : GLib::UserDirectory) : Path?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#user_state_dir%3APath-class-method" class="signature"><strong>.user_state_dir</strong> : Path</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#variant_get_gtype%3AUInt64-class-method" class="signature"><strong>.variant_get_gtype</strong> : UInt64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#variant_is_object_path%28string%3AString%29%3ABool-class-method" class="signature"><strong>.variant_is_object_path</strong>(string : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#variant_is_signature%28string%3AString%29%3ABool-class-method" class="signature"><strong>.variant_is_signature</strong>(string : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#variant_parse_error_print_context%28error%3AGLib%3A%3AError%2Csource_str%3AString%29%3AString-class-method" class="signature"><strong>.variant_parse_error_print_context</strong>(error : GLib::Error, source_str : String) : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#variant_parse_error_quark%3AUInt32-class-method" class="signature"><strong>.variant_parse_error_quark</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#variant_parser_get_error_quark%3AUInt32-class-method" class="signature"><strong>.variant_parser_get_error_quark</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#variant_type_checked_%28arg0%3AString%29%3AGLib%3A%3AVariantType-class-method" class="signature"><strong>.variant_type_checked_</strong>(arg0 : String) : GLib::VariantType</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#variant_type_string_get_depth_%28type_string%3AString%29%3AUInt64-class-method" class="signature"><strong>.variant_type_string_get_depth_</strong>(type_string : String) : UInt64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#variant_type_string_is_valid%28type_string%3AString%29%3ABool-class-method" class="signature"><strong>.variant_type_string_is_valid</strong>(type_string : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#variant_type_string_scan%28string%3AString%2Climit%3AString%3F%29%3ABool-class-method" class="signature"><strong>.variant_type_string_scan</strong>(string : String, limit : String?) : Bool</a>
+        
+      </li>
+    
   </ul>
 
 
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#variant_parse%28type%3AGLib%3A%3AVariantType%3F%2Ctext%3AString%2Climit%3AString%3F%2Cendptr%3AString%3F%29%3AGLib%3A%3AVariant-instance-method" class="signature"><strong>#variant_parse</strong>(type : GLib::VariantType?, text : String, limit : String?, endptr : String?) : GLib::Variant</a>
+        
+      </li>
+    
+  </ul>
 
 
 
@@ -12499,12 +12766,418 @@ using functions deprecated in later releases will not).</p>
     Class Method Detail
   </h2>
   
+    <div class="entry-detail" id="application_name:String?-class-method">
+      <div class="signature">
+        
+        def self.<strong>application_name</strong> : String?
+
+        <a class="method-permalink" href="#application_name%3AString%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="application_name=(application_name:String):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>application_name=</strong>(application_name : String) : Nil
+
+        <a class="method-permalink" href="#application_name%3D%28application_name%3AString%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bit_nth_lsf(mask:UInt64,nth_bit:Int32):Int32-class-method">
+      <div class="signature">
+        
+        def self.<strong>bit_nth_lsf</strong>(mask : UInt64, nth_bit : Int32) : Int32
+
+        <a class="method-permalink" href="#bit_nth_lsf%28mask%3AUInt64%2Cnth_bit%3AInt32%29%3AInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bit_nth_msf(mask:UInt64,nth_bit:Int32):Int32-class-method">
+      <div class="signature">
+        
+        def self.<strong>bit_nth_msf</strong>(mask : UInt64, nth_bit : Int32) : Int32
+
+        <a class="method-permalink" href="#bit_nth_msf%28mask%3AUInt64%2Cnth_bit%3AInt32%29%3AInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bit_storage(number:UInt64):UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>bit_storage</strong>(number : UInt64) : UInt32
+
+        <a class="method-permalink" href="#bit_storage%28number%3AUInt64%29%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="check_version(required_major:UInt32,required_minor:UInt32,required_micro:UInt32):String?-class-method">
+      <div class="signature">
+        
+        def self.<strong>check_version</strong>(required_major : UInt32, required_minor : UInt32, required_micro : UInt32) : String?
+
+        <a class="method-permalink" href="#check_version%28required_major%3AUInt32%2Crequired_minor%3AUInt32%2Crequired_micro%3AUInt32%29%3AString%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="format_size_for_display(size:Int64):String-class-method">
+      <div class="signature">
+        
+        def self.<strong>format_size_for_display</strong>(size : Int64) : String
+
+        <a class="method-permalink" href="#format_size_for_display%28size%3AInt64%29%3AString-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="idle_add(priority:Priority=Priority::Default,&amp;block:-&gt;Bool)-class-method">
       <div class="signature">
         
         def self.<strong>idle_add</strong>(priority : <a href="GLib/Priority.html">Priority</a> = <span class="t">Priority</span><span class="t">::</span><span class="t">Default</span>, &block :  -> Bool)
 
         <a class="method-permalink" href="#idle_add%28priority%3APriority%3DPriority%3A%3ADefault%2C%26block%3A-%3EBool%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="idle_remove_by_data(data:Pointer(Void)?):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>idle_remove_by_data</strong>(data : Pointer(Void)?) : Bool
+
+        <a class="method-permalink" href="#idle_remove_by_data%28data%3APointer%28Void%29%3F%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="idle_source_new:GLib::Source-class-method">
+      <div class="signature">
+        
+        def self.<strong>idle_source_new</strong> : <a href="GLib/Source.html">GLib::Source</a>
+
+        <a class="method-permalink" href="#idle_source_new%3AGLib%3A%3ASource-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="main_context_default:GLib::MainContext-class-method">
+      <div class="signature">
+        
+        def self.<strong>main_context_default</strong> : <a href="GLib/MainContext.html">GLib::MainContext</a>
+
+        <a class="method-permalink" href="#main_context_default%3AGLib%3A%3AMainContext-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="main_context_get_thread_default:GLib::MainContext?-class-method">
+      <div class="signature">
+        
+        def self.<strong>main_context_get_thread_default</strong> : <a href="GLib/MainContext.html">GLib::MainContext</a>?
+
+        <a class="method-permalink" href="#main_context_get_thread_default%3AGLib%3A%3AMainContext%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="main_context_ref_thread_default:GLib::MainContext-class-method">
+      <div class="signature">
+        
+        def self.<strong>main_context_ref_thread_default</strong> : <a href="GLib/MainContext.html">GLib::MainContext</a>
+
+        <a class="method-permalink" href="#main_context_ref_thread_default%3AGLib%3A%3AMainContext-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="main_current_source:GLib::Source?-class-method">
+      <div class="signature">
+        
+        def self.<strong>main_current_source</strong> : <a href="GLib/Source.html">GLib::Source</a>?
+
+        <a class="method-permalink" href="#main_current_source%3AGLib%3A%3ASource%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="main_depth:Int32-class-method">
+      <div class="signature">
+        
+        def self.<strong>main_depth</strong> : Int32
+
+        <a class="method-permalink" href="#main_depth%3AInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="markup_escape_text(text:String,length:Int64):String-class-method">
+      <div class="signature">
+        
+        def self.<strong>markup_escape_text</strong>(text : String, length : Int64) : String
+
+        <a class="method-permalink" href="#markup_escape_text%28text%3AString%2Clength%3AInt64%29%3AString-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_error_query(prg_name:String):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>on_error_query</strong>(prg_name : String) : Nil
+
+        <a class="method-permalink" href="#on_error_query%28prg_name%3AString%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_error_stack_trace(prg_name:String):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>on_error_stack_trace</strong>(prg_name : String) : Nil
+
+        <a class="method-permalink" href="#on_error_stack_trace%28prg_name%3AString%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="os_info(key_name:String):String?-class-method">
+      <div class="signature">
+        
+        def self.<strong>os_info</strong>(key_name : String) : String?
+
+        <a class="method-permalink" href="#os_info%28key_name%3AString%29%3AString%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="prgname:String?-class-method">
+      <div class="signature">
+        
+        def self.<strong>prgname</strong> : String?
+
+        <a class="method-permalink" href="#prgname%3AString%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="prgname=(prgname:String):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>prgname=</strong>(prgname : String) : Nil
+
+        <a class="method-permalink" href="#prgname%3D%28prgname%3AString%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="quark_from_string(string:String?):UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>quark_from_string</strong>(string : String?) : UInt32
+
+        <a class="method-permalink" href="#quark_from_string%28string%3AString%3F%29%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="quark_to_string(quark:UInt32):String-class-method">
+      <div class="signature">
+        
+        def self.<strong>quark_to_string</strong>(quark : UInt32) : String
+
+        <a class="method-permalink" href="#quark_to_string%28quark%3AUInt32%29%3AString-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="quark_try_string(string:String?):UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>quark_try_string</strong>(string : String?) : UInt32
+
+        <a class="method-permalink" href="#quark_try_string%28string%3AString%3F%29%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reload_user_special_dirs_cache:Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>reload_user_special_dirs_cache</strong> : Nil
+
+        <a class="method-permalink" href="#reload_user_special_dirs_cache%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="source_remove(tag:UInt32):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>source_remove</strong>(tag : UInt32) : Bool
+
+        <a class="method-permalink" href="#source_remove%28tag%3AUInt32%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="source_set_name_by_id(tag:UInt32,name:String):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>source_set_name_by_id</strong>(tag : UInt32, name : String) : Nil
+
+        <a class="method-permalink" href="#source_set_name_by_id%28tag%3AUInt32%2Cname%3AString%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="spaced_primes_closest(num:UInt32):UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>spaced_primes_closest</strong>(num : UInt32) : UInt32
+
+        <a class="method-permalink" href="#spaced_primes_closest%28num%3AUInt32%29%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="system_config_dirs:Enumerable(String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>system_config_dirs</strong> : Enumerable(String)
+
+        <a class="method-permalink" href="#system_config_dirs%3AEnumerable%28String%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="system_data_dirs:Enumerable(String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>system_data_dirs</strong> : Enumerable(String)
+
+        <a class="method-permalink" href="#system_data_dirs%3AEnumerable%28String%29-class-method">#</a>
       </div>
       
       <br/>
@@ -12555,8 +13228,284 @@ using functions deprecated in later releases will not).</p>
       </div>
     </div>
   
+    <div class="entry-detail" id="timeout_source_new(interval:UInt32):GLib::Source-class-method">
+      <div class="signature">
+        
+        def self.<strong>timeout_source_new</strong>(interval : UInt32) : <a href="GLib/Source.html">GLib::Source</a>
+
+        <a class="method-permalink" href="#timeout_source_new%28interval%3AUInt32%29%3AGLib%3A%3ASource-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="timeout_source_new_seconds(interval:UInt32):GLib::Source-class-method">
+      <div class="signature">
+        
+        def self.<strong>timeout_source_new_seconds</strong>(interval : UInt32) : <a href="GLib/Source.html">GLib::Source</a>
+
+        <a class="method-permalink" href="#timeout_source_new_seconds%28interval%3AUInt32%29%3AGLib%3A%3ASource-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="user_cache_dir:Path-class-method">
+      <div class="signature">
+        
+        def self.<strong>user_cache_dir</strong> : Path
+
+        <a class="method-permalink" href="#user_cache_dir%3APath-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="user_config_dir:Path-class-method">
+      <div class="signature">
+        
+        def self.<strong>user_config_dir</strong> : Path
+
+        <a class="method-permalink" href="#user_config_dir%3APath-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="user_data_dir:Path-class-method">
+      <div class="signature">
+        
+        def self.<strong>user_data_dir</strong> : Path
+
+        <a class="method-permalink" href="#user_data_dir%3APath-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="user_runtime_dir:Path-class-method">
+      <div class="signature">
+        
+        def self.<strong>user_runtime_dir</strong> : Path
+
+        <a class="method-permalink" href="#user_runtime_dir%3APath-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="user_special_dir(directory:GLib::UserDirectory):Path?-class-method">
+      <div class="signature">
+        
+        def self.<strong>user_special_dir</strong>(directory : <a href="GLib/UserDirectory.html">GLib::UserDirectory</a>) : Path?
+
+        <a class="method-permalink" href="#user_special_dir%28directory%3AGLib%3A%3AUserDirectory%29%3APath%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="user_state_dir:Path-class-method">
+      <div class="signature">
+        
+        def self.<strong>user_state_dir</strong> : Path
+
+        <a class="method-permalink" href="#user_state_dir%3APath-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="variant_get_gtype:UInt64-class-method">
+      <div class="signature">
+        
+        def self.<strong>variant_get_gtype</strong> : UInt64
+
+        <a class="method-permalink" href="#variant_get_gtype%3AUInt64-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="variant_is_object_path(string:String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>variant_is_object_path</strong>(string : String) : Bool
+
+        <a class="method-permalink" href="#variant_is_object_path%28string%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="variant_is_signature(string:String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>variant_is_signature</strong>(string : String) : Bool
+
+        <a class="method-permalink" href="#variant_is_signature%28string%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="variant_parse_error_print_context(error:GLib::Error,source_str:String):String-class-method">
+      <div class="signature">
+        
+        def self.<strong>variant_parse_error_print_context</strong>(error : <a href="GLib/Error.html">GLib::Error</a>, source_str : String) : String
+
+        <a class="method-permalink" href="#variant_parse_error_print_context%28error%3AGLib%3A%3AError%2Csource_str%3AString%29%3AString-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="variant_parse_error_quark:UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>variant_parse_error_quark</strong> : UInt32
+
+        <a class="method-permalink" href="#variant_parse_error_quark%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="variant_parser_get_error_quark:UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>variant_parser_get_error_quark</strong> : UInt32
+
+        <a class="method-permalink" href="#variant_parser_get_error_quark%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="variant_type_checked_(arg0:String):GLib::VariantType-class-method">
+      <div class="signature">
+        
+        def self.<strong>variant_type_checked_</strong>(arg0 : String) : <a href="GLib/VariantType.html">GLib::VariantType</a>
+
+        <a class="method-permalink" href="#variant_type_checked_%28arg0%3AString%29%3AGLib%3A%3AVariantType-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="variant_type_string_get_depth_(type_string:String):UInt64-class-method">
+      <div class="signature">
+        
+        def self.<strong>variant_type_string_get_depth_</strong>(type_string : String) : UInt64
+
+        <a class="method-permalink" href="#variant_type_string_get_depth_%28type_string%3AString%29%3AUInt64-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="variant_type_string_is_valid(type_string:String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>variant_type_string_is_valid</strong>(type_string : String) : Bool
+
+        <a class="method-permalink" href="#variant_type_string_is_valid%28type_string%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="variant_type_string_scan(string:String,limit:String?):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>variant_type_string_scan</strong>(string : String, limit : String?) : Bool
+
+        <a class="method-permalink" href="#variant_type_string_scan%28string%3AString%2Climit%3AString%3F%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
 
 
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="variant_parse(type:GLib::VariantType?,text:String,limit:String?,endptr:String?):GLib::Variant-instance-method">
+      <div class="signature">
+        
+        def <strong>variant_parse</strong>(type : <a href="GLib/VariantType.html">GLib::VariantType</a>?, text : String, limit : String?, endptr : String?) : <a href="GLib/Variant.html">GLib::Variant</a>
+
+        <a class="method-permalink" href="#variant_parse%28type%3AGLib%3A%3AVariantType%3F%2Ctext%3AString%2Climit%3AString%3F%2Cendptr%3AString%3F%29%3AGLib%3A%3AVariant-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
 
 
 

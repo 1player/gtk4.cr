@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.3.0">
-<meta name="crystal_docs.project_version" content="0.5.0">
+<meta name="generator" content="Crystal Docs 1.3.2">
+<meta name="crystal_docs.project_version" content="0.7.0">
 <meta name="crystal_docs.project_name" content="GTK4.cr">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="GTK4.cr">
-  <title>GObject::TypeInterface - GTK4.cr 0.5.0</title>
+  <title>GObject::TypeInterface - GTK4.cr 0.7.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        0.5.0
+        0.7.0
       </span>
     </div>
   </div>
@@ -1145,6 +1145,11 @@
       <a href="../GICrystal.html">GICrystal</a>
       
         <ul>
+  
+  <li class=" " data-id="GTK4.cr/GICrystal/ObjectCollectedError" data-name="gicrystal::objectcollectederror">
+      <a href="../GICrystal/ObjectCollectedError.html">ObjectCollectedError</a>
+      
+    </li>
   
   <li class=" " data-id="GTK4.cr/GICrystal/Transfer" data-name="gicrystal::transfer">
       <a href="../GICrystal/Transfer.html">Transfer</a>
@@ -5241,8 +5246,18 @@
       
     </li>
   
+  <li class=" " data-id="GTK4.cr/GObject/ParamSpecPool" data-name="gobject::paramspecpool">
+      <a href="../GObject/ParamSpecPool.html">ParamSpecPool</a>
+      
+    </li>
+  
   <li class=" " data-id="GTK4.cr/GObject/ParamSpecString" data-name="gobject::paramspecstring">
       <a href="../GObject/ParamSpecString.html">ParamSpecString</a>
+      
+    </li>
+  
+  <li class=" " data-id="GTK4.cr/GObject/ParamSpecTypeInfo" data-name="gobject::paramspectypeinfo">
+      <a href="../GObject/ParamSpecTypeInfo.html">ParamSpecTypeInfo</a>
       
     </li>
   
@@ -11077,38 +11092,6 @@
 
 
 
-  <h2>
-    <a id="class-method-summary" class="anchor" href="#class-method-summary">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Class Method Summary
-  </h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#add_prerequisite%28interface_type%3AUInt64%2Cprerequisite_type%3AUInt64%29%3ANil-class-method" class="signature"><strong>.add_prerequisite</strong>(interface_type : UInt64, prerequisite_type : UInt64) : Nil</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#instantiatable_prerequisite%28interface_type%3AUInt64%29%3AUInt64-class-method" class="signature"><strong>.instantiatable_prerequisite</strong>(interface_type : UInt64) : UInt64</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#peek%28instance_class%3AGObject%3A%3ATypeClass%2Ciface_type%3AUInt64%29%3AGObject%3A%3ATypeInterface-class-method" class="signature"><strong>.peek</strong>(instance_class : GObject::TypeClass, iface_type : UInt64) : GObject::TypeInterface</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#plugin%28instance_type%3AUInt64%2Cinterface_type%3AUInt64%29%3AGObject%3A%3ATypePlugin-class-method" class="signature"><strong>.plugin</strong>(instance_type : UInt64, interface_type : UInt64) : GObject::TypePlugin</a>
-        
-      </li>
-    
-  </ul>
-
 
 
   <h2>
@@ -11233,72 +11216,6 @@
   
 
 
-
-  <h2>
-    <a id="class-method-detail" class="anchor" href="#class-method-detail">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Class Method Detail
-  </h2>
-  
-    <div class="entry-detail" id="add_prerequisite(interface_type:UInt64,prerequisite_type:UInt64):Nil-class-method">
-      <div class="signature">
-        
-        def self.<strong>add_prerequisite</strong>(interface_type : UInt64, prerequisite_type : UInt64) : Nil
-
-        <a class="method-permalink" href="#add_prerequisite%28interface_type%3AUInt64%2Cprerequisite_type%3AUInt64%29%3ANil-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="instantiatable_prerequisite(interface_type:UInt64):UInt64-class-method">
-      <div class="signature">
-        
-        def self.<strong>instantiatable_prerequisite</strong>(interface_type : UInt64) : UInt64
-
-        <a class="method-permalink" href="#instantiatable_prerequisite%28interface_type%3AUInt64%29%3AUInt64-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="peek(instance_class:GObject::TypeClass,iface_type:UInt64):GObject::TypeInterface-class-method">
-      <div class="signature">
-        
-        def self.<strong>peek</strong>(instance_class : <a href="../GObject/TypeClass.html">GObject::TypeClass</a>, iface_type : UInt64) : <a href="../GObject/TypeInterface.html">GObject::TypeInterface</a>
-
-        <a class="method-permalink" href="#peek%28instance_class%3AGObject%3A%3ATypeClass%2Ciface_type%3AUInt64%29%3AGObject%3A%3ATypeInterface-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="plugin(instance_type:UInt64,interface_type:UInt64):GObject::TypePlugin-class-method">
-      <div class="signature">
-        
-        def self.<strong>plugin</strong>(instance_type : UInt64, interface_type : UInt64) : <a href="../GObject/TypePlugin.html">GObject::TypePlugin</a>
-
-        <a class="method-permalink" href="#plugin%28instance_type%3AUInt64%2Cinterface_type%3AUInt64%29%3AGObject%3A%3ATypePlugin-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
 
 
 

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.3.0">
-<meta name="crystal_docs.project_version" content="0.5.0">
+<meta name="generator" content="Crystal Docs 1.3.2">
+<meta name="crystal_docs.project_version" content="0.7.0">
 <meta name="crystal_docs.project_name" content="GTK4.cr">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="GTK4.cr">
-  <title>Gtk::Label - GTK4.cr 0.5.0</title>
+  <title>Gtk::Label - GTK4.cr 0.7.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        0.5.0
+        0.7.0
       </span>
     </div>
   </div>
@@ -1145,6 +1145,11 @@
       <a href="../GICrystal.html">GICrystal</a>
       
         <ul>
+  
+  <li class=" " data-id="GTK4.cr/GICrystal/ObjectCollectedError" data-name="gicrystal::objectcollectederror">
+      <a href="../GICrystal/ObjectCollectedError.html">ObjectCollectedError</a>
+      
+    </li>
   
   <li class=" " data-id="GTK4.cr/GICrystal/Transfer" data-name="gicrystal::transfer">
       <a href="../GICrystal/Transfer.html">Transfer</a>
@@ -5241,8 +5246,18 @@
       
     </li>
   
+  <li class=" " data-id="GTK4.cr/GObject/ParamSpecPool" data-name="gobject::paramspecpool">
+      <a href="../GObject/ParamSpecPool.html">ParamSpecPool</a>
+      
+    </li>
+  
   <li class=" " data-id="GTK4.cr/GObject/ParamSpecString" data-name="gobject::paramspecstring">
       <a href="../GObject/ParamSpecString.html">ParamSpecString</a>
+      
+    </li>
+  
+  <li class=" " data-id="GTK4.cr/GObject/ParamSpecTypeInfo" data-name="gobject::paramspectypeinfo">
+      <a href="../GObject/ParamSpecTypeInfo.html">ParamSpecTypeInfo</a>
       
     </li>
   
@@ -11116,7 +11131,7 @@ markup format:</p>
 <pre><code class="language-c">GtkWidget *label = gtk_label_new (NULL);
 gtk_label_set_markup (GTK_LABEL (label), &quot;&lt;small&gt;Small text&lt;/small&gt;&quot;);</code></pre>
 <p>(See the Pango manual for complete documentation] of available
-tags, <code>Pango#parse_markup</code>)</p>
+tags, <code><a href="../Pango.html#parse_markup%28markup_text%3AString%2Clength%3AInt32%2Caccel_marker%3AUInt32%29%3ABool-instance-method">Pango#parse_markup</a></code>)</p>
 <p>The markup passed to gtk_label_set_markup() must be valid; for example,
 literal &lt;, &gt; and &amp; characters must be escaped as &amp;lt;, &gt;, and &amp;.
 If you pass text obtained from the user, file, or a network to
@@ -12920,11 +12935,6 @@ with the [signal@Gtk.Label::activate-link] signal and the
     finalize</a>, 
     
   
-    <a href="../GObject/Object.html#force_floating%3ANil-instance-method" class="tooltip">
-      <span>force_floating : Nil</span>
-    force_floating</a>, 
-    
-  
     <a href="../GObject/Object.html#freeze_notify%3ANil-instance-method" class="tooltip">
       <span>freeze_notify : Nil</span>
     freeze_notify</a>, 
@@ -12935,14 +12945,14 @@ with the [signal@Gtk.Label::activate-link] signal and the
     getv</a>, 
     
   
-    <a href="../GObject/Object.html#is_floating%3ABool-instance-method" class="tooltip">
-      <span>is_floating : Bool</span>
-    is_floating</a>, 
-    
-  
     <a href="../GObject/Object.html#notify%28property_name%3AString%29%3ANil-instance-method" class="tooltip">
       <span>notify(property_name : String) : Nil</span>
     notify</a>, 
+    
+  
+    <a href="../GObject/Object.html#notify_by_pspec%28pspec%3AGObject%3A%3AParamSpec%29%3ANil-instance-method" class="tooltip">
+      <span>notify_by_pspec(pspec : GObject::ParamSpec) : Nil</span>
+    notify_by_pspec</a>, 
     
   
     <a href="../GObject/Object.html#notify_signal-instance-method" class="tooltip">
@@ -12963,11 +12973,6 @@ with the [signal@Gtk.Label::activate-link] signal and the
     <a href="../GObject/Object.html#ref_count-instance-method" class="tooltip">
       <span>ref_count</span>
     ref_count</a>, 
-    
-  
-    <a href="../GObject/Object.html#ref_sink%3AGObject%3A%3AObject-instance-method" class="tooltip">
-      <span>ref_sink : GObject::Object</span>
-    ref_sink</a>, 
     
   
     <a href="../GObject/Object.html#run_dispose%3ANil-instance-method" class="tooltip">
@@ -13051,7 +13056,12 @@ with the [signal@Gtk.Label::activate-link] signal and the
   
     <a href="../GObject/Object.html#interface_find_property%28g_iface%3AGObject%3A%3ATypeInterface%2Cproperty_name%3AString%29%3AGObject%3A%3AParamSpec-class-method" class="tooltip">
       <span>interface_find_property(g_iface : GObject::TypeInterface, property_name : String) : GObject::ParamSpec</span>
-    interface_find_property</a>
+    interface_find_property</a>, 
+    
+  
+    <a href="../GObject/Object.html#interface_list_properties%28g_iface%3AGObject%3A%3ATypeInterface%29%3AEnumerable%28GObject%3A%3AParamSpec%29-class-method" class="tooltip">
+      <span>interface_list_properties(g_iface : GObject::TypeInterface) : Enumerable(GObject::ParamSpec)</span>
+    interface_list_properties</a>
     
   
 
@@ -13584,7 +13594,7 @@ Set this to -1 if you don’t want to limit the number of lines.</p>
           
           <p>Sets the labels text and attributes from markup.</p>
 <p>The string must be marked up with Pango markup
-(see <code>Pango#parse_markup</code>).</p>
+(see <code><a href="../Pango.html#parse_markup%28markup_text%3AString%2Clength%3AInt32%2Caccel_marker%3AUInt32%29%3ABool-instance-method">Pango#parse_markup</a></code>).</p>
 <p>If the @str is external data, you may need to escape it
 with g_markup_escape_text() or g_markup_printf_escaped():</p>
 <p><span class="flag yellow">WARNING</span>  <strong>⚠️ The following code is in c ⚠️</strong></p>
@@ -13621,7 +13631,7 @@ property you should also ensure that you set the
         <div class="doc">
           
           <p>Sets the labels text, attributes and mnemonic from markup.</p>
-<p>Parses @str which is marked up with Pango markup (see <code>Pango#parse_markup</code>),
+<p>Parses @str which is marked up with Pango markup (see <code><a href="../Pango.html#parse_markup%28markup_text%3AString%2Clength%3AInt32%2Caccel_marker%3AUInt32%29%3ABool-instance-method">Pango#parse_markup</a></code>),
 setting the label’s text and attribute list based on the parse results.
 If characters in @str are preceded by an underscore, they are underlined
 indicating that they represent a keyboard accelerator called a mnemonic.</p>

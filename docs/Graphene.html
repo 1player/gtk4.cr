@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.3.0">
-<meta name="crystal_docs.project_version" content="0.5.0">
+<meta name="generator" content="Crystal Docs 1.3.2">
+<meta name="crystal_docs.project_version" content="0.7.0">
 <meta name="crystal_docs.project_name" content="GTK4.cr">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="js/doc.js"></script>
 
   <meta name="repository-name" content="GTK4.cr">
-  <title>Graphene - GTK4.cr 0.5.0</title>
+  <title>Graphene - GTK4.cr 0.7.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        0.5.0
+        0.7.0
       </span>
     </div>
   </div>
@@ -1145,6 +1145,11 @@
       <a href="GICrystal.html">GICrystal</a>
       
         <ul>
+  
+  <li class=" " data-id="GTK4.cr/GICrystal/ObjectCollectedError" data-name="gicrystal::objectcollectederror">
+      <a href="GICrystal/ObjectCollectedError.html">ObjectCollectedError</a>
+      
+    </li>
   
   <li class=" " data-id="GTK4.cr/GICrystal/Transfer" data-name="gicrystal::transfer">
       <a href="GICrystal/Transfer.html">Transfer</a>
@@ -5241,8 +5246,18 @@
       
     </li>
   
+  <li class=" " data-id="GTK4.cr/GObject/ParamSpecPool" data-name="gobject::paramspecpool">
+      <a href="GObject/ParamSpecPool.html">ParamSpecPool</a>
+      
+    </li>
+  
   <li class=" " data-id="GTK4.cr/GObject/ParamSpecString" data-name="gobject::paramspecstring">
       <a href="GObject/ParamSpecString.html">ParamSpecString</a>
+      
+    </li>
+  
+  <li class=" " data-id="GTK4.cr/GObject/ParamSpecTypeInfo" data-name="gobject::paramspectypeinfo">
+      <a href="GObject/ParamSpecTypeInfo.html">ParamSpecTypeInfo</a>
       
     </li>
   
@@ -11232,6 +11247,148 @@ fprintf (stdout, &quot;component %d: %g\n&quot;, i, v[i]);
 
 
 
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#box_empty%3AGraphene%3A%3ABox-class-method" class="signature"><strong>.box_empty</strong> : Graphene::Box</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#box_infinite%3AGraphene%3A%3ABox-class-method" class="signature"><strong>.box_infinite</strong> : Graphene::Box</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#box_minus_one%3AGraphene%3A%3ABox-class-method" class="signature"><strong>.box_minus_one</strong> : Graphene::Box</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#box_one%3AGraphene%3A%3ABox-class-method" class="signature"><strong>.box_one</strong> : Graphene::Box</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#box_one_minus_one%3AGraphene%3A%3ABox-class-method" class="signature"><strong>.box_one_minus_one</strong> : Graphene::Box</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#box_zero%3AGraphene%3A%3ABox-class-method" class="signature"><strong>.box_zero</strong> : Graphene::Box</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#point3d_zero%3AGraphene%3A%3APoint3D-class-method" class="signature"><strong>.point3d_zero</strong> : Graphene::Point3D</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#point_zero%3AGraphene%3A%3APoint-class-method" class="signature"><strong>.point_zero</strong> : Graphene::Point</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#rect_alloc%3AGraphene%3A%3ARect-class-method" class="signature"><strong>.rect_alloc</strong> : Graphene::Rect</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#rect_zero%3AGraphene%3A%3ARect-class-method" class="signature"><strong>.rect_zero</strong> : Graphene::Rect</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#size_zero%3AGraphene%3A%3ASize-class-method" class="signature"><strong>.size_zero</strong> : Graphene::Size</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#vec2_one%3AGraphene%3A%3AVec2-class-method" class="signature"><strong>.vec2_one</strong> : Graphene::Vec2</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#vec2_x_axis%3AGraphene%3A%3AVec2-class-method" class="signature"><strong>.vec2_x_axis</strong> : Graphene::Vec2</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#vec2_y_axis%3AGraphene%3A%3AVec2-class-method" class="signature"><strong>.vec2_y_axis</strong> : Graphene::Vec2</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#vec2_zero%3AGraphene%3A%3AVec2-class-method" class="signature"><strong>.vec2_zero</strong> : Graphene::Vec2</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#vec3_one%3AGraphene%3A%3AVec3-class-method" class="signature"><strong>.vec3_one</strong> : Graphene::Vec3</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#vec3_x_axis%3AGraphene%3A%3AVec3-class-method" class="signature"><strong>.vec3_x_axis</strong> : Graphene::Vec3</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#vec3_y_axis%3AGraphene%3A%3AVec3-class-method" class="signature"><strong>.vec3_y_axis</strong> : Graphene::Vec3</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#vec3_z_axis%3AGraphene%3A%3AVec3-class-method" class="signature"><strong>.vec3_z_axis</strong> : Graphene::Vec3</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#vec3_zero%3AGraphene%3A%3AVec3-class-method" class="signature"><strong>.vec3_zero</strong> : Graphene::Vec3</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#vec4_one%3AGraphene%3A%3AVec4-class-method" class="signature"><strong>.vec4_one</strong> : Graphene::Vec4</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#vec4_w_axis%3AGraphene%3A%3AVec4-class-method" class="signature"><strong>.vec4_w_axis</strong> : Graphene::Vec4</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#vec4_x_axis%3AGraphene%3A%3AVec4-class-method" class="signature"><strong>.vec4_x_axis</strong> : Graphene::Vec4</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#vec4_y_axis%3AGraphene%3A%3AVec4-class-method" class="signature"><strong>.vec4_y_axis</strong> : Graphene::Vec4</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#vec4_z_axis%3AGraphene%3A%3AVec4-class-method" class="signature"><strong>.vec4_z_axis</strong> : Graphene::Vec4</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#vec4_zero%3AGraphene%3A%3AVec4-class-method" class="signature"><strong>.vec4_zero</strong> : Graphene::Vec4</a>
+        
+      </li>
+    
+  </ul>
+
 
 
 
@@ -11244,6 +11401,380 @@ fprintf (stdout, &quot;component %d: %g\n&quot;, i, v[i]);
 
 
 
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="box_empty:Graphene::Box-class-method">
+      <div class="signature">
+        
+        def self.<strong>box_empty</strong> : <a href="Graphene/Box.html">Graphene::Box</a>
+
+        <a class="method-permalink" href="#box_empty%3AGraphene%3A%3ABox-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="box_infinite:Graphene::Box-class-method">
+      <div class="signature">
+        
+        def self.<strong>box_infinite</strong> : <a href="Graphene/Box.html">Graphene::Box</a>
+
+        <a class="method-permalink" href="#box_infinite%3AGraphene%3A%3ABox-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="box_minus_one:Graphene::Box-class-method">
+      <div class="signature">
+        
+        def self.<strong>box_minus_one</strong> : <a href="Graphene/Box.html">Graphene::Box</a>
+
+        <a class="method-permalink" href="#box_minus_one%3AGraphene%3A%3ABox-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="box_one:Graphene::Box-class-method">
+      <div class="signature">
+        
+        def self.<strong>box_one</strong> : <a href="Graphene/Box.html">Graphene::Box</a>
+
+        <a class="method-permalink" href="#box_one%3AGraphene%3A%3ABox-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="box_one_minus_one:Graphene::Box-class-method">
+      <div class="signature">
+        
+        def self.<strong>box_one_minus_one</strong> : <a href="Graphene/Box.html">Graphene::Box</a>
+
+        <a class="method-permalink" href="#box_one_minus_one%3AGraphene%3A%3ABox-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="box_zero:Graphene::Box-class-method">
+      <div class="signature">
+        
+        def self.<strong>box_zero</strong> : <a href="Graphene/Box.html">Graphene::Box</a>
+
+        <a class="method-permalink" href="#box_zero%3AGraphene%3A%3ABox-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="point3d_zero:Graphene::Point3D-class-method">
+      <div class="signature">
+        
+        def self.<strong>point3d_zero</strong> : <a href="Graphene/Point3D.html">Graphene::Point3D</a>
+
+        <a class="method-permalink" href="#point3d_zero%3AGraphene%3A%3APoint3D-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="point_zero:Graphene::Point-class-method">
+      <div class="signature">
+        
+        def self.<strong>point_zero</strong> : <a href="Graphene/Point.html">Graphene::Point</a>
+
+        <a class="method-permalink" href="#point_zero%3AGraphene%3A%3APoint-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="rect_alloc:Graphene::Rect-class-method">
+      <div class="signature">
+        
+        def self.<strong>rect_alloc</strong> : <a href="Graphene/Rect.html">Graphene::Rect</a>
+
+        <a class="method-permalink" href="#rect_alloc%3AGraphene%3A%3ARect-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="rect_zero:Graphene::Rect-class-method">
+      <div class="signature">
+        
+        def self.<strong>rect_zero</strong> : <a href="Graphene/Rect.html">Graphene::Rect</a>
+
+        <a class="method-permalink" href="#rect_zero%3AGraphene%3A%3ARect-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="size_zero:Graphene::Size-class-method">
+      <div class="signature">
+        
+        def self.<strong>size_zero</strong> : <a href="Graphene/Size.html">Graphene::Size</a>
+
+        <a class="method-permalink" href="#size_zero%3AGraphene%3A%3ASize-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="vec2_one:Graphene::Vec2-class-method">
+      <div class="signature">
+        
+        def self.<strong>vec2_one</strong> : <a href="Graphene/Vec2.html">Graphene::Vec2</a>
+
+        <a class="method-permalink" href="#vec2_one%3AGraphene%3A%3AVec2-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="vec2_x_axis:Graphene::Vec2-class-method">
+      <div class="signature">
+        
+        def self.<strong>vec2_x_axis</strong> : <a href="Graphene/Vec2.html">Graphene::Vec2</a>
+
+        <a class="method-permalink" href="#vec2_x_axis%3AGraphene%3A%3AVec2-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="vec2_y_axis:Graphene::Vec2-class-method">
+      <div class="signature">
+        
+        def self.<strong>vec2_y_axis</strong> : <a href="Graphene/Vec2.html">Graphene::Vec2</a>
+
+        <a class="method-permalink" href="#vec2_y_axis%3AGraphene%3A%3AVec2-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="vec2_zero:Graphene::Vec2-class-method">
+      <div class="signature">
+        
+        def self.<strong>vec2_zero</strong> : <a href="Graphene/Vec2.html">Graphene::Vec2</a>
+
+        <a class="method-permalink" href="#vec2_zero%3AGraphene%3A%3AVec2-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="vec3_one:Graphene::Vec3-class-method">
+      <div class="signature">
+        
+        def self.<strong>vec3_one</strong> : <a href="Graphene/Vec3.html">Graphene::Vec3</a>
+
+        <a class="method-permalink" href="#vec3_one%3AGraphene%3A%3AVec3-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="vec3_x_axis:Graphene::Vec3-class-method">
+      <div class="signature">
+        
+        def self.<strong>vec3_x_axis</strong> : <a href="Graphene/Vec3.html">Graphene::Vec3</a>
+
+        <a class="method-permalink" href="#vec3_x_axis%3AGraphene%3A%3AVec3-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="vec3_y_axis:Graphene::Vec3-class-method">
+      <div class="signature">
+        
+        def self.<strong>vec3_y_axis</strong> : <a href="Graphene/Vec3.html">Graphene::Vec3</a>
+
+        <a class="method-permalink" href="#vec3_y_axis%3AGraphene%3A%3AVec3-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="vec3_z_axis:Graphene::Vec3-class-method">
+      <div class="signature">
+        
+        def self.<strong>vec3_z_axis</strong> : <a href="Graphene/Vec3.html">Graphene::Vec3</a>
+
+        <a class="method-permalink" href="#vec3_z_axis%3AGraphene%3A%3AVec3-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="vec3_zero:Graphene::Vec3-class-method">
+      <div class="signature">
+        
+        def self.<strong>vec3_zero</strong> : <a href="Graphene/Vec3.html">Graphene::Vec3</a>
+
+        <a class="method-permalink" href="#vec3_zero%3AGraphene%3A%3AVec3-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="vec4_one:Graphene::Vec4-class-method">
+      <div class="signature">
+        
+        def self.<strong>vec4_one</strong> : <a href="Graphene/Vec4.html">Graphene::Vec4</a>
+
+        <a class="method-permalink" href="#vec4_one%3AGraphene%3A%3AVec4-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="vec4_w_axis:Graphene::Vec4-class-method">
+      <div class="signature">
+        
+        def self.<strong>vec4_w_axis</strong> : <a href="Graphene/Vec4.html">Graphene::Vec4</a>
+
+        <a class="method-permalink" href="#vec4_w_axis%3AGraphene%3A%3AVec4-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="vec4_x_axis:Graphene::Vec4-class-method">
+      <div class="signature">
+        
+        def self.<strong>vec4_x_axis</strong> : <a href="Graphene/Vec4.html">Graphene::Vec4</a>
+
+        <a class="method-permalink" href="#vec4_x_axis%3AGraphene%3A%3AVec4-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="vec4_y_axis:Graphene::Vec4-class-method">
+      <div class="signature">
+        
+        def self.<strong>vec4_y_axis</strong> : <a href="Graphene/Vec4.html">Graphene::Vec4</a>
+
+        <a class="method-permalink" href="#vec4_y_axis%3AGraphene%3A%3AVec4-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="vec4_z_axis:Graphene::Vec4-class-method">
+      <div class="signature">
+        
+        def self.<strong>vec4_z_axis</strong> : <a href="Graphene/Vec4.html">Graphene::Vec4</a>
+
+        <a class="method-permalink" href="#vec4_z_axis%3AGraphene%3A%3AVec4-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="vec4_zero:Graphene::Vec4-class-method">
+      <div class="signature">
+        
+        def self.<strong>vec4_zero</strong> : <a href="Graphene/Vec4.html">Graphene::Vec4</a>
+
+        <a class="method-permalink" href="#vec4_zero%3AGraphene%3A%3AVec4-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
 
 
 

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.3.0">
-<meta name="crystal_docs.project_version" content="0.5.0">
+<meta name="generator" content="Crystal Docs 1.3.2">
+<meta name="crystal_docs.project_version" content="0.7.0">
 <meta name="crystal_docs.project_name" content="GTK4.cr">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="GTK4.cr">
-  <title>Gtk::Application - GTK4.cr 0.5.0</title>
+  <title>Gtk::Application - GTK4.cr 0.7.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        0.5.0
+        0.7.0
       </span>
     </div>
   </div>
@@ -1145,6 +1145,11 @@
       <a href="../GICrystal.html">GICrystal</a>
       
         <ul>
+  
+  <li class=" " data-id="GTK4.cr/GICrystal/ObjectCollectedError" data-name="gicrystal::objectcollectederror">
+      <a href="../GICrystal/ObjectCollectedError.html">ObjectCollectedError</a>
+      
+    </li>
   
   <li class=" " data-id="GTK4.cr/GICrystal/Transfer" data-name="gicrystal::transfer">
       <a href="../GICrystal/Transfer.html">Transfer</a>
@@ -5241,8 +5246,18 @@
       
     </li>
   
+  <li class=" " data-id="GTK4.cr/GObject/ParamSpecPool" data-name="gobject::paramspecpool">
+      <a href="../GObject/ParamSpecPool.html">ParamSpecPool</a>
+      
+    </li>
+  
   <li class=" " data-id="GTK4.cr/GObject/ParamSpecString" data-name="gobject::paramspecstring">
       <a href="../GObject/ParamSpecString.html">ParamSpecString</a>
+      
+    </li>
+  
+  <li class=" " data-id="GTK4.cr/GObject/ParamSpecTypeInfo" data-name="gobject::paramspectypeinfo">
+      <a href="../GObject/ParamSpecTypeInfo.html">ParamSpecTypeInfo</a>
       
     </li>
   
@@ -11656,7 +11671,7 @@ session while inhibitors are present.</p>
     
   
     <a href="../Gio/Application.html#run%28argv%3AEnumerable%28String%29%3F%29%3AInt32-instance-method" class="tooltip">
-      <span>run(argv : Enumerable(String)?) : Int32<br/>run(*argv : String)</span>
+      <span>run(argv : Enumerable(String)?) : Int32<br/>run<br/>run(*argv : String)</span>
     run</a>, 
     
   
@@ -11905,11 +11920,6 @@ session while inhibitors are present.</p>
     finalize</a>, 
     
   
-    <a href="../GObject/Object.html#force_floating%3ANil-instance-method" class="tooltip">
-      <span>force_floating : Nil</span>
-    force_floating</a>, 
-    
-  
     <a href="../GObject/Object.html#freeze_notify%3ANil-instance-method" class="tooltip">
       <span>freeze_notify : Nil</span>
     freeze_notify</a>, 
@@ -11920,14 +11930,14 @@ session while inhibitors are present.</p>
     getv</a>, 
     
   
-    <a href="../GObject/Object.html#is_floating%3ABool-instance-method" class="tooltip">
-      <span>is_floating : Bool</span>
-    is_floating</a>, 
-    
-  
     <a href="../GObject/Object.html#notify%28property_name%3AString%29%3ANil-instance-method" class="tooltip">
       <span>notify(property_name : String) : Nil</span>
     notify</a>, 
+    
+  
+    <a href="../GObject/Object.html#notify_by_pspec%28pspec%3AGObject%3A%3AParamSpec%29%3ANil-instance-method" class="tooltip">
+      <span>notify_by_pspec(pspec : GObject::ParamSpec) : Nil</span>
+    notify_by_pspec</a>, 
     
   
     <a href="../GObject/Object.html#notify_signal-instance-method" class="tooltip">
@@ -11948,11 +11958,6 @@ session while inhibitors are present.</p>
     <a href="../GObject/Object.html#ref_count-instance-method" class="tooltip">
       <span>ref_count</span>
     ref_count</a>, 
-    
-  
-    <a href="../GObject/Object.html#ref_sink%3AGObject%3A%3AObject-instance-method" class="tooltip">
-      <span>ref_sink : GObject::Object</span>
-    ref_sink</a>, 
     
   
     <a href="../GObject/Object.html#run_dispose%3ANil-instance-method" class="tooltip">
@@ -12036,7 +12041,12 @@ session while inhibitors are present.</p>
   
     <a href="../GObject/Object.html#interface_find_property%28g_iface%3AGObject%3A%3ATypeInterface%2Cproperty_name%3AString%29%3AGObject%3A%3AParamSpec-class-method" class="tooltip">
       <span>interface_find_property(g_iface : GObject::TypeInterface, property_name : String) : GObject::ParamSpec</span>
-    interface_find_property</a>
+    interface_find_property</a>, 
+    
+  
+    <a href="../GObject/Object.html#interface_list_properties%28g_iface%3AGObject%3A%3ATypeInterface%29%3AEnumerable%28GObject%3A%3AParamSpec%29-class-method" class="tooltip">
+      <span>interface_list_properties(g_iface : GObject::TypeInterface) : Enumerable(GObject::ParamSpec)</span>
+    interface_list_properties</a>
     
   
 
@@ -12085,14 +12095,14 @@ session while inhibitors are present.</p>
         <div class="doc">
           
           <p>Creates a new <code>GtkApplication</code> instance.</p>
-<p>When using <code>GtkApplication</code>, it is not necessary to call <code>Gtk#init</code>
+<p>When using <code>GtkApplication</code>, it is not necessary to call <code><a href="../Gtk.html#init%3ANil-class-method">Gtk#init</a></code>
 manually. It is called as soon as the application gets registered as
 the primary instance.</p>
-<p>Concretely, <code>Gtk#init</code> is called in the default handler for the
+<p>Concretely, <code><a href="../Gtk.html#init%3ANil-class-method">Gtk#init</a></code> is called in the default handler for the
 <code>GApplication::startup</code> signal. Therefore, <code>GtkApplication</code> subclasses should
 always chain up in their <code>GApplication::startup</code> handler before using any GTK
 API.</p>
-<p>Note that commandline arguments are not passed to <code>Gtk#init</code>.</p>
+<p>Note that commandline arguments are not passed to <code><a href="../Gtk.html#init%3ANil-class-method">Gtk#init</a></code>.</p>
 <p>If <code>application_id</code> is not %NULL, then it must be valid. See
 <code>g_application_id_is_valid()</code>.</p>
 <p>If no application ID is given then some features (most notably application
@@ -12203,7 +12213,7 @@ same context.</p>
 <p>In case there are no actions for a given accelerator, an empty array
 is returned. <code>NULL</code> is never returned.</p>
 <p>It is a programmer error to pass an invalid accelerator string.</p>
-<p>If you are unsure, check it with <code>Gtk#accelerator_parse</code> first.</p>
+<p>If you are unsure, check it with <code><a href="../Gtk.html#accelerator_parse%28accelerator%3AString%29%3ABool-class-method">Gtk#accelerator_parse</a></code> first.</p>
         </div>
       
       <br/>

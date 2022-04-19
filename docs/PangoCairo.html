@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.3.0">
-<meta name="crystal_docs.project_version" content="0.5.0">
+<meta name="generator" content="Crystal Docs 1.3.2">
+<meta name="crystal_docs.project_version" content="0.7.0">
 <meta name="crystal_docs.project_name" content="GTK4.cr">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="js/doc.js"></script>
 
   <meta name="repository-name" content="GTK4.cr">
-  <title>PangoCairo - GTK4.cr 0.5.0</title>
+  <title>PangoCairo - GTK4.cr 0.7.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        0.5.0
+        0.7.0
       </span>
     </div>
   </div>
@@ -1145,6 +1145,11 @@
       <a href="GICrystal.html">GICrystal</a>
       
         <ul>
+  
+  <li class=" " data-id="GTK4.cr/GICrystal/ObjectCollectedError" data-name="gicrystal::objectcollectederror">
+      <a href="GICrystal/ObjectCollectedError.html">ObjectCollectedError</a>
+      
+    </li>
   
   <li class=" " data-id="GTK4.cr/GICrystal/Transfer" data-name="gicrystal::transfer">
       <a href="GICrystal/Transfer.html">Transfer</a>
@@ -5241,8 +5246,18 @@
       
     </li>
   
+  <li class=" " data-id="GTK4.cr/GObject/ParamSpecPool" data-name="gobject::paramspecpool">
+      <a href="GObject/ParamSpecPool.html">ParamSpecPool</a>
+      
+    </li>
+  
   <li class=" " data-id="GTK4.cr/GObject/ParamSpecString" data-name="gobject::paramspecstring">
       <a href="GObject/ParamSpecString.html">ParamSpecString</a>
+      
+    </li>
+  
+  <li class=" " data-id="GTK4.cr/GObject/ParamSpecTypeInfo" data-name="gobject::paramspectypeinfo">
+      <a href="GObject/ParamSpecTypeInfo.html">ParamSpecTypeInfo</a>
       
     </li>
   
@@ -11066,6 +11081,123 @@
 
 
 
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#context_get_font_options%28context%3APango%3A%3AContext%29%3ACairo%3A%3AFontOptions%3F-class-method" class="signature"><strong>.context_get_font_options</strong>(context : Pango::Context) : Cairo::FontOptions?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#context_get_resolution%28context%3APango%3A%3AContext%29%3AFloat64-class-method" class="signature"><strong>.context_get_resolution</strong>(context : Pango::Context) : Float64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#context_set_font_options%28context%3APango%3A%3AContext%2Coptions%3ACairo%3A%3AFontOptions%3F%29%3ANil-class-method" class="signature"><strong>.context_set_font_options</strong>(context : Pango::Context, options : Cairo::FontOptions?) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#context_set_resolution%28context%3APango%3A%3AContext%2Cdpi%3AFloat64%29%3ANil-class-method" class="signature"><strong>.context_set_resolution</strong>(context : Pango::Context, dpi : Float64) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#context_set_shape_renderer%28context%3APango%3A%3AContext%2Cfunc%3APointer%28Void%29%3F%2Cdata%3APointer%28Void%29%3F%2Cdnotify%3APointer%28Void%29%3F%29%3ANil-class-method" class="signature"><strong>.context_set_shape_renderer</strong>(context : Pango::Context, func : Pointer(Void)?, data : Pointer(Void)?, dnotify : Pointer(Void)?) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#create_context%28cr%3ACairo%3A%3AContext%29%3APango%3A%3AContext-class-method" class="signature"><strong>.create_context</strong>(cr : Cairo::Context) : Pango::Context</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#create_layout%28cr%3ACairo%3A%3AContext%29%3APango%3A%3ALayout-class-method" class="signature"><strong>.create_layout</strong>(cr : Cairo::Context) : Pango::Layout</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#error_underline_path%28cr%3ACairo%3A%3AContext%2Cx%3AFloat64%2Cy%3AFloat64%2Cwidth%3AFloat64%2Cheight%3AFloat64%29%3ANil-class-method" class="signature"><strong>.error_underline_path</strong>(cr : Cairo::Context, x : Float64, y : Float64, width : Float64, height : Float64) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#font_map_get_default%3APango%3A%3AFontMap-class-method" class="signature"><strong>.font_map_get_default</strong> : Pango::FontMap</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#font_map_new%3APango%3A%3AFontMap-class-method" class="signature"><strong>.font_map_new</strong> : Pango::FontMap</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#font_map_new_for_font_type%28fonttype%3ACairo%3A%3AFontType%29%3APango%3A%3AFontMap%3F-class-method" class="signature"><strong>.font_map_new_for_font_type</strong>(fonttype : Cairo::FontType) : Pango::FontMap?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#glyph_string_path%28cr%3ACairo%3A%3AContext%2Cfont%3APango%3A%3AFont%2Cglyphs%3APango%3A%3AGlyphString%29%3ANil-class-method" class="signature"><strong>.glyph_string_path</strong>(cr : Cairo::Context, font : Pango::Font, glyphs : Pango::GlyphString) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#layout_line_path%28cr%3ACairo%3A%3AContext%2Cline%3APango%3A%3ALayoutLine%29%3ANil-class-method" class="signature"><strong>.layout_line_path</strong>(cr : Cairo::Context, line : Pango::LayoutLine) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#layout_path%28cr%3ACairo%3A%3AContext%2Clayout%3APango%3A%3ALayout%29%3ANil-class-method" class="signature"><strong>.layout_path</strong>(cr : Cairo::Context, layout : Pango::Layout) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#show_error_underline%28cr%3ACairo%3A%3AContext%2Cx%3AFloat64%2Cy%3AFloat64%2Cwidth%3AFloat64%2Cheight%3AFloat64%29%3ANil-class-method" class="signature"><strong>.show_error_underline</strong>(cr : Cairo::Context, x : Float64, y : Float64, width : Float64, height : Float64) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#show_glyph_item%28cr%3ACairo%3A%3AContext%2Ctext%3AString%2Cglyph_item%3APango%3A%3AGlyphItem%29%3ANil-class-method" class="signature"><strong>.show_glyph_item</strong>(cr : Cairo::Context, text : String, glyph_item : Pango::GlyphItem) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#show_glyph_string%28cr%3ACairo%3A%3AContext%2Cfont%3APango%3A%3AFont%2Cglyphs%3APango%3A%3AGlyphString%29%3ANil-class-method" class="signature"><strong>.show_glyph_string</strong>(cr : Cairo::Context, font : Pango::Font, glyphs : Pango::GlyphString) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#show_layout%28cr%3ACairo%3A%3AContext%2Clayout%3APango%3A%3ALayout%29%3ANil-class-method" class="signature"><strong>.show_layout</strong>(cr : Cairo::Context, layout : Pango::Layout) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#show_layout_line%28cr%3ACairo%3A%3AContext%2Cline%3APango%3A%3ALayoutLine%29%3ANil-class-method" class="signature"><strong>.show_layout_line</strong>(cr : Cairo::Context, line : Pango::LayoutLine) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#update_context%28cr%3ACairo%3A%3AContext%2Ccontext%3APango%3A%3AContext%29%3ANil-class-method" class="signature"><strong>.update_context</strong>(cr : Cairo::Context, context : Pango::Context) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#update_layout%28cr%3ACairo%3A%3AContext%2Clayout%3APango%3A%3ALayout%29%3ANil-class-method" class="signature"><strong>.update_layout</strong>(cr : Cairo::Context, layout : Pango::Layout) : Nil</a>
+        
+      </li>
+    
+  </ul>
+
 
 
 
@@ -11078,6 +11210,310 @@
 
 
 
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="context_get_font_options(context:Pango::Context):Cairo::FontOptions?-class-method">
+      <div class="signature">
+        
+        def self.<strong>context_get_font_options</strong>(context : <a href="Pango/Context.html">Pango::Context</a>) : <a href="Cairo/FontOptions.html">Cairo::FontOptions</a>?
+
+        <a class="method-permalink" href="#context_get_font_options%28context%3APango%3A%3AContext%29%3ACairo%3A%3AFontOptions%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="context_get_resolution(context:Pango::Context):Float64-class-method">
+      <div class="signature">
+        
+        def self.<strong>context_get_resolution</strong>(context : <a href="Pango/Context.html">Pango::Context</a>) : Float64
+
+        <a class="method-permalink" href="#context_get_resolution%28context%3APango%3A%3AContext%29%3AFloat64-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="context_set_font_options(context:Pango::Context,options:Cairo::FontOptions?):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>context_set_font_options</strong>(context : <a href="Pango/Context.html">Pango::Context</a>, options : <a href="Cairo/FontOptions.html">Cairo::FontOptions</a>?) : Nil
+
+        <a class="method-permalink" href="#context_set_font_options%28context%3APango%3A%3AContext%2Coptions%3ACairo%3A%3AFontOptions%3F%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="context_set_resolution(context:Pango::Context,dpi:Float64):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>context_set_resolution</strong>(context : <a href="Pango/Context.html">Pango::Context</a>, dpi : Float64) : Nil
+
+        <a class="method-permalink" href="#context_set_resolution%28context%3APango%3A%3AContext%2Cdpi%3AFloat64%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="context_set_shape_renderer(context:Pango::Context,func:Pointer(Void)?,data:Pointer(Void)?,dnotify:Pointer(Void)?):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>context_set_shape_renderer</strong>(context : <a href="Pango/Context.html">Pango::Context</a>, func : Pointer(Void)?, data : Pointer(Void)?, dnotify : Pointer(Void)?) : Nil
+
+        <a class="method-permalink" href="#context_set_shape_renderer%28context%3APango%3A%3AContext%2Cfunc%3APointer%28Void%29%3F%2Cdata%3APointer%28Void%29%3F%2Cdnotify%3APointer%28Void%29%3F%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="create_context(cr:Cairo::Context):Pango::Context-class-method">
+      <div class="signature">
+        
+        def self.<strong>create_context</strong>(cr : <a href="Cairo/Context.html">Cairo::Context</a>) : <a href="Pango/Context.html">Pango::Context</a>
+
+        <a class="method-permalink" href="#create_context%28cr%3ACairo%3A%3AContext%29%3APango%3A%3AContext-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="create_layout(cr:Cairo::Context):Pango::Layout-class-method">
+      <div class="signature">
+        
+        def self.<strong>create_layout</strong>(cr : <a href="Cairo/Context.html">Cairo::Context</a>) : <a href="Pango/Layout.html">Pango::Layout</a>
+
+        <a class="method-permalink" href="#create_layout%28cr%3ACairo%3A%3AContext%29%3APango%3A%3ALayout-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="error_underline_path(cr:Cairo::Context,x:Float64,y:Float64,width:Float64,height:Float64):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>error_underline_path</strong>(cr : <a href="Cairo/Context.html">Cairo::Context</a>, x : Float64, y : Float64, width : Float64, height : Float64) : Nil
+
+        <a class="method-permalink" href="#error_underline_path%28cr%3ACairo%3A%3AContext%2Cx%3AFloat64%2Cy%3AFloat64%2Cwidth%3AFloat64%2Cheight%3AFloat64%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="font_map_get_default:Pango::FontMap-class-method">
+      <div class="signature">
+        
+        def self.<strong>font_map_get_default</strong> : <a href="Pango/FontMap.html">Pango::FontMap</a>
+
+        <a class="method-permalink" href="#font_map_get_default%3APango%3A%3AFontMap-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="font_map_new:Pango::FontMap-class-method">
+      <div class="signature">
+        
+        def self.<strong>font_map_new</strong> : <a href="Pango/FontMap.html">Pango::FontMap</a>
+
+        <a class="method-permalink" href="#font_map_new%3APango%3A%3AFontMap-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="font_map_new_for_font_type(fonttype:Cairo::FontType):Pango::FontMap?-class-method">
+      <div class="signature">
+        
+        def self.<strong>font_map_new_for_font_type</strong>(fonttype : <a href="Cairo/FontType.html">Cairo::FontType</a>) : <a href="Pango/FontMap.html">Pango::FontMap</a>?
+
+        <a class="method-permalink" href="#font_map_new_for_font_type%28fonttype%3ACairo%3A%3AFontType%29%3APango%3A%3AFontMap%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="glyph_string_path(cr:Cairo::Context,font:Pango::Font,glyphs:Pango::GlyphString):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>glyph_string_path</strong>(cr : <a href="Cairo/Context.html">Cairo::Context</a>, font : <a href="Pango/Font.html">Pango::Font</a>, glyphs : <a href="Pango/GlyphString.html">Pango::GlyphString</a>) : Nil
+
+        <a class="method-permalink" href="#glyph_string_path%28cr%3ACairo%3A%3AContext%2Cfont%3APango%3A%3AFont%2Cglyphs%3APango%3A%3AGlyphString%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="layout_line_path(cr:Cairo::Context,line:Pango::LayoutLine):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>layout_line_path</strong>(cr : <a href="Cairo/Context.html">Cairo::Context</a>, line : <a href="Pango/LayoutLine.html">Pango::LayoutLine</a>) : Nil
+
+        <a class="method-permalink" href="#layout_line_path%28cr%3ACairo%3A%3AContext%2Cline%3APango%3A%3ALayoutLine%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="layout_path(cr:Cairo::Context,layout:Pango::Layout):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>layout_path</strong>(cr : <a href="Cairo/Context.html">Cairo::Context</a>, layout : <a href="Pango/Layout.html">Pango::Layout</a>) : Nil
+
+        <a class="method-permalink" href="#layout_path%28cr%3ACairo%3A%3AContext%2Clayout%3APango%3A%3ALayout%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="show_error_underline(cr:Cairo::Context,x:Float64,y:Float64,width:Float64,height:Float64):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>show_error_underline</strong>(cr : <a href="Cairo/Context.html">Cairo::Context</a>, x : Float64, y : Float64, width : Float64, height : Float64) : Nil
+
+        <a class="method-permalink" href="#show_error_underline%28cr%3ACairo%3A%3AContext%2Cx%3AFloat64%2Cy%3AFloat64%2Cwidth%3AFloat64%2Cheight%3AFloat64%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="show_glyph_item(cr:Cairo::Context,text:String,glyph_item:Pango::GlyphItem):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>show_glyph_item</strong>(cr : <a href="Cairo/Context.html">Cairo::Context</a>, text : String, glyph_item : <a href="Pango/GlyphItem.html">Pango::GlyphItem</a>) : Nil
+
+        <a class="method-permalink" href="#show_glyph_item%28cr%3ACairo%3A%3AContext%2Ctext%3AString%2Cglyph_item%3APango%3A%3AGlyphItem%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="show_glyph_string(cr:Cairo::Context,font:Pango::Font,glyphs:Pango::GlyphString):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>show_glyph_string</strong>(cr : <a href="Cairo/Context.html">Cairo::Context</a>, font : <a href="Pango/Font.html">Pango::Font</a>, glyphs : <a href="Pango/GlyphString.html">Pango::GlyphString</a>) : Nil
+
+        <a class="method-permalink" href="#show_glyph_string%28cr%3ACairo%3A%3AContext%2Cfont%3APango%3A%3AFont%2Cglyphs%3APango%3A%3AGlyphString%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="show_layout(cr:Cairo::Context,layout:Pango::Layout):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>show_layout</strong>(cr : <a href="Cairo/Context.html">Cairo::Context</a>, layout : <a href="Pango/Layout.html">Pango::Layout</a>) : Nil
+
+        <a class="method-permalink" href="#show_layout%28cr%3ACairo%3A%3AContext%2Clayout%3APango%3A%3ALayout%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="show_layout_line(cr:Cairo::Context,line:Pango::LayoutLine):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>show_layout_line</strong>(cr : <a href="Cairo/Context.html">Cairo::Context</a>, line : <a href="Pango/LayoutLine.html">Pango::LayoutLine</a>) : Nil
+
+        <a class="method-permalink" href="#show_layout_line%28cr%3ACairo%3A%3AContext%2Cline%3APango%3A%3ALayoutLine%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="update_context(cr:Cairo::Context,context:Pango::Context):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>update_context</strong>(cr : <a href="Cairo/Context.html">Cairo::Context</a>, context : <a href="Pango/Context.html">Pango::Context</a>) : Nil
+
+        <a class="method-permalink" href="#update_context%28cr%3ACairo%3A%3AContext%2Ccontext%3APango%3A%3AContext%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="update_layout(cr:Cairo::Context,layout:Pango::Layout):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>update_layout</strong>(cr : <a href="Cairo/Context.html">Cairo::Context</a>, layout : <a href="Pango/Layout.html">Pango::Layout</a>) : Nil
+
+        <a class="method-permalink" href="#update_layout%28cr%3ACairo%3A%3AContext%2Clayout%3APango%3A%3ALayout%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
 
 
 

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.3.0">
-<meta name="crystal_docs.project_version" content="0.5.0">
+<meta name="generator" content="Crystal Docs 1.3.2">
+<meta name="crystal_docs.project_version" content="0.7.0">
 <meta name="crystal_docs.project_name" content="GTK4.cr">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="js/doc.js"></script>
 
   <meta name="repository-name" content="GTK4.cr">
-  <title>Gio - GTK4.cr 0.5.0</title>
+  <title>Gio - GTK4.cr 0.7.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        0.5.0
+        0.7.0
       </span>
     </div>
   </div>
@@ -1145,6 +1145,11 @@
       <a href="GICrystal.html">GICrystal</a>
       
         <ul>
+  
+  <li class=" " data-id="GTK4.cr/GICrystal/ObjectCollectedError" data-name="gicrystal::objectcollectederror">
+      <a href="GICrystal/ObjectCollectedError.html">ObjectCollectedError</a>
+      
+    </li>
   
   <li class=" " data-id="GTK4.cr/GICrystal/Transfer" data-name="gicrystal::transfer">
       <a href="GICrystal/Transfer.html">Transfer</a>
@@ -5241,8 +5246,18 @@
       
     </li>
   
+  <li class=" " data-id="GTK4.cr/GObject/ParamSpecPool" data-name="gobject::paramspecpool">
+      <a href="GObject/ParamSpecPool.html">ParamSpecPool</a>
+      
+    </li>
+  
   <li class=" " data-id="GTK4.cr/GObject/ParamSpecString" data-name="gobject::paramspecstring">
       <a href="GObject/ParamSpecString.html">ParamSpecString</a>
+      
+    </li>
+  
+  <li class=" " data-id="GTK4.cr/GObject/ParamSpecTypeInfo" data-name="gobject::paramspectypeinfo">
+      <a href="GObject/ParamSpecTypeInfo.html">ParamSpecTypeInfo</a>
       
     </li>
   
@@ -11939,6 +11954,11 @@
     
     <br/>
   
+    
+      bindings/gio/application.cr
+    
+    <br/>
+  
 
 
 
@@ -13256,7 +13276,781 @@ See [Extending GIO][extending-gio].</p>
 
 
 
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#action_name_is_valid%28action_name%3AString%29%3ABool-class-method" class="signature"><strong>.action_name_is_valid</strong>(action_name : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#action_print_detailed_name%28action_name%3AString%2Ctarget_value%3A_%3F%29%3AString-class-method" class="signature"><strong>.action_print_detailed_name</strong>(action_name : String, target_value : _?) : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#app_info_get_all%3AGLib%3A%3AList-class-method" class="signature"><strong>.app_info_get_all</strong> : GLib::List</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#app_info_get_all_for_type%28content_type%3AString%29%3AGLib%3A%3AList-class-method" class="signature"><strong>.app_info_get_all_for_type</strong>(content_type : String) : GLib::List</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#app_info_get_default_for_type%28content_type%3AString%2Cmust_support_uris%3ABool%29%3AGio%3A%3AAppInfo%3F-class-method" class="signature"><strong>.app_info_get_default_for_type</strong>(content_type : String, must_support_uris : Bool) : Gio::AppInfo?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#app_info_get_default_for_uri_scheme%28uri_scheme%3AString%29%3AGio%3A%3AAppInfo%3F-class-method" class="signature"><strong>.app_info_get_default_for_uri_scheme</strong>(uri_scheme : String) : Gio::AppInfo?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#app_info_get_fallback_for_type%28content_type%3AString%29%3AGLib%3A%3AList-class-method" class="signature"><strong>.app_info_get_fallback_for_type</strong>(content_type : String) : GLib::List</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#app_info_get_recommended_for_type%28content_type%3AString%29%3AGLib%3A%3AList-class-method" class="signature"><strong>.app_info_get_recommended_for_type</strong>(content_type : String) : GLib::List</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#app_info_launch_default_for_uri_async%28uri%3AString%2Ccontext%3AGio%3A%3AAppLaunchContext%3F%2Ccancellable%3AGio%3A%3ACancellable%3F%2Ccallback%3APointer%28Void%29%3F%2Cuser_data%3APointer%28Void%29%3F%29%3ANil-class-method" class="signature"><strong>.app_info_launch_default_for_uri_async</strong>(uri : String, context : Gio::AppLaunchContext?, cancellable : Gio::Cancellable?, callback : Pointer(Void)?, user_data : Pointer(Void)?) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#app_info_reset_type_associations%28content_type%3AString%29%3ANil-class-method" class="signature"><strong>.app_info_reset_type_associations</strong>(content_type : String) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#async_initable_newv_async%28object_type%3AUInt64%2Cn_parameters%3AUInt32%2Cparameters%3AGObject%3A%3AParameter%2Cio_priority%3AInt32%2Ccancellable%3AGio%3A%3ACancellable%3F%2Ccallback%3APointer%28Void%29%3F%2Cuser_data%3APointer%28Void%29%3F%29%3ANil-class-method" class="signature"><strong>.async_initable_newv_async</strong>(object_type : UInt64, n_parameters : UInt32, parameters : GObject::Parameter, io_priority : Int32, cancellable : Gio::Cancellable?, callback : Pointer(Void)?, user_data : Pointer(Void)?) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bus_get%28bus_type%3AGio%3A%3ABusType%2Ccancellable%3AGio%3A%3ACancellable%3F%2Ccallback%3APointer%28Void%29%3F%2Cuser_data%3APointer%28Void%29%3F%29%3ANil-class-method" class="signature"><strong>.bus_get</strong>(bus_type : Gio::BusType, cancellable : Gio::Cancellable?, callback : Pointer(Void)?, user_data : Pointer(Void)?) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bus_own_name%28bus_type%3AGio%3A%3ABusType%2Cname%3AString%2Cflags%3AGio%3A%3ABusNameOwnerFlags%2Cbus_acquired_closure%3AGObject%3A%3AClosure%3F%2Cname_acquired_closure%3AGObject%3A%3AClosure%3F%2Cname_lost_closure%3AGObject%3A%3AClosure%3F%29%3AUInt32-class-method" class="signature"><strong>.bus_own_name</strong>(bus_type : Gio::BusType, name : String, flags : Gio::BusNameOwnerFlags, bus_acquired_closure : GObject::Closure?, name_acquired_closure : GObject::Closure?, name_lost_closure : GObject::Closure?) : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bus_own_name_on_connection%28connection%3AGio%3A%3ADBusConnection%2Cname%3AString%2Cflags%3AGio%3A%3ABusNameOwnerFlags%2Cname_acquired_closure%3AGObject%3A%3AClosure%3F%2Cname_lost_closure%3AGObject%3A%3AClosure%3F%29%3AUInt32-class-method" class="signature"><strong>.bus_own_name_on_connection</strong>(connection : Gio::DBusConnection, name : String, flags : Gio::BusNameOwnerFlags, name_acquired_closure : GObject::Closure?, name_lost_closure : GObject::Closure?) : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bus_unown_name%28owner_id%3AUInt32%29%3ANil-class-method" class="signature"><strong>.bus_unown_name</strong>(owner_id : UInt32) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bus_unwatch_name%28watcher_id%3AUInt32%29%3ANil-class-method" class="signature"><strong>.bus_unwatch_name</strong>(watcher_id : UInt32) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bus_watch_name%28bus_type%3AGio%3A%3ABusType%2Cname%3AString%2Cflags%3AGio%3A%3ABusNameWatcherFlags%2Cname_appeared_closure%3AGObject%3A%3AClosure%3F%2Cname_vanished_closure%3AGObject%3A%3AClosure%3F%29%3AUInt32-class-method" class="signature"><strong>.bus_watch_name</strong>(bus_type : Gio::BusType, name : String, flags : Gio::BusNameWatcherFlags, name_appeared_closure : GObject::Closure?, name_vanished_closure : GObject::Closure?) : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bus_watch_name_on_connection%28connection%3AGio%3A%3ADBusConnection%2Cname%3AString%2Cflags%3AGio%3A%3ABusNameWatcherFlags%2Cname_appeared_closure%3AGObject%3A%3AClosure%3F%2Cname_vanished_closure%3AGObject%3A%3AClosure%3F%29%3AUInt32-class-method" class="signature"><strong>.bus_watch_name_on_connection</strong>(connection : Gio::DBusConnection, name : String, flags : Gio::BusNameWatcherFlags, name_appeared_closure : GObject::Closure?, name_vanished_closure : GObject::Closure?) : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#content_type_can_be_executable%28type%3AString%29%3ABool-class-method" class="signature"><strong>.content_type_can_be_executable</strong>(type : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#content_type_equals%28type1%3AString%2Ctype2%3AString%29%3ABool-class-method" class="signature"><strong>.content_type_equals</strong>(type1 : String, type2 : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#content_type_from_mime_type%28mime_type%3AString%29%3AString%3F-class-method" class="signature"><strong>.content_type_from_mime_type</strong>(mime_type : String) : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#content_type_get_description%28type%3AString%29%3AString-class-method" class="signature"><strong>.content_type_get_description</strong>(type : String) : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#content_type_get_generic_icon_name%28type%3AString%29%3AString%3F-class-method" class="signature"><strong>.content_type_get_generic_icon_name</strong>(type : String) : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#content_type_get_icon%28type%3AString%29%3AGio%3A%3AIcon-class-method" class="signature"><strong>.content_type_get_icon</strong>(type : String) : Gio::Icon</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#content_type_get_mime_dirs%3AEnumerable%28String%29-class-method" class="signature"><strong>.content_type_get_mime_dirs</strong> : Enumerable(String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#content_type_get_mime_type%28type%3AString%29%3AString%3F-class-method" class="signature"><strong>.content_type_get_mime_type</strong>(type : String) : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#content_type_get_symbolic_icon%28type%3AString%29%3AGio%3A%3AIcon-class-method" class="signature"><strong>.content_type_get_symbolic_icon</strong>(type : String) : Gio::Icon</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#content_type_guess%28filename%3AString%3F%2Cdata%3AEnumerable%28UInt8%29%3F%29%3AString-class-method" class="signature"><strong>.content_type_guess</strong>(filename : String?, data : Enumerable(UInt8)?) : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#content_type_guess_for_tree%28root%3AGio%3A%3AFile%29%3AEnumerable%28String%29-class-method" class="signature"><strong>.content_type_guess_for_tree</strong>(root : Gio::File) : Enumerable(String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#content_type_is_a%28type%3AString%2Csupertype%3AString%29%3ABool-class-method" class="signature"><strong>.content_type_is_a</strong>(type : String, supertype : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#content_type_is_mime_type%28type%3AString%2Cmime_type%3AString%29%3ABool-class-method" class="signature"><strong>.content_type_is_mime_type</strong>(type : String, mime_type : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#content_type_is_unknown%28type%3AString%29%3ABool-class-method" class="signature"><strong>.content_type_is_unknown</strong>(type : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#content_type_set_mime_dirs%28dirs%3AEnumerable%28String%29%3F%29%3ANil-class-method" class="signature"><strong>.content_type_set_mime_dirs</strong>(dirs : Enumerable(String)?) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#content_type_set_mime_dirs%28%2Adirs%3AString%29-class-method" class="signature"><strong>.content_type_set_mime_dirs</strong>(*dirs : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#content_types_get_registered%3AGLib%3A%3AList-class-method" class="signature"><strong>.content_types_get_registered</strong> : GLib::List</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_address_escape_value%28string%3AString%29%3AString-class-method" class="signature"><strong>.dbus_address_escape_value</strong>(string : String) : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_address_get_stream%28address%3AString%2Ccancellable%3AGio%3A%3ACancellable%3F%2Ccallback%3APointer%28Void%29%3F%2Cuser_data%3APointer%28Void%29%3F%29%3ANil-class-method" class="signature"><strong>.dbus_address_get_stream</strong>(address : String, cancellable : Gio::Cancellable?, callback : Pointer(Void)?, user_data : Pointer(Void)?) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_annotation_info_lookup%28annotations%3AEnumerable%28Gio%3A%3ADBusAnnotationInfo%29%3F%2Cname%3AString%29%3AString%3F-class-method" class="signature"><strong>.dbus_annotation_info_lookup</strong>(annotations : Enumerable(Gio::DBusAnnotationInfo)?, name : String) : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_error_encode_gerror%28error%3AGLib%3A%3AError%29%3AString-class-method" class="signature"><strong>.dbus_error_encode_gerror</strong>(error : GLib::Error) : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_error_get_remote_error%28error%3AGLib%3A%3AError%29%3AString%3F-class-method" class="signature"><strong>.dbus_error_get_remote_error</strong>(error : GLib::Error) : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_error_is_remote_error%28error%3AGLib%3A%3AError%29%3ABool-class-method" class="signature"><strong>.dbus_error_is_remote_error</strong>(error : GLib::Error) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_error_new_for_dbus_error%28dbus_error_name%3AString%2Cdbus_error_message%3AString%29%3AGLib%3A%3AError-class-method" class="signature"><strong>.dbus_error_new_for_dbus_error</strong>(dbus_error_name : String, dbus_error_message : String) : GLib::Error</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_error_quark%3AUInt32-class-method" class="signature"><strong>.dbus_error_quark</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_error_register_error%28error_domain%3AUInt32%2Cerror_code%3AInt32%2Cdbus_error_name%3AString%29%3ABool-class-method" class="signature"><strong>.dbus_error_register_error</strong>(error_domain : UInt32, error_code : Int32, dbus_error_name : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_error_register_error_domain%28error_domain_quark_name%3AString%2Cquark_volatile%3APointer%28UInt64%29%2Centries%3AEnumerable%28Gio%3A%3ADBusErrorEntry%29%29%3ANil-class-method" class="signature"><strong>.dbus_error_register_error_domain</strong>(error_domain_quark_name : String, quark_volatile : Pointer(UInt64), entries : Enumerable(Gio::DBusErrorEntry)) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_error_strip_remote_error%28error%3AGLib%3A%3AError%29%3ABool-class-method" class="signature"><strong>.dbus_error_strip_remote_error</strong>(error : GLib::Error) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_error_unregister_error%28error_domain%3AUInt32%2Cerror_code%3AInt32%2Cdbus_error_name%3AString%29%3ABool-class-method" class="signature"><strong>.dbus_error_unregister_error</strong>(error_domain : UInt32, error_code : Int32, dbus_error_name : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_escape_object_path%28s%3AString%29%3AString-class-method" class="signature"><strong>.dbus_escape_object_path</strong>(s : String) : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_escape_object_path_bytestring%28bytes%3AEnumerable%28UInt8%29%29%3AString-class-method" class="signature"><strong>.dbus_escape_object_path_bytestring</strong>(bytes : Enumerable(UInt8)) : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_escape_object_path_bytestring%28%2Abytes%3AUInt8%29-class-method" class="signature"><strong>.dbus_escape_object_path_bytestring</strong>(*bytes : UInt8)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_generate_guid%3AString-class-method" class="signature"><strong>.dbus_generate_guid</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_gvalue_to_gvariant%28gvalue%3A_%2Ctype%3AGLib%3A%3AVariantType%29%3AGLib%3A%3AVariant-class-method" class="signature"><strong>.dbus_gvalue_to_gvariant</strong>(gvalue : _, type : GLib::VariantType) : GLib::Variant</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_gvariant_to_gvalue%28value%3A_%29%3AGObject%3A%3AValue-class-method" class="signature"><strong>.dbus_gvariant_to_gvalue</strong>(value : _) : GObject::Value</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_is_address%28string%3AString%29%3ABool-class-method" class="signature"><strong>.dbus_is_address</strong>(string : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_is_error_name%28string%3AString%29%3ABool-class-method" class="signature"><strong>.dbus_is_error_name</strong>(string : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_is_guid%28string%3AString%29%3ABool-class-method" class="signature"><strong>.dbus_is_guid</strong>(string : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_is_interface_name%28string%3AString%29%3ABool-class-method" class="signature"><strong>.dbus_is_interface_name</strong>(string : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_is_member_name%28string%3AString%29%3ABool-class-method" class="signature"><strong>.dbus_is_member_name</strong>(string : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_is_name%28string%3AString%29%3ABool-class-method" class="signature"><strong>.dbus_is_name</strong>(string : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_is_unique_name%28string%3AString%29%3ABool-class-method" class="signature"><strong>.dbus_is_unique_name</strong>(string : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_unescape_object_path%28s%3AString%29%3AEnumerable%28UInt8%29%3F-class-method" class="signature"><strong>.dbus_unescape_object_path</strong>(s : String) : Enumerable(UInt8)?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#file_new_for_commandline_arg%28arg%3AString%29%3AGio%3A%3AFile-class-method" class="signature"><strong>.file_new_for_commandline_arg</strong>(arg : String) : Gio::File</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#file_new_for_commandline_arg_and_cwd%28arg%3AString%2Ccwd%3AString%29%3AGio%3A%3AFile-class-method" class="signature"><strong>.file_new_for_commandline_arg_and_cwd</strong>(arg : String, cwd : String) : Gio::File</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#file_new_for_path%28path%3AString%29%3AGio%3A%3AFile-class-method" class="signature"><strong>.file_new_for_path</strong>(path : String) : Gio::File</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#file_new_for_uri%28uri%3AString%29%3AGio%3A%3AFile-class-method" class="signature"><strong>.file_new_for_uri</strong>(uri : String) : Gio::File</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#file_parse_name%28parse_name%3AString%29%3AGio%3A%3AFile-class-method" class="signature"><strong>.file_parse_name</strong>(parse_name : String) : Gio::File</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#icon_deserialize%28value%3A_%29%3AGio%3A%3AIcon%3F-class-method" class="signature"><strong>.icon_deserialize</strong>(value : _) : Gio::Icon?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#icon_hash%28icon%3APointer%28Void%29%29%3AUInt32-class-method" class="signature"><strong>.icon_hash</strong>(icon : Pointer(Void)) : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#io_error_from_errno%28err_no%3AInt32%29%3AGio%3A%3AIOErrorEnum-class-method" class="signature"><strong>.io_error_from_errno</strong>(err_no : Int32) : Gio::IOErrorEnum</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#io_error_quark%3AUInt32-class-method" class="signature"><strong>.io_error_quark</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#io_extension_point_implement%28extension_point_name%3AString%2Ctype%3AUInt64%2Cextension_name%3AString%2Cpriority%3AInt32%29%3AGio%3A%3AIOExtension-class-method" class="signature"><strong>.io_extension_point_implement</strong>(extension_point_name : String, type : UInt64, extension_name : String, priority : Int32) : Gio::IOExtension</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#io_extension_point_lookup%28name%3AString%29%3AGio%3A%3AIOExtensionPoint-class-method" class="signature"><strong>.io_extension_point_lookup</strong>(name : String) : Gio::IOExtensionPoint</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#io_extension_point_register%28name%3AString%29%3AGio%3A%3AIOExtensionPoint-class-method" class="signature"><strong>.io_extension_point_register</strong>(name : String) : Gio::IOExtensionPoint</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#io_modules_load_all_in_directory%28dirname%3AString%29%3AGLib%3A%3AList-class-method" class="signature"><strong>.io_modules_load_all_in_directory</strong>(dirname : String) : GLib::List</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#io_modules_load_all_in_directory_with_scope%28dirname%3AString%2Cscope%3AGio%3A%3AIOModuleScope%29%3AGLib%3A%3AList-class-method" class="signature"><strong>.io_modules_load_all_in_directory_with_scope</strong>(dirname : String, scope : Gio::IOModuleScope) : GLib::List</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#io_modules_scan_all_in_directory%28dirname%3AString%29%3ANil-class-method" class="signature"><strong>.io_modules_scan_all_in_directory</strong>(dirname : String) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#io_modules_scan_all_in_directory_with_scope%28dirname%3AString%2Cscope%3AGio%3A%3AIOModuleScope%29%3ANil-class-method" class="signature"><strong>.io_modules_scan_all_in_directory_with_scope</strong>(dirname : String, scope : Gio::IOModuleScope) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#io_scheduler_cancel_all_jobs%3ANil-class-method" class="signature"><strong>.io_scheduler_cancel_all_jobs</strong> : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#io_scheduler_push_job%28job_func%3APointer%28Void%29%2Cuser_data%3APointer%28Void%29%3F%2Cnotify%3APointer%28Void%29%3F%2Cio_priority%3AInt32%2Ccancellable%3AGio%3A%3ACancellable%3F%29%3ANil-class-method" class="signature"><strong>.io_scheduler_push_job</strong>(job_func : Pointer(Void), user_data : Pointer(Void)?, notify : Pointer(Void)?, io_priority : Int32, cancellable : Gio::Cancellable?) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#keyfile_settings_backend_new%28filename%3AString%2Croot_path%3AString%2Croot_group%3AString%3F%29%3AGio%3A%3ASettingsBackend-class-method" class="signature"><strong>.keyfile_settings_backend_new</strong>(filename : String, root_path : String, root_group : String?) : Gio::SettingsBackend</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#memory_monitor_dup_default%3AGio%3A%3AMemoryMonitor-class-method" class="signature"><strong>.memory_monitor_dup_default</strong> : Gio::MemoryMonitor</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#memory_settings_backend_new%3AGio%3A%3ASettingsBackend-class-method" class="signature"><strong>.memory_settings_backend_new</strong> : Gio::SettingsBackend</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#network_monitor_get_default%3AGio%3A%3ANetworkMonitor-class-method" class="signature"><strong>.network_monitor_get_default</strong> : Gio::NetworkMonitor</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#networking_init%3ANil-class-method" class="signature"><strong>.networking_init</strong> : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#null_settings_backend_new%3AGio%3A%3ASettingsBackend-class-method" class="signature"><strong>.null_settings_backend_new</strong> : Gio::SettingsBackend</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pollable_source_new%28pollable_stream%3AGObject%3A%3AObject%29%3AGLib%3A%3ASource-class-method" class="signature"><strong>.pollable_source_new</strong>(pollable_stream : GObject::Object) : GLib::Source</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pollable_source_new_full%28pollable_stream%3AGObject%3A%3AObject%2Cchild_source%3AGLib%3A%3ASource%3F%2Ccancellable%3AGio%3A%3ACancellable%3F%29%3AGLib%3A%3ASource-class-method" class="signature"><strong>.pollable_source_new_full</strong>(pollable_stream : GObject::Object, child_source : GLib::Source?, cancellable : Gio::Cancellable?) : GLib::Source</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#power_profile_monitor_dup_default%3AGio%3A%3APowerProfileMonitor-class-method" class="signature"><strong>.power_profile_monitor_dup_default</strong> : Gio::PowerProfileMonitor</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#proxy_get_default_for_protocol%28protocol%3AString%29%3AGio%3A%3AProxy%3F-class-method" class="signature"><strong>.proxy_get_default_for_protocol</strong>(protocol : String) : Gio::Proxy?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#proxy_resolver_get_default%3AGio%3A%3AProxyResolver-class-method" class="signature"><strong>.proxy_resolver_get_default</strong> : Gio::ProxyResolver</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#resolver_error_quark%3AUInt32-class-method" class="signature"><strong>.resolver_error_quark</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#resource_error_quark%3AUInt32-class-method" class="signature"><strong>.resource_error_quark</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#resources_register%28resource%3AGio%3A%3AResource%29%3ANil-class-method" class="signature"><strong>.resources_register</strong>(resource : Gio::Resource) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#resources_unregister%28resource%3AGio%3A%3AResource%29%3ANil-class-method" class="signature"><strong>.resources_unregister</strong>(resource : Gio::Resource) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#settings_schema_source_get_default%3AGio%3A%3ASettingsSchemaSource%3F-class-method" class="signature"><strong>.settings_schema_source_get_default</strong> : Gio::SettingsSchemaSource?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#simple_async_report_gerror_in_idle%28object%3AGObject%3A%3AObject%3F%2Ccallback%3APointer%28Void%29%3F%2Cuser_data%3APointer%28Void%29%3F%2Cerror%3AGLib%3A%3AError%29%3ANil-class-method" class="signature"><strong>.simple_async_report_gerror_in_idle</strong>(object : GObject::Object?, callback : Pointer(Void)?, user_data : Pointer(Void)?, error : GLib::Error) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tls_backend_get_default%3AGio%3A%3ATlsBackend-class-method" class="signature"><strong>.tls_backend_get_default</strong> : Gio::TlsBackend</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tls_channel_binding_error_quark%3AUInt32-class-method" class="signature"><strong>.tls_channel_binding_error_quark</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tls_error_quark%3AUInt32-class-method" class="signature"><strong>.tls_error_quark</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_is_mount_path_system_internal%28mount_path%3AString%29%3ABool-class-method" class="signature"><strong>.unix_is_mount_path_system_internal</strong>(mount_path : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_is_system_device_path%28device_path%3AString%29%3ABool-class-method" class="signature"><strong>.unix_is_system_device_path</strong>(device_path : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_is_system_fs_type%28fs_type%3AString%29%3ABool-class-method" class="signature"><strong>.unix_is_system_fs_type</strong>(fs_type : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_mount_at%28mount_path%3AString%29%3AGio%3A%3AUnixMountEntry%3F-class-method" class="signature"><strong>.unix_mount_at</strong>(mount_path : String) : Gio::UnixMountEntry?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_mount_compare%28mount1%3AGio%3A%3AUnixMountEntry%2Cmount2%3AGio%3A%3AUnixMountEntry%29%3AInt32-class-method" class="signature"><strong>.unix_mount_compare</strong>(mount1 : Gio::UnixMountEntry, mount2 : Gio::UnixMountEntry) : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_mount_copy%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3AGio%3A%3AUnixMountEntry-class-method" class="signature"><strong>.unix_mount_copy</strong>(mount_entry : Gio::UnixMountEntry) : Gio::UnixMountEntry</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_mount_for%28file_path%3AString%29%3AGio%3A%3AUnixMountEntry%3F-class-method" class="signature"><strong>.unix_mount_for</strong>(file_path : String) : Gio::UnixMountEntry?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_mount_free%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3ANil-class-method" class="signature"><strong>.unix_mount_free</strong>(mount_entry : Gio::UnixMountEntry) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_mount_get_device_path%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3APath-class-method" class="signature"><strong>.unix_mount_get_device_path</strong>(mount_entry : Gio::UnixMountEntry) : Path</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_mount_get_fs_type%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3AString-class-method" class="signature"><strong>.unix_mount_get_fs_type</strong>(mount_entry : Gio::UnixMountEntry) : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_mount_get_mount_path%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3APath-class-method" class="signature"><strong>.unix_mount_get_mount_path</strong>(mount_entry : Gio::UnixMountEntry) : Path</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_mount_get_options%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3AString%3F-class-method" class="signature"><strong>.unix_mount_get_options</strong>(mount_entry : Gio::UnixMountEntry) : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_mount_get_root_path%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3AString%3F-class-method" class="signature"><strong>.unix_mount_get_root_path</strong>(mount_entry : Gio::UnixMountEntry) : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_mount_guess_can_eject%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3ABool-class-method" class="signature"><strong>.unix_mount_guess_can_eject</strong>(mount_entry : Gio::UnixMountEntry) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_mount_guess_icon%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3AGio%3A%3AIcon-class-method" class="signature"><strong>.unix_mount_guess_icon</strong>(mount_entry : Gio::UnixMountEntry) : Gio::Icon</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_mount_guess_name%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3AString-class-method" class="signature"><strong>.unix_mount_guess_name</strong>(mount_entry : Gio::UnixMountEntry) : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_mount_guess_should_display%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3ABool-class-method" class="signature"><strong>.unix_mount_guess_should_display</strong>(mount_entry : Gio::UnixMountEntry) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_mount_guess_symbolic_icon%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3AGio%3A%3AIcon-class-method" class="signature"><strong>.unix_mount_guess_symbolic_icon</strong>(mount_entry : Gio::UnixMountEntry) : Gio::Icon</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_mount_is_readonly%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3ABool-class-method" class="signature"><strong>.unix_mount_is_readonly</strong>(mount_entry : Gio::UnixMountEntry) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_mount_is_system_internal%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3ABool-class-method" class="signature"><strong>.unix_mount_is_system_internal</strong>(mount_entry : Gio::UnixMountEntry) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_mount_point_at%28mount_path%3AString%29%3AGio%3A%3AUnixMountPoint%3F-class-method" class="signature"><strong>.unix_mount_point_at</strong>(mount_path : String) : Gio::UnixMountPoint?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_mount_points_changed_since%28time%3AUInt64%29%3ABool-class-method" class="signature"><strong>.unix_mount_points_changed_since</strong>(time : UInt64) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_mount_points_get%3AGLib%3A%3AList-class-method" class="signature"><strong>.unix_mount_points_get</strong> : GLib::List</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_mounts_changed_since%28time%3AUInt64%29%3ABool-class-method" class="signature"><strong>.unix_mounts_changed_since</strong>(time : UInt64) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_mounts_get%3AGLib%3A%3AList-class-method" class="signature"><strong>.unix_mounts_get</strong> : GLib::List</a>
+        
+      </li>
+    
+  </ul>
 
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#action_parse_detailed_name%28detailed_name%3AString%2Caction_name%3AString%2Ctarget_value%3A_%29%3ABool-instance-method" class="signature"><strong>#action_parse_detailed_name</strong>(detailed_name : String, action_name : String, target_value : _) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#app_info_create_from_commandline%28commandline%3AString%2Capplication_name%3AString%3F%2Cflags%3AGio%3A%3AAppInfoCreateFlags%29%3AGio%3A%3AAppInfo-instance-method" class="signature"><strong>#app_info_create_from_commandline</strong>(commandline : String, application_name : String?, flags : Gio::AppInfoCreateFlags) : Gio::AppInfo</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#app_info_launch_default_for_uri%28uri%3AString%2Ccontext%3AGio%3A%3AAppLaunchContext%3F%29%3ABool-instance-method" class="signature"><strong>#app_info_launch_default_for_uri</strong>(uri : String, context : Gio::AppLaunchContext?) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#app_info_launch_default_for_uri_finish%28result%3AGio%3A%3AAsyncResult%29%3ABool-instance-method" class="signature"><strong>#app_info_launch_default_for_uri_finish</strong>(result : Gio::AsyncResult) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bus_get_finish%28res%3AGio%3A%3AAsyncResult%29%3AGio%3A%3ADBusConnection-instance-method" class="signature"><strong>#bus_get_finish</strong>(res : Gio::AsyncResult) : Gio::DBusConnection</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bus_get_sync%28bus_type%3AGio%3A%3ABusType%2Ccancellable%3AGio%3A%3ACancellable%3F%29%3AGio%3A%3ADBusConnection-instance-method" class="signature"><strong>#bus_get_sync</strong>(bus_type : Gio::BusType, cancellable : Gio::Cancellable?) : Gio::DBusConnection</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_address_get_for_bus_sync%28bus_type%3AGio%3A%3ABusType%2Ccancellable%3AGio%3A%3ACancellable%3F%29%3AString-instance-method" class="signature"><strong>#dbus_address_get_for_bus_sync</strong>(bus_type : Gio::BusType, cancellable : Gio::Cancellable?) : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_address_get_stream_finish%28res%3AGio%3A%3AAsyncResult%29%3AGio%3A%3AIOStream-instance-method" class="signature"><strong>#dbus_address_get_stream_finish</strong>(res : Gio::AsyncResult) : Gio::IOStream</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_address_get_stream_sync%28address%3AString%2Ccancellable%3AGio%3A%3ACancellable%3F%29%3AGio%3A%3AIOStream-instance-method" class="signature"><strong>#dbus_address_get_stream_sync</strong>(address : String, cancellable : Gio::Cancellable?) : Gio::IOStream</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dbus_is_supported_address%28string%3AString%29%3ABool-instance-method" class="signature"><strong>#dbus_is_supported_address</strong>(string : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dtls_client_connection_new%28base_socket%3AGio%3A%3ADatagramBased%2Cserver_identity%3AGio%3A%3ASocketConnectable%3F%29%3AGio%3A%3ADtlsClientConnection-instance-method" class="signature"><strong>#dtls_client_connection_new</strong>(base_socket : Gio::DatagramBased, server_identity : Gio::SocketConnectable?) : Gio::DtlsClientConnection</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dtls_server_connection_new%28base_socket%3AGio%3A%3ADatagramBased%2Ccertificate%3AGio%3A%3ATlsCertificate%3F%29%3AGio%3A%3ADtlsServerConnection-instance-method" class="signature"><strong>#dtls_server_connection_new</strong>(base_socket : Gio::DatagramBased, certificate : Gio::TlsCertificate?) : Gio::DtlsServerConnection</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#file_new_tmp%28tmpl%3AString%3F%2Ciostream%3AGio%3A%3AFileIOStream%29%3AGio%3A%3AFile-instance-method" class="signature"><strong>#file_new_tmp</strong>(tmpl : String?, iostream : Gio::FileIOStream) : Gio::File</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#icon_new_for_string%28str%3AString%29%3AGio%3A%3AIcon-instance-method" class="signature"><strong>#icon_new_for_string</strong>(str : String) : Gio::Icon</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#initable_newv%28object_type%3AUInt64%2Cparameters%3AEnumerable%28GObject%3A%3AParameter%29%2Ccancellable%3AGio%3A%3ACancellable%3F%29%3AGObject%3A%3AObject-instance-method" class="signature"><strong>#initable_newv</strong>(object_type : UInt64, parameters : Enumerable(GObject::Parameter), cancellable : Gio::Cancellable?) : GObject::Object</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pollable_stream_read%28stream%3AGio%3A%3AInputStream%2Cbuffer%3AEnumerable%28UInt8%29%2Cblocking%3ABool%2Ccancellable%3AGio%3A%3ACancellable%3F%29%3AInt64-instance-method" class="signature"><strong>#pollable_stream_read</strong>(stream : Gio::InputStream, buffer : Enumerable(UInt8), blocking : Bool, cancellable : Gio::Cancellable?) : Int64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pollable_stream_write%28stream%3AGio%3A%3AOutputStream%2Cbuffer%3AEnumerable%28UInt8%29%2Cblocking%3ABool%2Ccancellable%3AGio%3A%3ACancellable%3F%29%3AInt64-instance-method" class="signature"><strong>#pollable_stream_write</strong>(stream : Gio::OutputStream, buffer : Enumerable(UInt8), blocking : Bool, cancellable : Gio::Cancellable?) : Int64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pollable_stream_write_all%28stream%3AGio%3A%3AOutputStream%2Cbuffer%3AEnumerable%28UInt8%29%2Cblocking%3ABool%2Cbytes_written%3AUInt64%2Ccancellable%3AGio%3A%3ACancellable%3F%29%3ABool-instance-method" class="signature"><strong>#pollable_stream_write_all</strong>(stream : Gio::OutputStream, buffer : Enumerable(UInt8), blocking : Bool, bytes_written : UInt64, cancellable : Gio::Cancellable?) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#resource_load%28filename%3AString%29%3AGio%3A%3AResource-instance-method" class="signature"><strong>#resource_load</strong>(filename : String) : Gio::Resource</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#resources_enumerate_children%28path%3AString%2Clookup_flags%3AGio%3A%3AResourceLookupFlags%29%3AEnumerable%28String%29-instance-method" class="signature"><strong>#resources_enumerate_children</strong>(path : String, lookup_flags : Gio::ResourceLookupFlags) : Enumerable(String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#resources_get_info%28path%3AString%2Clookup_flags%3AGio%3A%3AResourceLookupFlags%29%3ABool-instance-method" class="signature"><strong>#resources_get_info</strong>(path : String, lookup_flags : Gio::ResourceLookupFlags) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#resources_lookup_data%28path%3AString%2Clookup_flags%3AGio%3A%3AResourceLookupFlags%29%3AGLib%3A%3ABytes-instance-method" class="signature"><strong>#resources_lookup_data</strong>(path : String, lookup_flags : Gio::ResourceLookupFlags) : GLib::Bytes</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#resources_open_stream%28path%3AString%2Clookup_flags%3AGio%3A%3AResourceLookupFlags%29%3AGio%3A%3AInputStream-instance-method" class="signature"><strong>#resources_open_stream</strong>(path : String, lookup_flags : Gio::ResourceLookupFlags) : Gio::InputStream</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tls_client_connection_new%28base_io_stream%3AGio%3A%3AIOStream%2Cserver_identity%3AGio%3A%3ASocketConnectable%3F%29%3AGio%3A%3ATlsClientConnection-instance-method" class="signature"><strong>#tls_client_connection_new</strong>(base_io_stream : Gio::IOStream, server_identity : Gio::SocketConnectable?) : Gio::TlsClientConnection</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tls_file_database_new%28anchors%3AString%29%3AGio%3A%3ATlsFileDatabase-instance-method" class="signature"><strong>#tls_file_database_new</strong>(anchors : String) : Gio::TlsFileDatabase</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tls_server_connection_new%28base_io_stream%3AGio%3A%3AIOStream%2Ccertificate%3AGio%3A%3ATlsCertificate%3F%29%3AGio%3A%3ATlsServerConnection-instance-method" class="signature"><strong>#tls_server_connection_new</strong>(base_io_stream : Gio::IOStream, certificate : Gio::TlsCertificate?) : Gio::TlsServerConnection</a>
+        
+      </li>
+    
+  </ul>
 
 
 
@@ -13269,7 +14063,2127 @@ See [Extending GIO][extending-gio].</p>
 
 
 
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="action_name_is_valid(action_name:String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>action_name_is_valid</strong>(action_name : String) : Bool
 
+        <a class="method-permalink" href="#action_name_is_valid%28action_name%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="action_print_detailed_name(action_name:String,target_value:_?):String-class-method">
+      <div class="signature">
+        
+        def self.<strong>action_print_detailed_name</strong>(action_name : String, target_value : _?) : String
+
+        <a class="method-permalink" href="#action_print_detailed_name%28action_name%3AString%2Ctarget_value%3A_%3F%29%3AString-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="app_info_get_all:GLib::List-class-method">
+      <div class="signature">
+        
+        def self.<strong>app_info_get_all</strong> : <a href="GLib/List.html">GLib::List</a>
+
+        <a class="method-permalink" href="#app_info_get_all%3AGLib%3A%3AList-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="app_info_get_all_for_type(content_type:String):GLib::List-class-method">
+      <div class="signature">
+        
+        def self.<strong>app_info_get_all_for_type</strong>(content_type : String) : <a href="GLib/List.html">GLib::List</a>
+
+        <a class="method-permalink" href="#app_info_get_all_for_type%28content_type%3AString%29%3AGLib%3A%3AList-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="app_info_get_default_for_type(content_type:String,must_support_uris:Bool):Gio::AppInfo?-class-method">
+      <div class="signature">
+        
+        def self.<strong>app_info_get_default_for_type</strong>(content_type : String, must_support_uris : Bool) : <a href="Gio/AppInfo.html">Gio::AppInfo</a>?
+
+        <a class="method-permalink" href="#app_info_get_default_for_type%28content_type%3AString%2Cmust_support_uris%3ABool%29%3AGio%3A%3AAppInfo%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="app_info_get_default_for_uri_scheme(uri_scheme:String):Gio::AppInfo?-class-method">
+      <div class="signature">
+        
+        def self.<strong>app_info_get_default_for_uri_scheme</strong>(uri_scheme : String) : <a href="Gio/AppInfo.html">Gio::AppInfo</a>?
+
+        <a class="method-permalink" href="#app_info_get_default_for_uri_scheme%28uri_scheme%3AString%29%3AGio%3A%3AAppInfo%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="app_info_get_fallback_for_type(content_type:String):GLib::List-class-method">
+      <div class="signature">
+        
+        def self.<strong>app_info_get_fallback_for_type</strong>(content_type : String) : <a href="GLib/List.html">GLib::List</a>
+
+        <a class="method-permalink" href="#app_info_get_fallback_for_type%28content_type%3AString%29%3AGLib%3A%3AList-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="app_info_get_recommended_for_type(content_type:String):GLib::List-class-method">
+      <div class="signature">
+        
+        def self.<strong>app_info_get_recommended_for_type</strong>(content_type : String) : <a href="GLib/List.html">GLib::List</a>
+
+        <a class="method-permalink" href="#app_info_get_recommended_for_type%28content_type%3AString%29%3AGLib%3A%3AList-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="app_info_launch_default_for_uri_async(uri:String,context:Gio::AppLaunchContext?,cancellable:Gio::Cancellable?,callback:Pointer(Void)?,user_data:Pointer(Void)?):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>app_info_launch_default_for_uri_async</strong>(uri : String, context : <a href="Gio/AppLaunchContext.html">Gio::AppLaunchContext</a>?, cancellable : <a href="Gio/Cancellable.html">Gio::Cancellable</a>?, callback : Pointer(Void)?, user_data : Pointer(Void)?) : Nil
+
+        <a class="method-permalink" href="#app_info_launch_default_for_uri_async%28uri%3AString%2Ccontext%3AGio%3A%3AAppLaunchContext%3F%2Ccancellable%3AGio%3A%3ACancellable%3F%2Ccallback%3APointer%28Void%29%3F%2Cuser_data%3APointer%28Void%29%3F%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="app_info_reset_type_associations(content_type:String):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>app_info_reset_type_associations</strong>(content_type : String) : Nil
+
+        <a class="method-permalink" href="#app_info_reset_type_associations%28content_type%3AString%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="async_initable_newv_async(object_type:UInt64,n_parameters:UInt32,parameters:GObject::Parameter,io_priority:Int32,cancellable:Gio::Cancellable?,callback:Pointer(Void)?,user_data:Pointer(Void)?):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>async_initable_newv_async</strong>(object_type : UInt64, n_parameters : UInt32, parameters : <a href="GObject/Parameter.html">GObject::Parameter</a>, io_priority : Int32, cancellable : <a href="Gio/Cancellable.html">Gio::Cancellable</a>?, callback : Pointer(Void)?, user_data : Pointer(Void)?) : Nil
+
+        <a class="method-permalink" href="#async_initable_newv_async%28object_type%3AUInt64%2Cn_parameters%3AUInt32%2Cparameters%3AGObject%3A%3AParameter%2Cio_priority%3AInt32%2Ccancellable%3AGio%3A%3ACancellable%3F%2Ccallback%3APointer%28Void%29%3F%2Cuser_data%3APointer%28Void%29%3F%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bus_get(bus_type:Gio::BusType,cancellable:Gio::Cancellable?,callback:Pointer(Void)?,user_data:Pointer(Void)?):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>bus_get</strong>(bus_type : <a href="Gio/BusType.html">Gio::BusType</a>, cancellable : <a href="Gio/Cancellable.html">Gio::Cancellable</a>?, callback : Pointer(Void)?, user_data : Pointer(Void)?) : Nil
+
+        <a class="method-permalink" href="#bus_get%28bus_type%3AGio%3A%3ABusType%2Ccancellable%3AGio%3A%3ACancellable%3F%2Ccallback%3APointer%28Void%29%3F%2Cuser_data%3APointer%28Void%29%3F%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bus_own_name(bus_type:Gio::BusType,name:String,flags:Gio::BusNameOwnerFlags,bus_acquired_closure:GObject::Closure?,name_acquired_closure:GObject::Closure?,name_lost_closure:GObject::Closure?):UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>bus_own_name</strong>(bus_type : <a href="Gio/BusType.html">Gio::BusType</a>, name : String, flags : <a href="Gio/BusNameOwnerFlags.html">Gio::BusNameOwnerFlags</a>, bus_acquired_closure : <a href="GObject/Closure.html">GObject::Closure</a>?, name_acquired_closure : <a href="GObject/Closure.html">GObject::Closure</a>?, name_lost_closure : <a href="GObject/Closure.html">GObject::Closure</a>?) : UInt32
+
+        <a class="method-permalink" href="#bus_own_name%28bus_type%3AGio%3A%3ABusType%2Cname%3AString%2Cflags%3AGio%3A%3ABusNameOwnerFlags%2Cbus_acquired_closure%3AGObject%3A%3AClosure%3F%2Cname_acquired_closure%3AGObject%3A%3AClosure%3F%2Cname_lost_closure%3AGObject%3A%3AClosure%3F%29%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bus_own_name_on_connection(connection:Gio::DBusConnection,name:String,flags:Gio::BusNameOwnerFlags,name_acquired_closure:GObject::Closure?,name_lost_closure:GObject::Closure?):UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>bus_own_name_on_connection</strong>(connection : <a href="Gio/DBusConnection.html">Gio::DBusConnection</a>, name : String, flags : <a href="Gio/BusNameOwnerFlags.html">Gio::BusNameOwnerFlags</a>, name_acquired_closure : <a href="GObject/Closure.html">GObject::Closure</a>?, name_lost_closure : <a href="GObject/Closure.html">GObject::Closure</a>?) : UInt32
+
+        <a class="method-permalink" href="#bus_own_name_on_connection%28connection%3AGio%3A%3ADBusConnection%2Cname%3AString%2Cflags%3AGio%3A%3ABusNameOwnerFlags%2Cname_acquired_closure%3AGObject%3A%3AClosure%3F%2Cname_lost_closure%3AGObject%3A%3AClosure%3F%29%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bus_unown_name(owner_id:UInt32):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>bus_unown_name</strong>(owner_id : UInt32) : Nil
+
+        <a class="method-permalink" href="#bus_unown_name%28owner_id%3AUInt32%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bus_unwatch_name(watcher_id:UInt32):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>bus_unwatch_name</strong>(watcher_id : UInt32) : Nil
+
+        <a class="method-permalink" href="#bus_unwatch_name%28watcher_id%3AUInt32%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bus_watch_name(bus_type:Gio::BusType,name:String,flags:Gio::BusNameWatcherFlags,name_appeared_closure:GObject::Closure?,name_vanished_closure:GObject::Closure?):UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>bus_watch_name</strong>(bus_type : <a href="Gio/BusType.html">Gio::BusType</a>, name : String, flags : <a href="Gio/BusNameWatcherFlags.html">Gio::BusNameWatcherFlags</a>, name_appeared_closure : <a href="GObject/Closure.html">GObject::Closure</a>?, name_vanished_closure : <a href="GObject/Closure.html">GObject::Closure</a>?) : UInt32
+
+        <a class="method-permalink" href="#bus_watch_name%28bus_type%3AGio%3A%3ABusType%2Cname%3AString%2Cflags%3AGio%3A%3ABusNameWatcherFlags%2Cname_appeared_closure%3AGObject%3A%3AClosure%3F%2Cname_vanished_closure%3AGObject%3A%3AClosure%3F%29%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bus_watch_name_on_connection(connection:Gio::DBusConnection,name:String,flags:Gio::BusNameWatcherFlags,name_appeared_closure:GObject::Closure?,name_vanished_closure:GObject::Closure?):UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>bus_watch_name_on_connection</strong>(connection : <a href="Gio/DBusConnection.html">Gio::DBusConnection</a>, name : String, flags : <a href="Gio/BusNameWatcherFlags.html">Gio::BusNameWatcherFlags</a>, name_appeared_closure : <a href="GObject/Closure.html">GObject::Closure</a>?, name_vanished_closure : <a href="GObject/Closure.html">GObject::Closure</a>?) : UInt32
+
+        <a class="method-permalink" href="#bus_watch_name_on_connection%28connection%3AGio%3A%3ADBusConnection%2Cname%3AString%2Cflags%3AGio%3A%3ABusNameWatcherFlags%2Cname_appeared_closure%3AGObject%3A%3AClosure%3F%2Cname_vanished_closure%3AGObject%3A%3AClosure%3F%29%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="content_type_can_be_executable(type:String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>content_type_can_be_executable</strong>(type : String) : Bool
+
+        <a class="method-permalink" href="#content_type_can_be_executable%28type%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="content_type_equals(type1:String,type2:String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>content_type_equals</strong>(type1 : String, type2 : String) : Bool
+
+        <a class="method-permalink" href="#content_type_equals%28type1%3AString%2Ctype2%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="content_type_from_mime_type(mime_type:String):String?-class-method">
+      <div class="signature">
+        
+        def self.<strong>content_type_from_mime_type</strong>(mime_type : String) : String?
+
+        <a class="method-permalink" href="#content_type_from_mime_type%28mime_type%3AString%29%3AString%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="content_type_get_description(type:String):String-class-method">
+      <div class="signature">
+        
+        def self.<strong>content_type_get_description</strong>(type : String) : String
+
+        <a class="method-permalink" href="#content_type_get_description%28type%3AString%29%3AString-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="content_type_get_generic_icon_name(type:String):String?-class-method">
+      <div class="signature">
+        
+        def self.<strong>content_type_get_generic_icon_name</strong>(type : String) : String?
+
+        <a class="method-permalink" href="#content_type_get_generic_icon_name%28type%3AString%29%3AString%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="content_type_get_icon(type:String):Gio::Icon-class-method">
+      <div class="signature">
+        
+        def self.<strong>content_type_get_icon</strong>(type : String) : <a href="Gio/Icon.html">Gio::Icon</a>
+
+        <a class="method-permalink" href="#content_type_get_icon%28type%3AString%29%3AGio%3A%3AIcon-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="content_type_get_mime_dirs:Enumerable(String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>content_type_get_mime_dirs</strong> : Enumerable(String)
+
+        <a class="method-permalink" href="#content_type_get_mime_dirs%3AEnumerable%28String%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="content_type_get_mime_type(type:String):String?-class-method">
+      <div class="signature">
+        
+        def self.<strong>content_type_get_mime_type</strong>(type : String) : String?
+
+        <a class="method-permalink" href="#content_type_get_mime_type%28type%3AString%29%3AString%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="content_type_get_symbolic_icon(type:String):Gio::Icon-class-method">
+      <div class="signature">
+        
+        def self.<strong>content_type_get_symbolic_icon</strong>(type : String) : <a href="Gio/Icon.html">Gio::Icon</a>
+
+        <a class="method-permalink" href="#content_type_get_symbolic_icon%28type%3AString%29%3AGio%3A%3AIcon-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="content_type_guess(filename:String?,data:Enumerable(UInt8)?):String-class-method">
+      <div class="signature">
+        
+        def self.<strong>content_type_guess</strong>(filename : String?, data : Enumerable(UInt8)?) : String
+
+        <a class="method-permalink" href="#content_type_guess%28filename%3AString%3F%2Cdata%3AEnumerable%28UInt8%29%3F%29%3AString-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="content_type_guess_for_tree(root:Gio::File):Enumerable(String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>content_type_guess_for_tree</strong>(root : <a href="Gio/File.html">Gio::File</a>) : Enumerable(String)
+
+        <a class="method-permalink" href="#content_type_guess_for_tree%28root%3AGio%3A%3AFile%29%3AEnumerable%28String%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="content_type_is_a(type:String,supertype:String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>content_type_is_a</strong>(type : String, supertype : String) : Bool
+
+        <a class="method-permalink" href="#content_type_is_a%28type%3AString%2Csupertype%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="content_type_is_mime_type(type:String,mime_type:String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>content_type_is_mime_type</strong>(type : String, mime_type : String) : Bool
+
+        <a class="method-permalink" href="#content_type_is_mime_type%28type%3AString%2Cmime_type%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="content_type_is_unknown(type:String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>content_type_is_unknown</strong>(type : String) : Bool
+
+        <a class="method-permalink" href="#content_type_is_unknown%28type%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="content_type_set_mime_dirs(dirs:Enumerable(String)?):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>content_type_set_mime_dirs</strong>(dirs : Enumerable(String)?) : Nil
+
+        <a class="method-permalink" href="#content_type_set_mime_dirs%28dirs%3AEnumerable%28String%29%3F%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="content_type_set_mime_dirs(*dirs:String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>content_type_set_mime_dirs</strong>(*dirs : String)
+
+        <a class="method-permalink" href="#content_type_set_mime_dirs%28%2Adirs%3AString%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="content_types_get_registered:GLib::List-class-method">
+      <div class="signature">
+        
+        def self.<strong>content_types_get_registered</strong> : <a href="GLib/List.html">GLib::List</a>
+
+        <a class="method-permalink" href="#content_types_get_registered%3AGLib%3A%3AList-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_address_escape_value(string:String):String-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_address_escape_value</strong>(string : String) : String
+
+        <a class="method-permalink" href="#dbus_address_escape_value%28string%3AString%29%3AString-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_address_get_stream(address:String,cancellable:Gio::Cancellable?,callback:Pointer(Void)?,user_data:Pointer(Void)?):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_address_get_stream</strong>(address : String, cancellable : <a href="Gio/Cancellable.html">Gio::Cancellable</a>?, callback : Pointer(Void)?, user_data : Pointer(Void)?) : Nil
+
+        <a class="method-permalink" href="#dbus_address_get_stream%28address%3AString%2Ccancellable%3AGio%3A%3ACancellable%3F%2Ccallback%3APointer%28Void%29%3F%2Cuser_data%3APointer%28Void%29%3F%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_annotation_info_lookup(annotations:Enumerable(Gio::DBusAnnotationInfo)?,name:String):String?-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_annotation_info_lookup</strong>(annotations : Enumerable(<a href="Gio/DBusAnnotationInfo.html">Gio::DBusAnnotationInfo</a>)?, name : String) : String?
+
+        <a class="method-permalink" href="#dbus_annotation_info_lookup%28annotations%3AEnumerable%28Gio%3A%3ADBusAnnotationInfo%29%3F%2Cname%3AString%29%3AString%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_error_encode_gerror(error:GLib::Error):String-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_error_encode_gerror</strong>(error : <a href="GLib/Error.html">GLib::Error</a>) : String
+
+        <a class="method-permalink" href="#dbus_error_encode_gerror%28error%3AGLib%3A%3AError%29%3AString-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_error_get_remote_error(error:GLib::Error):String?-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_error_get_remote_error</strong>(error : <a href="GLib/Error.html">GLib::Error</a>) : String?
+
+        <a class="method-permalink" href="#dbus_error_get_remote_error%28error%3AGLib%3A%3AError%29%3AString%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_error_is_remote_error(error:GLib::Error):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_error_is_remote_error</strong>(error : <a href="GLib/Error.html">GLib::Error</a>) : Bool
+
+        <a class="method-permalink" href="#dbus_error_is_remote_error%28error%3AGLib%3A%3AError%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_error_new_for_dbus_error(dbus_error_name:String,dbus_error_message:String):GLib::Error-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_error_new_for_dbus_error</strong>(dbus_error_name : String, dbus_error_message : String) : <a href="GLib/Error.html">GLib::Error</a>
+
+        <a class="method-permalink" href="#dbus_error_new_for_dbus_error%28dbus_error_name%3AString%2Cdbus_error_message%3AString%29%3AGLib%3A%3AError-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_error_quark:UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_error_quark</strong> : UInt32
+
+        <a class="method-permalink" href="#dbus_error_quark%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_error_register_error(error_domain:UInt32,error_code:Int32,dbus_error_name:String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_error_register_error</strong>(error_domain : UInt32, error_code : Int32, dbus_error_name : String) : Bool
+
+        <a class="method-permalink" href="#dbus_error_register_error%28error_domain%3AUInt32%2Cerror_code%3AInt32%2Cdbus_error_name%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_error_register_error_domain(error_domain_quark_name:String,quark_volatile:Pointer(UInt64),entries:Enumerable(Gio::DBusErrorEntry)):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_error_register_error_domain</strong>(error_domain_quark_name : String, quark_volatile : Pointer(UInt64), entries : Enumerable(<a href="Gio/DBusErrorEntry.html">Gio::DBusErrorEntry</a>)) : Nil
+
+        <a class="method-permalink" href="#dbus_error_register_error_domain%28error_domain_quark_name%3AString%2Cquark_volatile%3APointer%28UInt64%29%2Centries%3AEnumerable%28Gio%3A%3ADBusErrorEntry%29%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_error_strip_remote_error(error:GLib::Error):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_error_strip_remote_error</strong>(error : <a href="GLib/Error.html">GLib::Error</a>) : Bool
+
+        <a class="method-permalink" href="#dbus_error_strip_remote_error%28error%3AGLib%3A%3AError%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_error_unregister_error(error_domain:UInt32,error_code:Int32,dbus_error_name:String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_error_unregister_error</strong>(error_domain : UInt32, error_code : Int32, dbus_error_name : String) : Bool
+
+        <a class="method-permalink" href="#dbus_error_unregister_error%28error_domain%3AUInt32%2Cerror_code%3AInt32%2Cdbus_error_name%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_escape_object_path(s:String):String-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_escape_object_path</strong>(s : String) : String
+
+        <a class="method-permalink" href="#dbus_escape_object_path%28s%3AString%29%3AString-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_escape_object_path_bytestring(bytes:Enumerable(UInt8)):String-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_escape_object_path_bytestring</strong>(bytes : Enumerable(UInt8)) : String
+
+        <a class="method-permalink" href="#dbus_escape_object_path_bytestring%28bytes%3AEnumerable%28UInt8%29%29%3AString-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_escape_object_path_bytestring(*bytes:UInt8)-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_escape_object_path_bytestring</strong>(*bytes : UInt8)
+
+        <a class="method-permalink" href="#dbus_escape_object_path_bytestring%28%2Abytes%3AUInt8%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_generate_guid:String-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_generate_guid</strong> : String
+
+        <a class="method-permalink" href="#dbus_generate_guid%3AString-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_gvalue_to_gvariant(gvalue:_,type:GLib::VariantType):GLib::Variant-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_gvalue_to_gvariant</strong>(gvalue : _, type : <a href="GLib/VariantType.html">GLib::VariantType</a>) : <a href="GLib/Variant.html">GLib::Variant</a>
+
+        <a class="method-permalink" href="#dbus_gvalue_to_gvariant%28gvalue%3A_%2Ctype%3AGLib%3A%3AVariantType%29%3AGLib%3A%3AVariant-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_gvariant_to_gvalue(value:_):GObject::Value-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_gvariant_to_gvalue</strong>(value : _) : <a href="GObject/Value.html">GObject::Value</a>
+
+        <a class="method-permalink" href="#dbus_gvariant_to_gvalue%28value%3A_%29%3AGObject%3A%3AValue-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_is_address(string:String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_is_address</strong>(string : String) : Bool
+
+        <a class="method-permalink" href="#dbus_is_address%28string%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_is_error_name(string:String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_is_error_name</strong>(string : String) : Bool
+
+        <a class="method-permalink" href="#dbus_is_error_name%28string%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_is_guid(string:String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_is_guid</strong>(string : String) : Bool
+
+        <a class="method-permalink" href="#dbus_is_guid%28string%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_is_interface_name(string:String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_is_interface_name</strong>(string : String) : Bool
+
+        <a class="method-permalink" href="#dbus_is_interface_name%28string%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_is_member_name(string:String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_is_member_name</strong>(string : String) : Bool
+
+        <a class="method-permalink" href="#dbus_is_member_name%28string%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_is_name(string:String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_is_name</strong>(string : String) : Bool
+
+        <a class="method-permalink" href="#dbus_is_name%28string%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_is_unique_name(string:String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_is_unique_name</strong>(string : String) : Bool
+
+        <a class="method-permalink" href="#dbus_is_unique_name%28string%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_unescape_object_path(s:String):Enumerable(UInt8)?-class-method">
+      <div class="signature">
+        
+        def self.<strong>dbus_unescape_object_path</strong>(s : String) : Enumerable(UInt8)?
+
+        <a class="method-permalink" href="#dbus_unescape_object_path%28s%3AString%29%3AEnumerable%28UInt8%29%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="file_new_for_commandline_arg(arg:String):Gio::File-class-method">
+      <div class="signature">
+        
+        def self.<strong>file_new_for_commandline_arg</strong>(arg : String) : <a href="Gio/File.html">Gio::File</a>
+
+        <a class="method-permalink" href="#file_new_for_commandline_arg%28arg%3AString%29%3AGio%3A%3AFile-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="file_new_for_commandline_arg_and_cwd(arg:String,cwd:String):Gio::File-class-method">
+      <div class="signature">
+        
+        def self.<strong>file_new_for_commandline_arg_and_cwd</strong>(arg : String, cwd : String) : <a href="Gio/File.html">Gio::File</a>
+
+        <a class="method-permalink" href="#file_new_for_commandline_arg_and_cwd%28arg%3AString%2Ccwd%3AString%29%3AGio%3A%3AFile-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="file_new_for_path(path:String):Gio::File-class-method">
+      <div class="signature">
+        
+        def self.<strong>file_new_for_path</strong>(path : String) : <a href="Gio/File.html">Gio::File</a>
+
+        <a class="method-permalink" href="#file_new_for_path%28path%3AString%29%3AGio%3A%3AFile-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="file_new_for_uri(uri:String):Gio::File-class-method">
+      <div class="signature">
+        
+        def self.<strong>file_new_for_uri</strong>(uri : String) : <a href="Gio/File.html">Gio::File</a>
+
+        <a class="method-permalink" href="#file_new_for_uri%28uri%3AString%29%3AGio%3A%3AFile-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="file_parse_name(parse_name:String):Gio::File-class-method">
+      <div class="signature">
+        
+        def self.<strong>file_parse_name</strong>(parse_name : String) : <a href="Gio/File.html">Gio::File</a>
+
+        <a class="method-permalink" href="#file_parse_name%28parse_name%3AString%29%3AGio%3A%3AFile-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="icon_deserialize(value:_):Gio::Icon?-class-method">
+      <div class="signature">
+        
+        def self.<strong>icon_deserialize</strong>(value : _) : <a href="Gio/Icon.html">Gio::Icon</a>?
+
+        <a class="method-permalink" href="#icon_deserialize%28value%3A_%29%3AGio%3A%3AIcon%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="icon_hash(icon:Pointer(Void)):UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>icon_hash</strong>(icon : Pointer(Void)) : UInt32
+
+        <a class="method-permalink" href="#icon_hash%28icon%3APointer%28Void%29%29%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="io_error_from_errno(err_no:Int32):Gio::IOErrorEnum-class-method">
+      <div class="signature">
+        
+        def self.<strong>io_error_from_errno</strong>(err_no : Int32) : <a href="Gio/IOErrorEnum.html">Gio::IOErrorEnum</a>
+
+        <a class="method-permalink" href="#io_error_from_errno%28err_no%3AInt32%29%3AGio%3A%3AIOErrorEnum-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="io_error_quark:UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>io_error_quark</strong> : UInt32
+
+        <a class="method-permalink" href="#io_error_quark%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="io_extension_point_implement(extension_point_name:String,type:UInt64,extension_name:String,priority:Int32):Gio::IOExtension-class-method">
+      <div class="signature">
+        
+        def self.<strong>io_extension_point_implement</strong>(extension_point_name : String, type : UInt64, extension_name : String, priority : Int32) : <a href="Gio/IOExtension.html">Gio::IOExtension</a>
+
+        <a class="method-permalink" href="#io_extension_point_implement%28extension_point_name%3AString%2Ctype%3AUInt64%2Cextension_name%3AString%2Cpriority%3AInt32%29%3AGio%3A%3AIOExtension-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="io_extension_point_lookup(name:String):Gio::IOExtensionPoint-class-method">
+      <div class="signature">
+        
+        def self.<strong>io_extension_point_lookup</strong>(name : String) : <a href="Gio/IOExtensionPoint.html">Gio::IOExtensionPoint</a>
+
+        <a class="method-permalink" href="#io_extension_point_lookup%28name%3AString%29%3AGio%3A%3AIOExtensionPoint-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="io_extension_point_register(name:String):Gio::IOExtensionPoint-class-method">
+      <div class="signature">
+        
+        def self.<strong>io_extension_point_register</strong>(name : String) : <a href="Gio/IOExtensionPoint.html">Gio::IOExtensionPoint</a>
+
+        <a class="method-permalink" href="#io_extension_point_register%28name%3AString%29%3AGio%3A%3AIOExtensionPoint-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="io_modules_load_all_in_directory(dirname:String):GLib::List-class-method">
+      <div class="signature">
+        
+        def self.<strong>io_modules_load_all_in_directory</strong>(dirname : String) : <a href="GLib/List.html">GLib::List</a>
+
+        <a class="method-permalink" href="#io_modules_load_all_in_directory%28dirname%3AString%29%3AGLib%3A%3AList-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="io_modules_load_all_in_directory_with_scope(dirname:String,scope:Gio::IOModuleScope):GLib::List-class-method">
+      <div class="signature">
+        
+        def self.<strong>io_modules_load_all_in_directory_with_scope</strong>(dirname : String, scope : <a href="Gio/IOModuleScope.html">Gio::IOModuleScope</a>) : <a href="GLib/List.html">GLib::List</a>
+
+        <a class="method-permalink" href="#io_modules_load_all_in_directory_with_scope%28dirname%3AString%2Cscope%3AGio%3A%3AIOModuleScope%29%3AGLib%3A%3AList-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="io_modules_scan_all_in_directory(dirname:String):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>io_modules_scan_all_in_directory</strong>(dirname : String) : Nil
+
+        <a class="method-permalink" href="#io_modules_scan_all_in_directory%28dirname%3AString%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="io_modules_scan_all_in_directory_with_scope(dirname:String,scope:Gio::IOModuleScope):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>io_modules_scan_all_in_directory_with_scope</strong>(dirname : String, scope : <a href="Gio/IOModuleScope.html">Gio::IOModuleScope</a>) : Nil
+
+        <a class="method-permalink" href="#io_modules_scan_all_in_directory_with_scope%28dirname%3AString%2Cscope%3AGio%3A%3AIOModuleScope%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="io_scheduler_cancel_all_jobs:Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>io_scheduler_cancel_all_jobs</strong> : Nil
+
+        <a class="method-permalink" href="#io_scheduler_cancel_all_jobs%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="io_scheduler_push_job(job_func:Pointer(Void),user_data:Pointer(Void)?,notify:Pointer(Void)?,io_priority:Int32,cancellable:Gio::Cancellable?):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>io_scheduler_push_job</strong>(job_func : Pointer(Void), user_data : Pointer(Void)?, notify : Pointer(Void)?, io_priority : Int32, cancellable : <a href="Gio/Cancellable.html">Gio::Cancellable</a>?) : Nil
+
+        <a class="method-permalink" href="#io_scheduler_push_job%28job_func%3APointer%28Void%29%2Cuser_data%3APointer%28Void%29%3F%2Cnotify%3APointer%28Void%29%3F%2Cio_priority%3AInt32%2Ccancellable%3AGio%3A%3ACancellable%3F%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="keyfile_settings_backend_new(filename:String,root_path:String,root_group:String?):Gio::SettingsBackend-class-method">
+      <div class="signature">
+        
+        def self.<strong>keyfile_settings_backend_new</strong>(filename : String, root_path : String, root_group : String?) : <a href="Gio/SettingsBackend.html">Gio::SettingsBackend</a>
+
+        <a class="method-permalink" href="#keyfile_settings_backend_new%28filename%3AString%2Croot_path%3AString%2Croot_group%3AString%3F%29%3AGio%3A%3ASettingsBackend-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="memory_monitor_dup_default:Gio::MemoryMonitor-class-method">
+      <div class="signature">
+        
+        def self.<strong>memory_monitor_dup_default</strong> : <a href="Gio/MemoryMonitor.html">Gio::MemoryMonitor</a>
+
+        <a class="method-permalink" href="#memory_monitor_dup_default%3AGio%3A%3AMemoryMonitor-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="memory_settings_backend_new:Gio::SettingsBackend-class-method">
+      <div class="signature">
+        
+        def self.<strong>memory_settings_backend_new</strong> : <a href="Gio/SettingsBackend.html">Gio::SettingsBackend</a>
+
+        <a class="method-permalink" href="#memory_settings_backend_new%3AGio%3A%3ASettingsBackend-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="network_monitor_get_default:Gio::NetworkMonitor-class-method">
+      <div class="signature">
+        
+        def self.<strong>network_monitor_get_default</strong> : <a href="Gio/NetworkMonitor.html">Gio::NetworkMonitor</a>
+
+        <a class="method-permalink" href="#network_monitor_get_default%3AGio%3A%3ANetworkMonitor-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="networking_init:Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>networking_init</strong> : Nil
+
+        <a class="method-permalink" href="#networking_init%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="null_settings_backend_new:Gio::SettingsBackend-class-method">
+      <div class="signature">
+        
+        def self.<strong>null_settings_backend_new</strong> : <a href="Gio/SettingsBackend.html">Gio::SettingsBackend</a>
+
+        <a class="method-permalink" href="#null_settings_backend_new%3AGio%3A%3ASettingsBackend-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pollable_source_new(pollable_stream:GObject::Object):GLib::Source-class-method">
+      <div class="signature">
+        
+        def self.<strong>pollable_source_new</strong>(pollable_stream : <a href="GObject/Object.html">GObject::Object</a>) : <a href="GLib/Source.html">GLib::Source</a>
+
+        <a class="method-permalink" href="#pollable_source_new%28pollable_stream%3AGObject%3A%3AObject%29%3AGLib%3A%3ASource-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pollable_source_new_full(pollable_stream:GObject::Object,child_source:GLib::Source?,cancellable:Gio::Cancellable?):GLib::Source-class-method">
+      <div class="signature">
+        
+        def self.<strong>pollable_source_new_full</strong>(pollable_stream : <a href="GObject/Object.html">GObject::Object</a>, child_source : <a href="GLib/Source.html">GLib::Source</a>?, cancellable : <a href="Gio/Cancellable.html">Gio::Cancellable</a>?) : <a href="GLib/Source.html">GLib::Source</a>
+
+        <a class="method-permalink" href="#pollable_source_new_full%28pollable_stream%3AGObject%3A%3AObject%2Cchild_source%3AGLib%3A%3ASource%3F%2Ccancellable%3AGio%3A%3ACancellable%3F%29%3AGLib%3A%3ASource-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="power_profile_monitor_dup_default:Gio::PowerProfileMonitor-class-method">
+      <div class="signature">
+        
+        def self.<strong>power_profile_monitor_dup_default</strong> : <a href="Gio/PowerProfileMonitor.html">Gio::PowerProfileMonitor</a>
+
+        <a class="method-permalink" href="#power_profile_monitor_dup_default%3AGio%3A%3APowerProfileMonitor-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="proxy_get_default_for_protocol(protocol:String):Gio::Proxy?-class-method">
+      <div class="signature">
+        
+        def self.<strong>proxy_get_default_for_protocol</strong>(protocol : String) : <a href="Gio/Proxy.html">Gio::Proxy</a>?
+
+        <a class="method-permalink" href="#proxy_get_default_for_protocol%28protocol%3AString%29%3AGio%3A%3AProxy%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="proxy_resolver_get_default:Gio::ProxyResolver-class-method">
+      <div class="signature">
+        
+        def self.<strong>proxy_resolver_get_default</strong> : <a href="Gio/ProxyResolver.html">Gio::ProxyResolver</a>
+
+        <a class="method-permalink" href="#proxy_resolver_get_default%3AGio%3A%3AProxyResolver-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="resolver_error_quark:UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>resolver_error_quark</strong> : UInt32
+
+        <a class="method-permalink" href="#resolver_error_quark%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="resource_error_quark:UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>resource_error_quark</strong> : UInt32
+
+        <a class="method-permalink" href="#resource_error_quark%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="resources_register(resource:Gio::Resource):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>resources_register</strong>(resource : <a href="Gio/Resource.html">Gio::Resource</a>) : Nil
+
+        <a class="method-permalink" href="#resources_register%28resource%3AGio%3A%3AResource%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="resources_unregister(resource:Gio::Resource):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>resources_unregister</strong>(resource : <a href="Gio/Resource.html">Gio::Resource</a>) : Nil
+
+        <a class="method-permalink" href="#resources_unregister%28resource%3AGio%3A%3AResource%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="settings_schema_source_get_default:Gio::SettingsSchemaSource?-class-method">
+      <div class="signature">
+        
+        def self.<strong>settings_schema_source_get_default</strong> : <a href="Gio/SettingsSchemaSource.html">Gio::SettingsSchemaSource</a>?
+
+        <a class="method-permalink" href="#settings_schema_source_get_default%3AGio%3A%3ASettingsSchemaSource%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="simple_async_report_gerror_in_idle(object:GObject::Object?,callback:Pointer(Void)?,user_data:Pointer(Void)?,error:GLib::Error):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>simple_async_report_gerror_in_idle</strong>(object : <a href="GObject/Object.html">GObject::Object</a>?, callback : Pointer(Void)?, user_data : Pointer(Void)?, error : <a href="GLib/Error.html">GLib::Error</a>) : Nil
+
+        <a class="method-permalink" href="#simple_async_report_gerror_in_idle%28object%3AGObject%3A%3AObject%3F%2Ccallback%3APointer%28Void%29%3F%2Cuser_data%3APointer%28Void%29%3F%2Cerror%3AGLib%3A%3AError%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tls_backend_get_default:Gio::TlsBackend-class-method">
+      <div class="signature">
+        
+        def self.<strong>tls_backend_get_default</strong> : <a href="Gio/TlsBackend.html">Gio::TlsBackend</a>
+
+        <a class="method-permalink" href="#tls_backend_get_default%3AGio%3A%3ATlsBackend-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tls_channel_binding_error_quark:UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>tls_channel_binding_error_quark</strong> : UInt32
+
+        <a class="method-permalink" href="#tls_channel_binding_error_quark%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tls_error_quark:UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>tls_error_quark</strong> : UInt32
+
+        <a class="method-permalink" href="#tls_error_quark%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_is_mount_path_system_internal(mount_path:String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_is_mount_path_system_internal</strong>(mount_path : String) : Bool
+
+        <a class="method-permalink" href="#unix_is_mount_path_system_internal%28mount_path%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_is_system_device_path(device_path:String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_is_system_device_path</strong>(device_path : String) : Bool
+
+        <a class="method-permalink" href="#unix_is_system_device_path%28device_path%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_is_system_fs_type(fs_type:String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_is_system_fs_type</strong>(fs_type : String) : Bool
+
+        <a class="method-permalink" href="#unix_is_system_fs_type%28fs_type%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_mount_at(mount_path:String):Gio::UnixMountEntry?-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_mount_at</strong>(mount_path : String) : <a href="Gio/UnixMountEntry.html">Gio::UnixMountEntry</a>?
+
+        <a class="method-permalink" href="#unix_mount_at%28mount_path%3AString%29%3AGio%3A%3AUnixMountEntry%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_mount_compare(mount1:Gio::UnixMountEntry,mount2:Gio::UnixMountEntry):Int32-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_mount_compare</strong>(mount1 : <a href="Gio/UnixMountEntry.html">Gio::UnixMountEntry</a>, mount2 : <a href="Gio/UnixMountEntry.html">Gio::UnixMountEntry</a>) : Int32
+
+        <a class="method-permalink" href="#unix_mount_compare%28mount1%3AGio%3A%3AUnixMountEntry%2Cmount2%3AGio%3A%3AUnixMountEntry%29%3AInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_mount_copy(mount_entry:Gio::UnixMountEntry):Gio::UnixMountEntry-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_mount_copy</strong>(mount_entry : <a href="Gio/UnixMountEntry.html">Gio::UnixMountEntry</a>) : <a href="Gio/UnixMountEntry.html">Gio::UnixMountEntry</a>
+
+        <a class="method-permalink" href="#unix_mount_copy%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3AGio%3A%3AUnixMountEntry-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_mount_for(file_path:String):Gio::UnixMountEntry?-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_mount_for</strong>(file_path : String) : <a href="Gio/UnixMountEntry.html">Gio::UnixMountEntry</a>?
+
+        <a class="method-permalink" href="#unix_mount_for%28file_path%3AString%29%3AGio%3A%3AUnixMountEntry%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_mount_free(mount_entry:Gio::UnixMountEntry):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_mount_free</strong>(mount_entry : <a href="Gio/UnixMountEntry.html">Gio::UnixMountEntry</a>) : Nil
+
+        <a class="method-permalink" href="#unix_mount_free%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_mount_get_device_path(mount_entry:Gio::UnixMountEntry):Path-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_mount_get_device_path</strong>(mount_entry : <a href="Gio/UnixMountEntry.html">Gio::UnixMountEntry</a>) : Path
+
+        <a class="method-permalink" href="#unix_mount_get_device_path%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3APath-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_mount_get_fs_type(mount_entry:Gio::UnixMountEntry):String-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_mount_get_fs_type</strong>(mount_entry : <a href="Gio/UnixMountEntry.html">Gio::UnixMountEntry</a>) : String
+
+        <a class="method-permalink" href="#unix_mount_get_fs_type%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3AString-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_mount_get_mount_path(mount_entry:Gio::UnixMountEntry):Path-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_mount_get_mount_path</strong>(mount_entry : <a href="Gio/UnixMountEntry.html">Gio::UnixMountEntry</a>) : Path
+
+        <a class="method-permalink" href="#unix_mount_get_mount_path%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3APath-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_mount_get_options(mount_entry:Gio::UnixMountEntry):String?-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_mount_get_options</strong>(mount_entry : <a href="Gio/UnixMountEntry.html">Gio::UnixMountEntry</a>) : String?
+
+        <a class="method-permalink" href="#unix_mount_get_options%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3AString%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_mount_get_root_path(mount_entry:Gio::UnixMountEntry):String?-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_mount_get_root_path</strong>(mount_entry : <a href="Gio/UnixMountEntry.html">Gio::UnixMountEntry</a>) : String?
+
+        <a class="method-permalink" href="#unix_mount_get_root_path%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3AString%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_mount_guess_can_eject(mount_entry:Gio::UnixMountEntry):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_mount_guess_can_eject</strong>(mount_entry : <a href="Gio/UnixMountEntry.html">Gio::UnixMountEntry</a>) : Bool
+
+        <a class="method-permalink" href="#unix_mount_guess_can_eject%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_mount_guess_icon(mount_entry:Gio::UnixMountEntry):Gio::Icon-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_mount_guess_icon</strong>(mount_entry : <a href="Gio/UnixMountEntry.html">Gio::UnixMountEntry</a>) : <a href="Gio/Icon.html">Gio::Icon</a>
+
+        <a class="method-permalink" href="#unix_mount_guess_icon%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3AGio%3A%3AIcon-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_mount_guess_name(mount_entry:Gio::UnixMountEntry):String-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_mount_guess_name</strong>(mount_entry : <a href="Gio/UnixMountEntry.html">Gio::UnixMountEntry</a>) : String
+
+        <a class="method-permalink" href="#unix_mount_guess_name%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3AString-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_mount_guess_should_display(mount_entry:Gio::UnixMountEntry):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_mount_guess_should_display</strong>(mount_entry : <a href="Gio/UnixMountEntry.html">Gio::UnixMountEntry</a>) : Bool
+
+        <a class="method-permalink" href="#unix_mount_guess_should_display%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_mount_guess_symbolic_icon(mount_entry:Gio::UnixMountEntry):Gio::Icon-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_mount_guess_symbolic_icon</strong>(mount_entry : <a href="Gio/UnixMountEntry.html">Gio::UnixMountEntry</a>) : <a href="Gio/Icon.html">Gio::Icon</a>
+
+        <a class="method-permalink" href="#unix_mount_guess_symbolic_icon%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3AGio%3A%3AIcon-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_mount_is_readonly(mount_entry:Gio::UnixMountEntry):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_mount_is_readonly</strong>(mount_entry : <a href="Gio/UnixMountEntry.html">Gio::UnixMountEntry</a>) : Bool
+
+        <a class="method-permalink" href="#unix_mount_is_readonly%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_mount_is_system_internal(mount_entry:Gio::UnixMountEntry):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_mount_is_system_internal</strong>(mount_entry : <a href="Gio/UnixMountEntry.html">Gio::UnixMountEntry</a>) : Bool
+
+        <a class="method-permalink" href="#unix_mount_is_system_internal%28mount_entry%3AGio%3A%3AUnixMountEntry%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_mount_point_at(mount_path:String):Gio::UnixMountPoint?-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_mount_point_at</strong>(mount_path : String) : <a href="Gio/UnixMountPoint.html">Gio::UnixMountPoint</a>?
+
+        <a class="method-permalink" href="#unix_mount_point_at%28mount_path%3AString%29%3AGio%3A%3AUnixMountPoint%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_mount_points_changed_since(time:UInt64):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_mount_points_changed_since</strong>(time : UInt64) : Bool
+
+        <a class="method-permalink" href="#unix_mount_points_changed_since%28time%3AUInt64%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_mount_points_get:GLib::List-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_mount_points_get</strong> : <a href="GLib/List.html">GLib::List</a>
+
+        <a class="method-permalink" href="#unix_mount_points_get%3AGLib%3A%3AList-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_mounts_changed_since(time:UInt64):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_mounts_changed_since</strong>(time : UInt64) : Bool
+
+        <a class="method-permalink" href="#unix_mounts_changed_since%28time%3AUInt64%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_mounts_get:GLib::List-class-method">
+      <div class="signature">
+        
+        def self.<strong>unix_mounts_get</strong> : <a href="GLib/List.html">GLib::List</a>
+
+        <a class="method-permalink" href="#unix_mounts_get%3AGLib%3A%3AList-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="action_parse_detailed_name(detailed_name:String,action_name:String,target_value:_):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>action_parse_detailed_name</strong>(detailed_name : String, action_name : String, target_value : _) : Bool
+
+        <a class="method-permalink" href="#action_parse_detailed_name%28detailed_name%3AString%2Caction_name%3AString%2Ctarget_value%3A_%29%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="app_info_create_from_commandline(commandline:String,application_name:String?,flags:Gio::AppInfoCreateFlags):Gio::AppInfo-instance-method">
+      <div class="signature">
+        
+        def <strong>app_info_create_from_commandline</strong>(commandline : String, application_name : String?, flags : <a href="Gio/AppInfoCreateFlags.html">Gio::AppInfoCreateFlags</a>) : <a href="Gio/AppInfo.html">Gio::AppInfo</a>
+
+        <a class="method-permalink" href="#app_info_create_from_commandline%28commandline%3AString%2Capplication_name%3AString%3F%2Cflags%3AGio%3A%3AAppInfoCreateFlags%29%3AGio%3A%3AAppInfo-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="app_info_launch_default_for_uri(uri:String,context:Gio::AppLaunchContext?):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>app_info_launch_default_for_uri</strong>(uri : String, context : <a href="Gio/AppLaunchContext.html">Gio::AppLaunchContext</a>?) : Bool
+
+        <a class="method-permalink" href="#app_info_launch_default_for_uri%28uri%3AString%2Ccontext%3AGio%3A%3AAppLaunchContext%3F%29%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="app_info_launch_default_for_uri_finish(result:Gio::AsyncResult):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>app_info_launch_default_for_uri_finish</strong>(result : <a href="Gio/AsyncResult.html">Gio::AsyncResult</a>) : Bool
+
+        <a class="method-permalink" href="#app_info_launch_default_for_uri_finish%28result%3AGio%3A%3AAsyncResult%29%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bus_get_finish(res:Gio::AsyncResult):Gio::DBusConnection-instance-method">
+      <div class="signature">
+        
+        def <strong>bus_get_finish</strong>(res : <a href="Gio/AsyncResult.html">Gio::AsyncResult</a>) : <a href="Gio/DBusConnection.html">Gio::DBusConnection</a>
+
+        <a class="method-permalink" href="#bus_get_finish%28res%3AGio%3A%3AAsyncResult%29%3AGio%3A%3ADBusConnection-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bus_get_sync(bus_type:Gio::BusType,cancellable:Gio::Cancellable?):Gio::DBusConnection-instance-method">
+      <div class="signature">
+        
+        def <strong>bus_get_sync</strong>(bus_type : <a href="Gio/BusType.html">Gio::BusType</a>, cancellable : <a href="Gio/Cancellable.html">Gio::Cancellable</a>?) : <a href="Gio/DBusConnection.html">Gio::DBusConnection</a>
+
+        <a class="method-permalink" href="#bus_get_sync%28bus_type%3AGio%3A%3ABusType%2Ccancellable%3AGio%3A%3ACancellable%3F%29%3AGio%3A%3ADBusConnection-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_address_get_for_bus_sync(bus_type:Gio::BusType,cancellable:Gio::Cancellable?):String-instance-method">
+      <div class="signature">
+        
+        def <strong>dbus_address_get_for_bus_sync</strong>(bus_type : <a href="Gio/BusType.html">Gio::BusType</a>, cancellable : <a href="Gio/Cancellable.html">Gio::Cancellable</a>?) : String
+
+        <a class="method-permalink" href="#dbus_address_get_for_bus_sync%28bus_type%3AGio%3A%3ABusType%2Ccancellable%3AGio%3A%3ACancellable%3F%29%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_address_get_stream_finish(res:Gio::AsyncResult):Gio::IOStream-instance-method">
+      <div class="signature">
+        
+        def <strong>dbus_address_get_stream_finish</strong>(res : <a href="Gio/AsyncResult.html">Gio::AsyncResult</a>) : <a href="Gio/IOStream.html">Gio::IOStream</a>
+
+        <a class="method-permalink" href="#dbus_address_get_stream_finish%28res%3AGio%3A%3AAsyncResult%29%3AGio%3A%3AIOStream-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_address_get_stream_sync(address:String,cancellable:Gio::Cancellable?):Gio::IOStream-instance-method">
+      <div class="signature">
+        
+        def <strong>dbus_address_get_stream_sync</strong>(address : String, cancellable : <a href="Gio/Cancellable.html">Gio::Cancellable</a>?) : <a href="Gio/IOStream.html">Gio::IOStream</a>
+
+        <a class="method-permalink" href="#dbus_address_get_stream_sync%28address%3AString%2Ccancellable%3AGio%3A%3ACancellable%3F%29%3AGio%3A%3AIOStream-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dbus_is_supported_address(string:String):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>dbus_is_supported_address</strong>(string : String) : Bool
+
+        <a class="method-permalink" href="#dbus_is_supported_address%28string%3AString%29%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dtls_client_connection_new(base_socket:Gio::DatagramBased,server_identity:Gio::SocketConnectable?):Gio::DtlsClientConnection-instance-method">
+      <div class="signature">
+        
+        def <strong>dtls_client_connection_new</strong>(base_socket : <a href="Gio/DatagramBased.html">Gio::DatagramBased</a>, server_identity : <a href="Gio/SocketConnectable.html">Gio::SocketConnectable</a>?) : <a href="Gio/DtlsClientConnection.html">Gio::DtlsClientConnection</a>
+
+        <a class="method-permalink" href="#dtls_client_connection_new%28base_socket%3AGio%3A%3ADatagramBased%2Cserver_identity%3AGio%3A%3ASocketConnectable%3F%29%3AGio%3A%3ADtlsClientConnection-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dtls_server_connection_new(base_socket:Gio::DatagramBased,certificate:Gio::TlsCertificate?):Gio::DtlsServerConnection-instance-method">
+      <div class="signature">
+        
+        def <strong>dtls_server_connection_new</strong>(base_socket : <a href="Gio/DatagramBased.html">Gio::DatagramBased</a>, certificate : <a href="Gio/TlsCertificate.html">Gio::TlsCertificate</a>?) : <a href="Gio/DtlsServerConnection.html">Gio::DtlsServerConnection</a>
+
+        <a class="method-permalink" href="#dtls_server_connection_new%28base_socket%3AGio%3A%3ADatagramBased%2Ccertificate%3AGio%3A%3ATlsCertificate%3F%29%3AGio%3A%3ADtlsServerConnection-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="file_new_tmp(tmpl:String?,iostream:Gio::FileIOStream):Gio::File-instance-method">
+      <div class="signature">
+        
+        def <strong>file_new_tmp</strong>(tmpl : String?, iostream : <a href="Gio/FileIOStream.html">Gio::FileIOStream</a>) : <a href="Gio/File.html">Gio::File</a>
+
+        <a class="method-permalink" href="#file_new_tmp%28tmpl%3AString%3F%2Ciostream%3AGio%3A%3AFileIOStream%29%3AGio%3A%3AFile-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="icon_new_for_string(str:String):Gio::Icon-instance-method">
+      <div class="signature">
+        
+        def <strong>icon_new_for_string</strong>(str : String) : <a href="Gio/Icon.html">Gio::Icon</a>
+
+        <a class="method-permalink" href="#icon_new_for_string%28str%3AString%29%3AGio%3A%3AIcon-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="initable_newv(object_type:UInt64,parameters:Enumerable(GObject::Parameter),cancellable:Gio::Cancellable?):GObject::Object-instance-method">
+      <div class="signature">
+        
+        def <strong>initable_newv</strong>(object_type : UInt64, parameters : Enumerable(<a href="GObject/Parameter.html">GObject::Parameter</a>), cancellable : <a href="Gio/Cancellable.html">Gio::Cancellable</a>?) : <a href="GObject/Object.html">GObject::Object</a>
+
+        <a class="method-permalink" href="#initable_newv%28object_type%3AUInt64%2Cparameters%3AEnumerable%28GObject%3A%3AParameter%29%2Ccancellable%3AGio%3A%3ACancellable%3F%29%3AGObject%3A%3AObject-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pollable_stream_read(stream:Gio::InputStream,buffer:Enumerable(UInt8),blocking:Bool,cancellable:Gio::Cancellable?):Int64-instance-method">
+      <div class="signature">
+        
+        def <strong>pollable_stream_read</strong>(stream : <a href="Gio/InputStream.html">Gio::InputStream</a>, buffer : Enumerable(UInt8), blocking : Bool, cancellable : <a href="Gio/Cancellable.html">Gio::Cancellable</a>?) : Int64
+
+        <a class="method-permalink" href="#pollable_stream_read%28stream%3AGio%3A%3AInputStream%2Cbuffer%3AEnumerable%28UInt8%29%2Cblocking%3ABool%2Ccancellable%3AGio%3A%3ACancellable%3F%29%3AInt64-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pollable_stream_write(stream:Gio::OutputStream,buffer:Enumerable(UInt8),blocking:Bool,cancellable:Gio::Cancellable?):Int64-instance-method">
+      <div class="signature">
+        
+        def <strong>pollable_stream_write</strong>(stream : <a href="Gio/OutputStream.html">Gio::OutputStream</a>, buffer : Enumerable(UInt8), blocking : Bool, cancellable : <a href="Gio/Cancellable.html">Gio::Cancellable</a>?) : Int64
+
+        <a class="method-permalink" href="#pollable_stream_write%28stream%3AGio%3A%3AOutputStream%2Cbuffer%3AEnumerable%28UInt8%29%2Cblocking%3ABool%2Ccancellable%3AGio%3A%3ACancellable%3F%29%3AInt64-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pollable_stream_write_all(stream:Gio::OutputStream,buffer:Enumerable(UInt8),blocking:Bool,bytes_written:UInt64,cancellable:Gio::Cancellable?):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>pollable_stream_write_all</strong>(stream : <a href="Gio/OutputStream.html">Gio::OutputStream</a>, buffer : Enumerable(UInt8), blocking : Bool, bytes_written : UInt64, cancellable : <a href="Gio/Cancellable.html">Gio::Cancellable</a>?) : Bool
+
+        <a class="method-permalink" href="#pollable_stream_write_all%28stream%3AGio%3A%3AOutputStream%2Cbuffer%3AEnumerable%28UInt8%29%2Cblocking%3ABool%2Cbytes_written%3AUInt64%2Ccancellable%3AGio%3A%3ACancellable%3F%29%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="resource_load(filename:String):Gio::Resource-instance-method">
+      <div class="signature">
+        
+        def <strong>resource_load</strong>(filename : String) : <a href="Gio/Resource.html">Gio::Resource</a>
+
+        <a class="method-permalink" href="#resource_load%28filename%3AString%29%3AGio%3A%3AResource-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="resources_enumerate_children(path:String,lookup_flags:Gio::ResourceLookupFlags):Enumerable(String)-instance-method">
+      <div class="signature">
+        
+        def <strong>resources_enumerate_children</strong>(path : String, lookup_flags : <a href="Gio/ResourceLookupFlags.html">Gio::ResourceLookupFlags</a>) : Enumerable(String)
+
+        <a class="method-permalink" href="#resources_enumerate_children%28path%3AString%2Clookup_flags%3AGio%3A%3AResourceLookupFlags%29%3AEnumerable%28String%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="resources_get_info(path:String,lookup_flags:Gio::ResourceLookupFlags):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>resources_get_info</strong>(path : String, lookup_flags : <a href="Gio/ResourceLookupFlags.html">Gio::ResourceLookupFlags</a>) : Bool
+
+        <a class="method-permalink" href="#resources_get_info%28path%3AString%2Clookup_flags%3AGio%3A%3AResourceLookupFlags%29%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="resources_lookup_data(path:String,lookup_flags:Gio::ResourceLookupFlags):GLib::Bytes-instance-method">
+      <div class="signature">
+        
+        def <strong>resources_lookup_data</strong>(path : String, lookup_flags : <a href="Gio/ResourceLookupFlags.html">Gio::ResourceLookupFlags</a>) : <a href="GLib/Bytes.html">GLib::Bytes</a>
+
+        <a class="method-permalink" href="#resources_lookup_data%28path%3AString%2Clookup_flags%3AGio%3A%3AResourceLookupFlags%29%3AGLib%3A%3ABytes-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="resources_open_stream(path:String,lookup_flags:Gio::ResourceLookupFlags):Gio::InputStream-instance-method">
+      <div class="signature">
+        
+        def <strong>resources_open_stream</strong>(path : String, lookup_flags : <a href="Gio/ResourceLookupFlags.html">Gio::ResourceLookupFlags</a>) : <a href="Gio/InputStream.html">Gio::InputStream</a>
+
+        <a class="method-permalink" href="#resources_open_stream%28path%3AString%2Clookup_flags%3AGio%3A%3AResourceLookupFlags%29%3AGio%3A%3AInputStream-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tls_client_connection_new(base_io_stream:Gio::IOStream,server_identity:Gio::SocketConnectable?):Gio::TlsClientConnection-instance-method">
+      <div class="signature">
+        
+        def <strong>tls_client_connection_new</strong>(base_io_stream : <a href="Gio/IOStream.html">Gio::IOStream</a>, server_identity : <a href="Gio/SocketConnectable.html">Gio::SocketConnectable</a>?) : <a href="Gio/TlsClientConnection.html">Gio::TlsClientConnection</a>
+
+        <a class="method-permalink" href="#tls_client_connection_new%28base_io_stream%3AGio%3A%3AIOStream%2Cserver_identity%3AGio%3A%3ASocketConnectable%3F%29%3AGio%3A%3ATlsClientConnection-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tls_file_database_new(anchors:String):Gio::TlsFileDatabase-instance-method">
+      <div class="signature">
+        
+        def <strong>tls_file_database_new</strong>(anchors : String) : <a href="Gio/TlsFileDatabase.html">Gio::TlsFileDatabase</a>
+
+        <a class="method-permalink" href="#tls_file_database_new%28anchors%3AString%29%3AGio%3A%3ATlsFileDatabase-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tls_server_connection_new(base_io_stream:Gio::IOStream,certificate:Gio::TlsCertificate?):Gio::TlsServerConnection-instance-method">
+      <div class="signature">
+        
+        def <strong>tls_server_connection_new</strong>(base_io_stream : <a href="Gio/IOStream.html">Gio::IOStream</a>, certificate : <a href="Gio/TlsCertificate.html">Gio::TlsCertificate</a>?) : <a href="Gio/TlsServerConnection.html">Gio::TlsServerConnection</a>
+
+        <a class="method-permalink" href="#tls_server_connection_new%28base_io_stream%3AGio%3A%3AIOStream%2Ccertificate%3AGio%3A%3ATlsCertificate%3F%29%3AGio%3A%3ATlsServerConnection-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
 
 
 

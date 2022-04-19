@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.3.0">
-<meta name="crystal_docs.project_version" content="0.5.0">
+<meta name="generator" content="Crystal Docs 1.3.2">
+<meta name="crystal_docs.project_version" content="0.7.0">
 <meta name="crystal_docs.project_name" content="GTK4.cr">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="GTK4.cr">
-  <title>GObject::Object::NotifySignal - GTK4.cr 0.5.0</title>
+  <title>GObject::Object::NotifySignal - GTK4.cr 0.7.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        0.5.0
+        0.7.0
       </span>
     </div>
   </div>
@@ -1145,6 +1145,11 @@
       <a href="../../GICrystal.html">GICrystal</a>
       
         <ul>
+  
+  <li class=" " data-id="GTK4.cr/GICrystal/ObjectCollectedError" data-name="gicrystal::objectcollectederror">
+      <a href="../../GICrystal/ObjectCollectedError.html">ObjectCollectedError</a>
+      
+    </li>
   
   <li class=" " data-id="GTK4.cr/GICrystal/Transfer" data-name="gicrystal::transfer">
       <a href="../../GICrystal/Transfer.html">Transfer</a>
@@ -5241,8 +5246,18 @@
       
     </li>
   
+  <li class=" " data-id="GTK4.cr/GObject/ParamSpecPool" data-name="gobject::paramspecpool">
+      <a href="../../GObject/ParamSpecPool.html">ParamSpecPool</a>
+      
+    </li>
+  
   <li class=" " data-id="GTK4.cr/GObject/ParamSpecString" data-name="gobject::paramspecstring">
       <a href="../../GObject/ParamSpecString.html">ParamSpecString</a>
+      
+    </li>
+  
+  <li class=" " data-id="GTK4.cr/GObject/ParamSpecTypeInfo" data-name="gobject::paramspectypeinfo">
+      <a href="../../GObject/ParamSpecTypeInfo.html">ParamSpecTypeInfo</a>
       
     </li>
   
@@ -11110,37 +11125,37 @@ detail strings for the notify signal.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#connect%28%26block%3AProc%28Nil%29%29-instance-method" class="signature"><strong>#connect</strong>(&block : Proc(Nil))</a>
+        <a href="#connect%28%26block%3AProc%28GObject%3A%3AParamSpec%2CNil%29%29-instance-method" class="signature"><strong>#connect</strong>(&block : Proc(GObject::ParamSpec, Nil))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#connect%28block%3AProc%28Nil%29%29-instance-method" class="signature"><strong>#connect</strong>(block : Proc(Nil))</a>
+        <a href="#connect%28block%3AProc%28GObject%3A%3AParamSpec%2CNil%29%29-instance-method" class="signature"><strong>#connect</strong>(block : Proc(GObject::ParamSpec, Nil))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#connect%28block%3AProc%28GObject%3A%3AObject%2CNil%29%29-instance-method" class="signature"><strong>#connect</strong>(block : Proc(GObject::Object, Nil))</a>
+        <a href="#connect%28block%3AProc%28GObject%3A%3AObject%2CGObject%3A%3AParamSpec%2CNil%29%29-instance-method" class="signature"><strong>#connect</strong>(block : Proc(GObject::Object, GObject::ParamSpec, Nil))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#connect_after%28%26block%3AProc%28Nil%29%29-instance-method" class="signature"><strong>#connect_after</strong>(&block : Proc(Nil))</a>
+        <a href="#connect_after%28%26block%3AProc%28GObject%3A%3AParamSpec%2CNil%29%29-instance-method" class="signature"><strong>#connect_after</strong>(&block : Proc(GObject::ParamSpec, Nil))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#connect_after%28block%3AProc%28Nil%29%29-instance-method" class="signature"><strong>#connect_after</strong>(block : Proc(Nil))</a>
+        <a href="#connect_after%28block%3AProc%28GObject%3A%3AParamSpec%2CNil%29%29-instance-method" class="signature"><strong>#connect_after</strong>(block : Proc(GObject::ParamSpec, Nil))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#connect_after%28block%3AProc%28GObject%3A%3AObject%2CNil%29%29-instance-method" class="signature"><strong>#connect_after</strong>(block : Proc(GObject::Object, Nil))</a>
+        <a href="#connect_after%28block%3AProc%28GObject%3A%3AObject%2CGObject%3A%3AParamSpec%2CNil%29%29-instance-method" class="signature"><strong>#connect_after</strong>(block : Proc(GObject::Object, GObject::ParamSpec, Nil))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#emit%3ANil-instance-method" class="signature"><strong>#emit</strong> : Nil</a>
+        <a href="#emit%28pspec%3AGObject%3A%3AParamSpec%29%3ANil-instance-method" class="signature"><strong>#emit</strong>(pspec : GObject::ParamSpec) : Nil</a>
         
       </li>
     
@@ -11241,12 +11256,12 @@ detail strings for the notify signal.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="connect(&amp;block:Proc(Nil))-instance-method">
+    <div class="entry-detail" id="connect(&amp;block:Proc(GObject::ParamSpec,Nil))-instance-method">
       <div class="signature">
         
-        def <strong>connect</strong>(&block : Proc(Nil))
+        def <strong>connect</strong>(&block : Proc(<a href="../../GObject/ParamSpec.html">GObject::ParamSpec</a>, Nil))
 
-        <a class="method-permalink" href="#connect%28%26block%3AProc%28Nil%29%29-instance-method">#</a>
+        <a class="method-permalink" href="#connect%28%26block%3AProc%28GObject%3A%3AParamSpec%2CNil%29%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -11255,12 +11270,12 @@ detail strings for the notify signal.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="connect(block:Proc(Nil))-instance-method">
+    <div class="entry-detail" id="connect(block:Proc(GObject::ParamSpec,Nil))-instance-method">
       <div class="signature">
         
-        def <strong>connect</strong>(block : Proc(Nil))
+        def <strong>connect</strong>(block : Proc(<a href="../../GObject/ParamSpec.html">GObject::ParamSpec</a>, Nil))
 
-        <a class="method-permalink" href="#connect%28block%3AProc%28Nil%29%29-instance-method">#</a>
+        <a class="method-permalink" href="#connect%28block%3AProc%28GObject%3A%3AParamSpec%2CNil%29%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -11269,12 +11284,12 @@ detail strings for the notify signal.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="connect(block:Proc(GObject::Object,Nil))-instance-method">
+    <div class="entry-detail" id="connect(block:Proc(GObject::Object,GObject::ParamSpec,Nil))-instance-method">
       <div class="signature">
         
-        def <strong>connect</strong>(block : Proc(<a href="../../GObject/Object.html">GObject::Object</a>, Nil))
+        def <strong>connect</strong>(block : Proc(<a href="../../GObject/Object.html">GObject::Object</a>, <a href="../../GObject/ParamSpec.html">GObject::ParamSpec</a>, Nil))
 
-        <a class="method-permalink" href="#connect%28block%3AProc%28GObject%3A%3AObject%2CNil%29%29-instance-method">#</a>
+        <a class="method-permalink" href="#connect%28block%3AProc%28GObject%3A%3AObject%2CGObject%3A%3AParamSpec%2CNil%29%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -11283,12 +11298,12 @@ detail strings for the notify signal.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="connect_after(&amp;block:Proc(Nil))-instance-method">
+    <div class="entry-detail" id="connect_after(&amp;block:Proc(GObject::ParamSpec,Nil))-instance-method">
       <div class="signature">
         
-        def <strong>connect_after</strong>(&block : Proc(Nil))
+        def <strong>connect_after</strong>(&block : Proc(<a href="../../GObject/ParamSpec.html">GObject::ParamSpec</a>, Nil))
 
-        <a class="method-permalink" href="#connect_after%28%26block%3AProc%28Nil%29%29-instance-method">#</a>
+        <a class="method-permalink" href="#connect_after%28%26block%3AProc%28GObject%3A%3AParamSpec%2CNil%29%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -11297,12 +11312,12 @@ detail strings for the notify signal.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="connect_after(block:Proc(Nil))-instance-method">
+    <div class="entry-detail" id="connect_after(block:Proc(GObject::ParamSpec,Nil))-instance-method">
       <div class="signature">
         
-        def <strong>connect_after</strong>(block : Proc(Nil))
+        def <strong>connect_after</strong>(block : Proc(<a href="../../GObject/ParamSpec.html">GObject::ParamSpec</a>, Nil))
 
-        <a class="method-permalink" href="#connect_after%28block%3AProc%28Nil%29%29-instance-method">#</a>
+        <a class="method-permalink" href="#connect_after%28block%3AProc%28GObject%3A%3AParamSpec%2CNil%29%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -11311,12 +11326,12 @@ detail strings for the notify signal.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="connect_after(block:Proc(GObject::Object,Nil))-instance-method">
+    <div class="entry-detail" id="connect_after(block:Proc(GObject::Object,GObject::ParamSpec,Nil))-instance-method">
       <div class="signature">
         
-        def <strong>connect_after</strong>(block : Proc(<a href="../../GObject/Object.html">GObject::Object</a>, Nil))
+        def <strong>connect_after</strong>(block : Proc(<a href="../../GObject/Object.html">GObject::Object</a>, <a href="../../GObject/ParamSpec.html">GObject::ParamSpec</a>, Nil))
 
-        <a class="method-permalink" href="#connect_after%28block%3AProc%28GObject%3A%3AObject%2CNil%29%29-instance-method">#</a>
+        <a class="method-permalink" href="#connect_after%28block%3AProc%28GObject%3A%3AObject%2CGObject%3A%3AParamSpec%2CNil%29%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -11325,12 +11340,12 @@ detail strings for the notify signal.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="emit:Nil-instance-method">
+    <div class="entry-detail" id="emit(pspec:GObject::ParamSpec):Nil-instance-method">
       <div class="signature">
         
-        def <strong>emit</strong> : Nil
+        def <strong>emit</strong>(pspec : <a href="../../GObject/ParamSpec.html">GObject::ParamSpec</a>) : Nil
 
-        <a class="method-permalink" href="#emit%3ANil-instance-method">#</a>
+        <a class="method-permalink" href="#emit%28pspec%3AGObject%3A%3AParamSpec%29%3ANil-instance-method">#</a>
       </div>
       
       <br/>

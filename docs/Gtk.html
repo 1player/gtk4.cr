@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.3.0">
-<meta name="crystal_docs.project_version" content="0.5.0">
+<meta name="generator" content="Crystal Docs 1.3.2">
+<meta name="crystal_docs.project_version" content="0.7.0">
 <meta name="crystal_docs.project_name" content="GTK4.cr">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="js/doc.js"></script>
 
   <meta name="repository-name" content="GTK4.cr">
-  <title>Gtk - GTK4.cr 0.5.0</title>
+  <title>Gtk - GTK4.cr 0.7.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        0.5.0
+        0.7.0
       </span>
     </div>
   </div>
@@ -1145,6 +1145,11 @@
       <a href="GICrystal.html">GICrystal</a>
       
         <ul>
+  
+  <li class=" " data-id="GTK4.cr/GICrystal/ObjectCollectedError" data-name="gicrystal::objectcollectederror">
+      <a href="GICrystal/ObjectCollectedError.html">ObjectCollectedError</a>
+      
+    </li>
   
   <li class=" " data-id="GTK4.cr/GICrystal/Transfer" data-name="gicrystal::transfer">
       <a href="GICrystal/Transfer.html">Transfer</a>
@@ -5241,8 +5246,18 @@
       
     </li>
   
+  <li class=" " data-id="GTK4.cr/GObject/ParamSpecPool" data-name="gobject::paramspecpool">
+      <a href="GObject/ParamSpecPool.html">ParamSpecPool</a>
+      
+    </li>
+  
   <li class=" " data-id="GTK4.cr/GObject/ParamSpecString" data-name="gobject::paramspecstring">
       <a href="GObject/ParamSpecString.html">ParamSpecString</a>
+      
+    </li>
+  
+  <li class=" " data-id="GTK4.cr/GObject/ParamSpecTypeInfo" data-name="gobject::paramspectypeinfo">
+      <a href="GObject/ParamSpecTypeInfo.html">ParamSpecTypeInfo</a>
       
     </li>
   
@@ -12594,7 +12609,7 @@ value is undefined.</p>
       </dt>
       
       <dd class="entry-const-doc">
-        <p>Like <code>#binary_age</code>, but from the headers used at
+        <p>Like <code><a href="Gtk.html#binary_age%3AUInt32-class-method">#binary_age</a></code>, but from the headers used at
 application compile time, rather than from the library linked
 against at application run time.</p>
       </dd>
@@ -12621,7 +12636,7 @@ signal in case of conversion failure.</p>
       </dt>
       
       <dd class="entry-const-doc">
-        <p>Like <code>#interface_age</code>, but from the headers used at
+        <p>Like <code><a href="Gtk.html#interface_age%3AUInt32-class-method">#interface_age</a></code>, but from the headers used at
 application compile time, rather than from the library linked
 against at application run time.</p>
       </dd>
@@ -12674,7 +12689,7 @@ allowed and what it does.</p>
       </dt>
       
       <dd class="entry-const-doc">
-        <p>Like <code>#major_version</code>, but from the headers used at
+        <p>Like <code><a href="Gtk.html#major_version%3AUInt32-class-method">#major_version</a></code>, but from the headers used at
 application compile time, rather than from the library linked
 against at application run time.</p>
       </dd>
@@ -12695,7 +12710,7 @@ against at application run time.</p>
       </dt>
       
       <dd class="entry-const-doc">
-        <p>Like <code>#micro_version</code>, but from the headers used at
+        <p>Like <code><a href="Gtk.html#micro_version%3AUInt32-class-method">#micro_version</a></code>, but from the headers used at
 application compile time, rather than from the library linked
 against at application run time.</p>
       </dd>
@@ -12706,7 +12721,7 @@ against at application run time.</p>
       </dt>
       
       <dd class="entry-const-doc">
-        <p>Like <code>#minor_version</code>, but from the headers used at
+        <p>Like <code><a href="Gtk.html#minor_version%3AUInt32-class-method">#minor_version</a></code>, but from the headers used at
 application compile time, rather than from the library linked
 against at application run time.</p>
       </dd>
@@ -13063,6 +13078,418 @@ in an idle job in the background.</p>
 
 
 
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#accelerator_get_default_mod_mask%3AGdk%3A%3AModifierType-class-method" class="signature"><strong>.accelerator_get_default_mod_mask</strong> : Gdk::ModifierType</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#accelerator_get_label%28accelerator_key%3AUInt32%2Caccelerator_mods%3AGdk%3A%3AModifierType%29%3AString-class-method" class="signature"><strong>.accelerator_get_label</strong>(accelerator_key : UInt32, accelerator_mods : Gdk::ModifierType) : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#accelerator_get_label_with_keycode%28display%3AGdk%3A%3ADisplay%3F%2Caccelerator_key%3AUInt32%2Ckeycode%3AUInt32%2Caccelerator_mods%3AGdk%3A%3AModifierType%29%3AString-class-method" class="signature"><strong>.accelerator_get_label_with_keycode</strong>(display : Gdk::Display?, accelerator_key : UInt32, keycode : UInt32, accelerator_mods : Gdk::ModifierType) : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#accelerator_name%28accelerator_key%3AUInt32%2Caccelerator_mods%3AGdk%3A%3AModifierType%29%3AString-class-method" class="signature"><strong>.accelerator_name</strong>(accelerator_key : UInt32, accelerator_mods : Gdk::ModifierType) : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#accelerator_name_with_keycode%28display%3AGdk%3A%3ADisplay%3F%2Caccelerator_key%3AUInt32%2Ckeycode%3AUInt32%2Caccelerator_mods%3AGdk%3A%3AModifierType%29%3AString-class-method" class="signature"><strong>.accelerator_name_with_keycode</strong>(display : Gdk::Display?, accelerator_key : UInt32, keycode : UInt32, accelerator_mods : Gdk::ModifierType) : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#accelerator_parse%28accelerator%3AString%29%3ABool-class-method" class="signature"><strong>.accelerator_parse</strong>(accelerator : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#accelerator_parse_with_keycode%28accelerator%3AString%2Cdisplay%3AGdk%3A%3ADisplay%3F%29%3ABool-class-method" class="signature"><strong>.accelerator_parse_with_keycode</strong>(accelerator : String, display : Gdk::Display?) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#accelerator_valid%28keyval%3AUInt32%2Cmodifiers%3AGdk%3A%3AModifierType%29%3ABool-class-method" class="signature"><strong>.accelerator_valid</strong>(keyval : UInt32, modifiers : Gdk::ModifierType) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#accessible_property_init_value%28property%3AGtk%3A%3AAccessibleProperty%2Cvalue%3A_%29%3ANil-class-method" class="signature"><strong>.accessible_property_init_value</strong>(property : Gtk::AccessibleProperty, value : _) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#accessible_relation_init_value%28relation%3AGtk%3A%3AAccessibleRelation%2Cvalue%3A_%29%3ANil-class-method" class="signature"><strong>.accessible_relation_init_value</strong>(relation : Gtk::AccessibleRelation, value : _) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#accessible_state_init_value%28state%3AGtk%3A%3AAccessibleState%2Cvalue%3A_%29%3ANil-class-method" class="signature"><strong>.accessible_state_init_value</strong>(state : Gtk::AccessibleState, value : _) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#binary_age%3AUInt32-class-method" class="signature"><strong>.binary_age</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bitset_iter_init_at%28set%3AGtk%3A%3ABitset%2Ctarget%3AUInt32%29%3AGtk%3A%3ABitsetIter-class-method" class="signature"><strong>.bitset_iter_init_at</strong>(set : Gtk::Bitset, target : UInt32) : Gtk::BitsetIter</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bitset_iter_init_first%28set%3AGtk%3A%3ABitset%29%3AGtk%3A%3ABitsetIter-class-method" class="signature"><strong>.bitset_iter_init_first</strong>(set : Gtk::Bitset) : Gtk::BitsetIter</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bitset_iter_init_last%28set%3AGtk%3A%3ABitset%29%3AGtk%3A%3ABitsetIter-class-method" class="signature"><strong>.bitset_iter_init_last</strong>(set : Gtk::Bitset) : Gtk::BitsetIter</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#builder_error_quark%3AUInt32-class-method" class="signature"><strong>.builder_error_quark</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#check_version%28required_major%3AUInt32%2Crequired_minor%3AUInt32%2Crequired_micro%3AUInt32%29%3AString%3F-class-method" class="signature"><strong>.check_version</strong>(required_major : UInt32, required_minor : UInt32, required_micro : UInt32) : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#constraint_vfl_parser_error_quark%3AUInt32-class-method" class="signature"><strong>.constraint_vfl_parser_error_quark</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#css_parser_error_quark%3AUInt32-class-method" class="signature"><strong>.css_parser_error_quark</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#css_parser_warning_quark%3AUInt32-class-method" class="signature"><strong>.css_parser_warning_quark</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#debug_flags%3AGtk%3A%3ADebugFlags-class-method" class="signature"><strong>.debug_flags</strong> : Gtk::DebugFlags</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#debug_flags%3D%28flags%3AGtk%3A%3ADebugFlags%29%3ANil-class-method" class="signature"><strong>.debug_flags=</strong>(flags : Gtk::DebugFlags) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#default_language%3APango%3A%3ALanguage-class-method" class="signature"><strong>.default_language</strong> : Pango::Language</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#disable_setlocale%3ANil-class-method" class="signature"><strong>.disable_setlocale</strong> : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#distribute_natural_allocation%28extra_space%3AInt32%2Csizes%3AEnumerable%28Gtk%3A%3ARequestedSize%29%29%3AInt32-class-method" class="signature"><strong>.distribute_natural_allocation</strong>(extra_space : Int32, sizes : Enumerable(Gtk::RequestedSize)) : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#editable_delegate_get_property%28object%3AGObject%3A%3AObject%2Cprop_id%3AUInt32%2Cvalue%3A_%2Cpspec%3AGObject%3A%3AParamSpec%29%3ABool-class-method" class="signature"><strong>.editable_delegate_get_property</strong>(object : GObject::Object, prop_id : UInt32, value : _, pspec : GObject::ParamSpec) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#editable_delegate_set_property%28object%3AGObject%3A%3AObject%2Cprop_id%3AUInt32%2Cvalue%3A_%2Cpspec%3AGObject%3A%3AParamSpec%29%3ABool-class-method" class="signature"><strong>.editable_delegate_set_property</strong>(object : GObject::Object, prop_id : UInt32, value : _, pspec : GObject::ParamSpec) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#editable_install_properties%28object_class%3AGObject%3A%3AObjectClass%2Cfirst_prop%3AUInt32%29%3AUInt32-class-method" class="signature"><strong>.editable_install_properties</strong>(object_class : GObject::ObjectClass, first_prop : UInt32) : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#enumerate_printers%28func%3APointer%28Void%29%2Cdata%3APointer%28Void%29%3F%2Cdestroy%3APointer%28Void%29%2Cwait%3ABool%29%3ANil-class-method" class="signature"><strong>.enumerate_printers</strong>(func : Pointer(Void), data : Pointer(Void)?, destroy : Pointer(Void), wait : Bool) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#file_chooser_error_quark%3AUInt32-class-method" class="signature"><strong>.file_chooser_error_quark</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hsv_to_rgb%28h%3AFloat32%2Cs%3AFloat32%2Cv%3AFloat32%2Cr%3AFloat32%2Cg%3AFloat32%2Cb%3AFloat32%29%3ANil-class-method" class="signature"><strong>.hsv_to_rgb</strong>(h : Float32, s : Float32, v : Float32, r : Float32, g : Float32, b : Float32) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#icon_theme_error_quark%3AUInt32-class-method" class="signature"><strong>.icon_theme_error_quark</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#init%3ANil-class-method" class="signature"><strong>.init</strong> : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#init_check%3ABool-class-method" class="signature"><strong>.init_check</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#interface_age%3AUInt32-class-method" class="signature"><strong>.interface_age</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#is_initialized%3ABool-class-method" class="signature"><strong>.is_initialized</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#locale_direction%3AGtk%3A%3ATextDirection-class-method" class="signature"><strong>.locale_direction</strong> : Gtk::TextDirection</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#major_version%3AUInt32-class-method" class="signature"><strong>.major_version</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#micro_version%3AUInt32-class-method" class="signature"><strong>.micro_version</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#minor_version%3AUInt32-class-method" class="signature"><strong>.minor_version</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#native_get_for_surface%28surface%3AGdk%3A%3ASurface%29%3AGtk%3A%3ANative%3F-class-method" class="signature"><strong>.native_get_for_surface</strong>(surface : Gdk::Surface) : Gtk::Native?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ordering_from_cmpfunc%28cmpfunc_result%3AInt32%29%3AGtk%3A%3AOrdering-class-method" class="signature"><strong>.ordering_from_cmpfunc</strong>(cmpfunc_result : Int32) : Gtk::Ordering</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#paper_size_get_default%3AString-class-method" class="signature"><strong>.paper_size_get_default</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#paper_size_get_paper_sizes%28include_custom%3ABool%29%3AGLib%3A%3AList-class-method" class="signature"><strong>.paper_size_get_paper_sizes</strong>(include_custom : Bool) : GLib::List</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#param_spec_expression%28name%3AString%2Cnick%3AString%2Cblurb%3AString%2Cflags%3AGObject%3A%3AParamFlags%29%3AGObject%3A%3AParamSpec-class-method" class="signature"><strong>.param_spec_expression</strong>(name : String, nick : String, blurb : String, flags : GObject::ParamFlags) : GObject::ParamSpec</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#print_error_quark%3AUInt32-class-method" class="signature"><strong>.print_error_quark</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#print_run_page_setup_dialog%28parent%3AGtk%3A%3AWindow%3F%2Cpage_setup%3AGtk%3A%3APageSetup%3F%2Csettings%3AGtk%3A%3APrintSettings%29%3AGtk%3A%3APageSetup-class-method" class="signature"><strong>.print_run_page_setup_dialog</strong>(parent : Gtk::Window?, page_setup : Gtk::PageSetup?, settings : Gtk::PrintSettings) : Gtk::PageSetup</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#print_run_page_setup_dialog_async%28parent%3AGtk%3A%3AWindow%3F%2Cpage_setup%3AGtk%3A%3APageSetup%3F%2Csettings%3AGtk%3A%3APrintSettings%2Cdone_cb%3APointer%28Void%29%2Cdata%3APointer%28Void%29%3F%29%3ANil-class-method" class="signature"><strong>.print_run_page_setup_dialog_async</strong>(parent : Gtk::Window?, page_setup : Gtk::PageSetup?, settings : Gtk::PrintSettings, done_cb : Pointer(Void), data : Pointer(Void)?) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#recent_manager_error_quark%3AUInt32-class-method" class="signature"><strong>.recent_manager_error_quark</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#render_activity%28context%3AGtk%3A%3AStyleContext%2Ccr%3ACairo%3A%3AContext%2Cx%3AFloat64%2Cy%3AFloat64%2Cwidth%3AFloat64%2Cheight%3AFloat64%29%3ANil-class-method" class="signature"><strong>.render_activity</strong>(context : Gtk::StyleContext, cr : Cairo::Context, x : Float64, y : Float64, width : Float64, height : Float64) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#render_arrow%28context%3AGtk%3A%3AStyleContext%2Ccr%3ACairo%3A%3AContext%2Cangle%3AFloat64%2Cx%3AFloat64%2Cy%3AFloat64%2Csize%3AFloat64%29%3ANil-class-method" class="signature"><strong>.render_arrow</strong>(context : Gtk::StyleContext, cr : Cairo::Context, angle : Float64, x : Float64, y : Float64, size : Float64) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#render_background%28context%3AGtk%3A%3AStyleContext%2Ccr%3ACairo%3A%3AContext%2Cx%3AFloat64%2Cy%3AFloat64%2Cwidth%3AFloat64%2Cheight%3AFloat64%29%3ANil-class-method" class="signature"><strong>.render_background</strong>(context : Gtk::StyleContext, cr : Cairo::Context, x : Float64, y : Float64, width : Float64, height : Float64) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#render_check%28context%3AGtk%3A%3AStyleContext%2Ccr%3ACairo%3A%3AContext%2Cx%3AFloat64%2Cy%3AFloat64%2Cwidth%3AFloat64%2Cheight%3AFloat64%29%3ANil-class-method" class="signature"><strong>.render_check</strong>(context : Gtk::StyleContext, cr : Cairo::Context, x : Float64, y : Float64, width : Float64, height : Float64) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#render_expander%28context%3AGtk%3A%3AStyleContext%2Ccr%3ACairo%3A%3AContext%2Cx%3AFloat64%2Cy%3AFloat64%2Cwidth%3AFloat64%2Cheight%3AFloat64%29%3ANil-class-method" class="signature"><strong>.render_expander</strong>(context : Gtk::StyleContext, cr : Cairo::Context, x : Float64, y : Float64, width : Float64, height : Float64) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#render_focus%28context%3AGtk%3A%3AStyleContext%2Ccr%3ACairo%3A%3AContext%2Cx%3AFloat64%2Cy%3AFloat64%2Cwidth%3AFloat64%2Cheight%3AFloat64%29%3ANil-class-method" class="signature"><strong>.render_focus</strong>(context : Gtk::StyleContext, cr : Cairo::Context, x : Float64, y : Float64, width : Float64, height : Float64) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#render_frame%28context%3AGtk%3A%3AStyleContext%2Ccr%3ACairo%3A%3AContext%2Cx%3AFloat64%2Cy%3AFloat64%2Cwidth%3AFloat64%2Cheight%3AFloat64%29%3ANil-class-method" class="signature"><strong>.render_frame</strong>(context : Gtk::StyleContext, cr : Cairo::Context, x : Float64, y : Float64, width : Float64, height : Float64) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#render_handle%28context%3AGtk%3A%3AStyleContext%2Ccr%3ACairo%3A%3AContext%2Cx%3AFloat64%2Cy%3AFloat64%2Cwidth%3AFloat64%2Cheight%3AFloat64%29%3ANil-class-method" class="signature"><strong>.render_handle</strong>(context : Gtk::StyleContext, cr : Cairo::Context, x : Float64, y : Float64, width : Float64, height : Float64) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#render_icon%28context%3AGtk%3A%3AStyleContext%2Ccr%3ACairo%3A%3AContext%2Ctexture%3AGdk%3A%3ATexture%2Cx%3AFloat64%2Cy%3AFloat64%29%3ANil-class-method" class="signature"><strong>.render_icon</strong>(context : Gtk::StyleContext, cr : Cairo::Context, texture : Gdk::Texture, x : Float64, y : Float64) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#render_layout%28context%3AGtk%3A%3AStyleContext%2Ccr%3ACairo%3A%3AContext%2Cx%3AFloat64%2Cy%3AFloat64%2Clayout%3APango%3A%3ALayout%29%3ANil-class-method" class="signature"><strong>.render_layout</strong>(context : Gtk::StyleContext, cr : Cairo::Context, x : Float64, y : Float64, layout : Pango::Layout) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#render_line%28context%3AGtk%3A%3AStyleContext%2Ccr%3ACairo%3A%3AContext%2Cx0%3AFloat64%2Cy0%3AFloat64%2Cx1%3AFloat64%2Cy1%3AFloat64%29%3ANil-class-method" class="signature"><strong>.render_line</strong>(context : Gtk::StyleContext, cr : Cairo::Context, x0 : Float64, y0 : Float64, x1 : Float64, y1 : Float64) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#render_option%28context%3AGtk%3A%3AStyleContext%2Ccr%3ACairo%3A%3AContext%2Cx%3AFloat64%2Cy%3AFloat64%2Cwidth%3AFloat64%2Cheight%3AFloat64%29%3ANil-class-method" class="signature"><strong>.render_option</strong>(context : Gtk::StyleContext, cr : Cairo::Context, x : Float64, y : Float64, width : Float64, height : Float64) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#rgb_to_hsv%28r%3AFloat32%2Cg%3AFloat32%2Cb%3AFloat32%2Ch%3AFloat32%2Cs%3AFloat32%2Cv%3AFloat32%29%3ANil-class-method" class="signature"><strong>.rgb_to_hsv</strong>(r : Float32, g : Float32, b : Float32, h : Float32, s : Float32, v : Float32) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#show_uri%28parent%3AGtk%3A%3AWindow%3F%2Curi%3AString%2Ctimestamp%3AUInt32%29%3ANil-class-method" class="signature"><strong>.show_uri</strong>(parent : Gtk::Window?, uri : String, timestamp : UInt32) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#show_uri_full%28parent%3AGtk%3A%3AWindow%3F%2Curi%3AString%2Ctimestamp%3AUInt32%2Ccancellable%3AGio%3A%3ACancellable%3F%2Ccallback%3APointer%28Void%29%3F%2Cuser_data%3APointer%28Void%29%3F%29%3ANil-class-method" class="signature"><strong>.show_uri_full</strong>(parent : Gtk::Window?, uri : String, timestamp : UInt32, cancellable : Gio::Cancellable?, callback : Pointer(Void)?, user_data : Pointer(Void)?) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#test_accessible_assertion_message_role%28domain%3AString%2Cfile%3AString%2Cline%3AInt32%2Cfunc%3AString%2Cexpr%3AString%2Caccessible%3AGtk%3A%3AAccessible%2Cexpected_role%3AGtk%3A%3AAccessibleRole%2Cactual_role%3AGtk%3A%3AAccessibleRole%29%3ANil-class-method" class="signature"><strong>.test_accessible_assertion_message_role</strong>(domain : String, file : String, line : Int32, func : String, expr : String, accessible : Gtk::Accessible, expected_role : Gtk::AccessibleRole, actual_role : Gtk::AccessibleRole) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#test_accessible_has_property%28accessible%3AGtk%3A%3AAccessible%2Cproperty%3AGtk%3A%3AAccessibleProperty%29%3ABool-class-method" class="signature"><strong>.test_accessible_has_property</strong>(accessible : Gtk::Accessible, property : Gtk::AccessibleProperty) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#test_accessible_has_relation%28accessible%3AGtk%3A%3AAccessible%2Crelation%3AGtk%3A%3AAccessibleRelation%29%3ABool-class-method" class="signature"><strong>.test_accessible_has_relation</strong>(accessible : Gtk::Accessible, relation : Gtk::AccessibleRelation) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#test_accessible_has_role%28accessible%3AGtk%3A%3AAccessible%2Crole%3AGtk%3A%3AAccessibleRole%29%3ABool-class-method" class="signature"><strong>.test_accessible_has_role</strong>(accessible : Gtk::Accessible, role : Gtk::AccessibleRole) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#test_accessible_has_state%28accessible%3AGtk%3A%3AAccessible%2Cstate%3AGtk%3A%3AAccessibleState%29%3ABool-class-method" class="signature"><strong>.test_accessible_has_state</strong>(accessible : Gtk::Accessible, state : Gtk::AccessibleState) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#test_list_all_types%3AEnumerable%28UInt64%29-class-method" class="signature"><strong>.test_list_all_types</strong> : Enumerable(UInt64)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#test_register_all_types%3ANil-class-method" class="signature"><strong>.test_register_all_types</strong> : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#test_widget_wait_for_draw%28widget%3AGtk%3A%3AWidget%29%3ANil-class-method" class="signature"><strong>.test_widget_wait_for_draw</strong>(widget : Gtk::Widget) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tree_create_row_drag_content%28tree_model%3AGtk%3A%3ATreeModel%2Cpath%3AGtk%3A%3ATreePath%29%3AGdk%3A%3AContentProvider-class-method" class="signature"><strong>.tree_create_row_drag_content</strong>(tree_model : Gtk::TreeModel, path : Gtk::TreePath) : Gdk::ContentProvider</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tree_get_row_drag_data%28value%3A_%29%3ABool-class-method" class="signature"><strong>.tree_get_row_drag_data</strong>(value : _) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tree_row_reference_deleted%28proxy%3AGObject%3A%3AObject%2Cpath%3AGtk%3A%3ATreePath%29%3ANil-class-method" class="signature"><strong>.tree_row_reference_deleted</strong>(proxy : GObject::Object, path : Gtk::TreePath) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tree_row_reference_inserted%28proxy%3AGObject%3A%3AObject%2Cpath%3AGtk%3A%3ATreePath%29%3ANil-class-method" class="signature"><strong>.tree_row_reference_inserted</strong>(proxy : GObject::Object, path : Gtk::TreePath) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#value_dup_expression%28value%3A_%29%3AGtk%3A%3AExpression%3F-class-method" class="signature"><strong>.value_dup_expression</strong>(value : _) : Gtk::Expression?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#value_get_expression%28value%3A_%29%3AGtk%3A%3AExpression%3F-class-method" class="signature"><strong>.value_get_expression</strong>(value : _) : Gtk::Expression?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#value_set_expression%28value%3A_%2Cexpression%3AGtk%3A%3AExpression%29%3ANil-class-method" class="signature"><strong>.value_set_expression</strong>(value : _, expression : Gtk::Expression) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#value_take_expression%28value%3A_%2Cexpression%3AGtk%3A%3AExpression%3F%29%3ANil-class-method" class="signature"><strong>.value_take_expression</strong>(value : _, expression : Gtk::Expression?) : Nil</a>
+        
+      </li>
+    
+  </ul>
+
 
 
   <h2>
@@ -13082,6 +13509,11 @@ in an idle job in the background.</p>
         
       </li>
     
+      <li class="entry-summary">
+        <a href="#show_uri_full_finish%28parent%3AGtk%3A%3AWindow%2Cresult%3AGio%3A%3AAsyncResult%29%3ABool-instance-method" class="signature"><strong>#show_uri_full_finish</strong>(parent : Gtk::Window, result : Gio::AsyncResult) : Bool</a>
+        
+      </li>
+    
   </ul>
 
 
@@ -13094,6 +13526,1136 @@ in an idle job in the background.</p>
 
 
 
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="accelerator_get_default_mod_mask:Gdk::ModifierType-class-method">
+      <div class="signature">
+        
+        def self.<strong>accelerator_get_default_mod_mask</strong> : <a href="Gdk/ModifierType.html">Gdk::ModifierType</a>
+
+        <a class="method-permalink" href="#accelerator_get_default_mod_mask%3AGdk%3A%3AModifierType-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="accelerator_get_label(accelerator_key:UInt32,accelerator_mods:Gdk::ModifierType):String-class-method">
+      <div class="signature">
+        
+        def self.<strong>accelerator_get_label</strong>(accelerator_key : UInt32, accelerator_mods : <a href="Gdk/ModifierType.html">Gdk::ModifierType</a>) : String
+
+        <a class="method-permalink" href="#accelerator_get_label%28accelerator_key%3AUInt32%2Caccelerator_mods%3AGdk%3A%3AModifierType%29%3AString-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="accelerator_get_label_with_keycode(display:Gdk::Display?,accelerator_key:UInt32,keycode:UInt32,accelerator_mods:Gdk::ModifierType):String-class-method">
+      <div class="signature">
+        
+        def self.<strong>accelerator_get_label_with_keycode</strong>(display : <a href="Gdk/Display.html">Gdk::Display</a>?, accelerator_key : UInt32, keycode : UInt32, accelerator_mods : <a href="Gdk/ModifierType.html">Gdk::ModifierType</a>) : String
+
+        <a class="method-permalink" href="#accelerator_get_label_with_keycode%28display%3AGdk%3A%3ADisplay%3F%2Caccelerator_key%3AUInt32%2Ckeycode%3AUInt32%2Caccelerator_mods%3AGdk%3A%3AModifierType%29%3AString-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="accelerator_name(accelerator_key:UInt32,accelerator_mods:Gdk::ModifierType):String-class-method">
+      <div class="signature">
+        
+        def self.<strong>accelerator_name</strong>(accelerator_key : UInt32, accelerator_mods : <a href="Gdk/ModifierType.html">Gdk::ModifierType</a>) : String
+
+        <a class="method-permalink" href="#accelerator_name%28accelerator_key%3AUInt32%2Caccelerator_mods%3AGdk%3A%3AModifierType%29%3AString-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="accelerator_name_with_keycode(display:Gdk::Display?,accelerator_key:UInt32,keycode:UInt32,accelerator_mods:Gdk::ModifierType):String-class-method">
+      <div class="signature">
+        
+        def self.<strong>accelerator_name_with_keycode</strong>(display : <a href="Gdk/Display.html">Gdk::Display</a>?, accelerator_key : UInt32, keycode : UInt32, accelerator_mods : <a href="Gdk/ModifierType.html">Gdk::ModifierType</a>) : String
+
+        <a class="method-permalink" href="#accelerator_name_with_keycode%28display%3AGdk%3A%3ADisplay%3F%2Caccelerator_key%3AUInt32%2Ckeycode%3AUInt32%2Caccelerator_mods%3AGdk%3A%3AModifierType%29%3AString-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="accelerator_parse(accelerator:String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>accelerator_parse</strong>(accelerator : String) : Bool
+
+        <a class="method-permalink" href="#accelerator_parse%28accelerator%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="accelerator_parse_with_keycode(accelerator:String,display:Gdk::Display?):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>accelerator_parse_with_keycode</strong>(accelerator : String, display : <a href="Gdk/Display.html">Gdk::Display</a>?) : Bool
+
+        <a class="method-permalink" href="#accelerator_parse_with_keycode%28accelerator%3AString%2Cdisplay%3AGdk%3A%3ADisplay%3F%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="accelerator_valid(keyval:UInt32,modifiers:Gdk::ModifierType):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>accelerator_valid</strong>(keyval : UInt32, modifiers : <a href="Gdk/ModifierType.html">Gdk::ModifierType</a>) : Bool
+
+        <a class="method-permalink" href="#accelerator_valid%28keyval%3AUInt32%2Cmodifiers%3AGdk%3A%3AModifierType%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="accessible_property_init_value(property:Gtk::AccessibleProperty,value:_):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>accessible_property_init_value</strong>(property : <a href="Gtk/AccessibleProperty.html">Gtk::AccessibleProperty</a>, value : _) : Nil
+
+        <a class="method-permalink" href="#accessible_property_init_value%28property%3AGtk%3A%3AAccessibleProperty%2Cvalue%3A_%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="accessible_relation_init_value(relation:Gtk::AccessibleRelation,value:_):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>accessible_relation_init_value</strong>(relation : <a href="Gtk/AccessibleRelation.html">Gtk::AccessibleRelation</a>, value : _) : Nil
+
+        <a class="method-permalink" href="#accessible_relation_init_value%28relation%3AGtk%3A%3AAccessibleRelation%2Cvalue%3A_%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="accessible_state_init_value(state:Gtk::AccessibleState,value:_):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>accessible_state_init_value</strong>(state : <a href="Gtk/AccessibleState.html">Gtk::AccessibleState</a>, value : _) : Nil
+
+        <a class="method-permalink" href="#accessible_state_init_value%28state%3AGtk%3A%3AAccessibleState%2Cvalue%3A_%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="binary_age:UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>binary_age</strong> : UInt32
+
+        <a class="method-permalink" href="#binary_age%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bitset_iter_init_at(set:Gtk::Bitset,target:UInt32):Gtk::BitsetIter-class-method">
+      <div class="signature">
+        
+        def self.<strong>bitset_iter_init_at</strong>(set : <a href="Gtk/Bitset.html">Gtk::Bitset</a>, target : UInt32) : <a href="Gtk/BitsetIter.html">Gtk::BitsetIter</a>
+
+        <a class="method-permalink" href="#bitset_iter_init_at%28set%3AGtk%3A%3ABitset%2Ctarget%3AUInt32%29%3AGtk%3A%3ABitsetIter-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bitset_iter_init_first(set:Gtk::Bitset):Gtk::BitsetIter-class-method">
+      <div class="signature">
+        
+        def self.<strong>bitset_iter_init_first</strong>(set : <a href="Gtk/Bitset.html">Gtk::Bitset</a>) : <a href="Gtk/BitsetIter.html">Gtk::BitsetIter</a>
+
+        <a class="method-permalink" href="#bitset_iter_init_first%28set%3AGtk%3A%3ABitset%29%3AGtk%3A%3ABitsetIter-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bitset_iter_init_last(set:Gtk::Bitset):Gtk::BitsetIter-class-method">
+      <div class="signature">
+        
+        def self.<strong>bitset_iter_init_last</strong>(set : <a href="Gtk/Bitset.html">Gtk::Bitset</a>) : <a href="Gtk/BitsetIter.html">Gtk::BitsetIter</a>
+
+        <a class="method-permalink" href="#bitset_iter_init_last%28set%3AGtk%3A%3ABitset%29%3AGtk%3A%3ABitsetIter-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="builder_error_quark:UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>builder_error_quark</strong> : UInt32
+
+        <a class="method-permalink" href="#builder_error_quark%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="check_version(required_major:UInt32,required_minor:UInt32,required_micro:UInt32):String?-class-method">
+      <div class="signature">
+        
+        def self.<strong>check_version</strong>(required_major : UInt32, required_minor : UInt32, required_micro : UInt32) : String?
+
+        <a class="method-permalink" href="#check_version%28required_major%3AUInt32%2Crequired_minor%3AUInt32%2Crequired_micro%3AUInt32%29%3AString%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="constraint_vfl_parser_error_quark:UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>constraint_vfl_parser_error_quark</strong> : UInt32
+
+        <a class="method-permalink" href="#constraint_vfl_parser_error_quark%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="css_parser_error_quark:UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>css_parser_error_quark</strong> : UInt32
+
+        <a class="method-permalink" href="#css_parser_error_quark%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="css_parser_warning_quark:UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>css_parser_warning_quark</strong> : UInt32
+
+        <a class="method-permalink" href="#css_parser_warning_quark%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="debug_flags:Gtk::DebugFlags-class-method">
+      <div class="signature">
+        
+        def self.<strong>debug_flags</strong> : <a href="Gtk/DebugFlags.html">Gtk::DebugFlags</a>
+
+        <a class="method-permalink" href="#debug_flags%3AGtk%3A%3ADebugFlags-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="debug_flags=(flags:Gtk::DebugFlags):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>debug_flags=</strong>(flags : <a href="Gtk/DebugFlags.html">Gtk::DebugFlags</a>) : Nil
+
+        <a class="method-permalink" href="#debug_flags%3D%28flags%3AGtk%3A%3ADebugFlags%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="default_language:Pango::Language-class-method">
+      <div class="signature">
+        
+        def self.<strong>default_language</strong> : <a href="Pango/Language.html">Pango::Language</a>
+
+        <a class="method-permalink" href="#default_language%3APango%3A%3ALanguage-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="disable_setlocale:Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>disable_setlocale</strong> : Nil
+
+        <a class="method-permalink" href="#disable_setlocale%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="distribute_natural_allocation(extra_space:Int32,sizes:Enumerable(Gtk::RequestedSize)):Int32-class-method">
+      <div class="signature">
+        
+        def self.<strong>distribute_natural_allocation</strong>(extra_space : Int32, sizes : Enumerable(<a href="Gtk/RequestedSize.html">Gtk::RequestedSize</a>)) : Int32
+
+        <a class="method-permalink" href="#distribute_natural_allocation%28extra_space%3AInt32%2Csizes%3AEnumerable%28Gtk%3A%3ARequestedSize%29%29%3AInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="editable_delegate_get_property(object:GObject::Object,prop_id:UInt32,value:_,pspec:GObject::ParamSpec):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>editable_delegate_get_property</strong>(object : <a href="GObject/Object.html">GObject::Object</a>, prop_id : UInt32, value : _, pspec : <a href="GObject/ParamSpec.html">GObject::ParamSpec</a>) : Bool
+
+        <a class="method-permalink" href="#editable_delegate_get_property%28object%3AGObject%3A%3AObject%2Cprop_id%3AUInt32%2Cvalue%3A_%2Cpspec%3AGObject%3A%3AParamSpec%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="editable_delegate_set_property(object:GObject::Object,prop_id:UInt32,value:_,pspec:GObject::ParamSpec):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>editable_delegate_set_property</strong>(object : <a href="GObject/Object.html">GObject::Object</a>, prop_id : UInt32, value : _, pspec : <a href="GObject/ParamSpec.html">GObject::ParamSpec</a>) : Bool
+
+        <a class="method-permalink" href="#editable_delegate_set_property%28object%3AGObject%3A%3AObject%2Cprop_id%3AUInt32%2Cvalue%3A_%2Cpspec%3AGObject%3A%3AParamSpec%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="editable_install_properties(object_class:GObject::ObjectClass,first_prop:UInt32):UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>editable_install_properties</strong>(object_class : GObject::ObjectClass, first_prop : UInt32) : UInt32
+
+        <a class="method-permalink" href="#editable_install_properties%28object_class%3AGObject%3A%3AObjectClass%2Cfirst_prop%3AUInt32%29%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="enumerate_printers(func:Pointer(Void),data:Pointer(Void)?,destroy:Pointer(Void),wait:Bool):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>enumerate_printers</strong>(func : Pointer(Void), data : Pointer(Void)?, destroy : Pointer(Void), wait : Bool) : Nil
+
+        <a class="method-permalink" href="#enumerate_printers%28func%3APointer%28Void%29%2Cdata%3APointer%28Void%29%3F%2Cdestroy%3APointer%28Void%29%2Cwait%3ABool%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="file_chooser_error_quark:UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>file_chooser_error_quark</strong> : UInt32
+
+        <a class="method-permalink" href="#file_chooser_error_quark%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hsv_to_rgb(h:Float32,s:Float32,v:Float32,r:Float32,g:Float32,b:Float32):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>hsv_to_rgb</strong>(h : Float32, s : Float32, v : Float32, r : Float32, g : Float32, b : Float32) : Nil
+
+        <a class="method-permalink" href="#hsv_to_rgb%28h%3AFloat32%2Cs%3AFloat32%2Cv%3AFloat32%2Cr%3AFloat32%2Cg%3AFloat32%2Cb%3AFloat32%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="icon_theme_error_quark:UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>icon_theme_error_quark</strong> : UInt32
+
+        <a class="method-permalink" href="#icon_theme_error_quark%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="init:Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>init</strong> : Nil
+
+        <a class="method-permalink" href="#init%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="init_check:Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>init_check</strong> : Bool
+
+        <a class="method-permalink" href="#init_check%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="interface_age:UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>interface_age</strong> : UInt32
+
+        <a class="method-permalink" href="#interface_age%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="is_initialized:Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>is_initialized</strong> : Bool
+
+        <a class="method-permalink" href="#is_initialized%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="locale_direction:Gtk::TextDirection-class-method">
+      <div class="signature">
+        
+        def self.<strong>locale_direction</strong> : <a href="Gtk/TextDirection.html">Gtk::TextDirection</a>
+
+        <a class="method-permalink" href="#locale_direction%3AGtk%3A%3ATextDirection-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="major_version:UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>major_version</strong> : UInt32
+
+        <a class="method-permalink" href="#major_version%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="micro_version:UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>micro_version</strong> : UInt32
+
+        <a class="method-permalink" href="#micro_version%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="minor_version:UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>minor_version</strong> : UInt32
+
+        <a class="method-permalink" href="#minor_version%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="native_get_for_surface(surface:Gdk::Surface):Gtk::Native?-class-method">
+      <div class="signature">
+        
+        def self.<strong>native_get_for_surface</strong>(surface : <a href="Gdk/Surface.html">Gdk::Surface</a>) : <a href="Gtk/Native.html">Gtk::Native</a>?
+
+        <a class="method-permalink" href="#native_get_for_surface%28surface%3AGdk%3A%3ASurface%29%3AGtk%3A%3ANative%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ordering_from_cmpfunc(cmpfunc_result:Int32):Gtk::Ordering-class-method">
+      <div class="signature">
+        
+        def self.<strong>ordering_from_cmpfunc</strong>(cmpfunc_result : Int32) : <a href="Gtk/Ordering.html">Gtk::Ordering</a>
+
+        <a class="method-permalink" href="#ordering_from_cmpfunc%28cmpfunc_result%3AInt32%29%3AGtk%3A%3AOrdering-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="paper_size_get_default:String-class-method">
+      <div class="signature">
+        
+        def self.<strong>paper_size_get_default</strong> : String
+
+        <a class="method-permalink" href="#paper_size_get_default%3AString-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="paper_size_get_paper_sizes(include_custom:Bool):GLib::List-class-method">
+      <div class="signature">
+        
+        def self.<strong>paper_size_get_paper_sizes</strong>(include_custom : Bool) : <a href="GLib/List.html">GLib::List</a>
+
+        <a class="method-permalink" href="#paper_size_get_paper_sizes%28include_custom%3ABool%29%3AGLib%3A%3AList-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="param_spec_expression(name:String,nick:String,blurb:String,flags:GObject::ParamFlags):GObject::ParamSpec-class-method">
+      <div class="signature">
+        
+        def self.<strong>param_spec_expression</strong>(name : String, nick : String, blurb : String, flags : <a href="GObject/ParamFlags.html">GObject::ParamFlags</a>) : <a href="GObject/ParamSpec.html">GObject::ParamSpec</a>
+
+        <a class="method-permalink" href="#param_spec_expression%28name%3AString%2Cnick%3AString%2Cblurb%3AString%2Cflags%3AGObject%3A%3AParamFlags%29%3AGObject%3A%3AParamSpec-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="print_error_quark:UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>print_error_quark</strong> : UInt32
+
+        <a class="method-permalink" href="#print_error_quark%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="print_run_page_setup_dialog(parent:Gtk::Window?,page_setup:Gtk::PageSetup?,settings:Gtk::PrintSettings):Gtk::PageSetup-class-method">
+      <div class="signature">
+        
+        def self.<strong>print_run_page_setup_dialog</strong>(parent : <a href="Gtk/Window.html">Gtk::Window</a>?, page_setup : <a href="Gtk/PageSetup.html">Gtk::PageSetup</a>?, settings : <a href="Gtk/PrintSettings.html">Gtk::PrintSettings</a>) : <a href="Gtk/PageSetup.html">Gtk::PageSetup</a>
+
+        <a class="method-permalink" href="#print_run_page_setup_dialog%28parent%3AGtk%3A%3AWindow%3F%2Cpage_setup%3AGtk%3A%3APageSetup%3F%2Csettings%3AGtk%3A%3APrintSettings%29%3AGtk%3A%3APageSetup-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="print_run_page_setup_dialog_async(parent:Gtk::Window?,page_setup:Gtk::PageSetup?,settings:Gtk::PrintSettings,done_cb:Pointer(Void),data:Pointer(Void)?):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>print_run_page_setup_dialog_async</strong>(parent : <a href="Gtk/Window.html">Gtk::Window</a>?, page_setup : <a href="Gtk/PageSetup.html">Gtk::PageSetup</a>?, settings : <a href="Gtk/PrintSettings.html">Gtk::PrintSettings</a>, done_cb : Pointer(Void), data : Pointer(Void)?) : Nil
+
+        <a class="method-permalink" href="#print_run_page_setup_dialog_async%28parent%3AGtk%3A%3AWindow%3F%2Cpage_setup%3AGtk%3A%3APageSetup%3F%2Csettings%3AGtk%3A%3APrintSettings%2Cdone_cb%3APointer%28Void%29%2Cdata%3APointer%28Void%29%3F%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="recent_manager_error_quark:UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>recent_manager_error_quark</strong> : UInt32
+
+        <a class="method-permalink" href="#recent_manager_error_quark%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="render_activity(context:Gtk::StyleContext,cr:Cairo::Context,x:Float64,y:Float64,width:Float64,height:Float64):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>render_activity</strong>(context : <a href="Gtk/StyleContext.html">Gtk::StyleContext</a>, cr : <a href="Cairo/Context.html">Cairo::Context</a>, x : Float64, y : Float64, width : Float64, height : Float64) : Nil
+
+        <a class="method-permalink" href="#render_activity%28context%3AGtk%3A%3AStyleContext%2Ccr%3ACairo%3A%3AContext%2Cx%3AFloat64%2Cy%3AFloat64%2Cwidth%3AFloat64%2Cheight%3AFloat64%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="render_arrow(context:Gtk::StyleContext,cr:Cairo::Context,angle:Float64,x:Float64,y:Float64,size:Float64):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>render_arrow</strong>(context : <a href="Gtk/StyleContext.html">Gtk::StyleContext</a>, cr : <a href="Cairo/Context.html">Cairo::Context</a>, angle : Float64, x : Float64, y : Float64, size : Float64) : Nil
+
+        <a class="method-permalink" href="#render_arrow%28context%3AGtk%3A%3AStyleContext%2Ccr%3ACairo%3A%3AContext%2Cangle%3AFloat64%2Cx%3AFloat64%2Cy%3AFloat64%2Csize%3AFloat64%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="render_background(context:Gtk::StyleContext,cr:Cairo::Context,x:Float64,y:Float64,width:Float64,height:Float64):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>render_background</strong>(context : <a href="Gtk/StyleContext.html">Gtk::StyleContext</a>, cr : <a href="Cairo/Context.html">Cairo::Context</a>, x : Float64, y : Float64, width : Float64, height : Float64) : Nil
+
+        <a class="method-permalink" href="#render_background%28context%3AGtk%3A%3AStyleContext%2Ccr%3ACairo%3A%3AContext%2Cx%3AFloat64%2Cy%3AFloat64%2Cwidth%3AFloat64%2Cheight%3AFloat64%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="render_check(context:Gtk::StyleContext,cr:Cairo::Context,x:Float64,y:Float64,width:Float64,height:Float64):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>render_check</strong>(context : <a href="Gtk/StyleContext.html">Gtk::StyleContext</a>, cr : <a href="Cairo/Context.html">Cairo::Context</a>, x : Float64, y : Float64, width : Float64, height : Float64) : Nil
+
+        <a class="method-permalink" href="#render_check%28context%3AGtk%3A%3AStyleContext%2Ccr%3ACairo%3A%3AContext%2Cx%3AFloat64%2Cy%3AFloat64%2Cwidth%3AFloat64%2Cheight%3AFloat64%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="render_expander(context:Gtk::StyleContext,cr:Cairo::Context,x:Float64,y:Float64,width:Float64,height:Float64):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>render_expander</strong>(context : <a href="Gtk/StyleContext.html">Gtk::StyleContext</a>, cr : <a href="Cairo/Context.html">Cairo::Context</a>, x : Float64, y : Float64, width : Float64, height : Float64) : Nil
+
+        <a class="method-permalink" href="#render_expander%28context%3AGtk%3A%3AStyleContext%2Ccr%3ACairo%3A%3AContext%2Cx%3AFloat64%2Cy%3AFloat64%2Cwidth%3AFloat64%2Cheight%3AFloat64%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="render_focus(context:Gtk::StyleContext,cr:Cairo::Context,x:Float64,y:Float64,width:Float64,height:Float64):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>render_focus</strong>(context : <a href="Gtk/StyleContext.html">Gtk::StyleContext</a>, cr : <a href="Cairo/Context.html">Cairo::Context</a>, x : Float64, y : Float64, width : Float64, height : Float64) : Nil
+
+        <a class="method-permalink" href="#render_focus%28context%3AGtk%3A%3AStyleContext%2Ccr%3ACairo%3A%3AContext%2Cx%3AFloat64%2Cy%3AFloat64%2Cwidth%3AFloat64%2Cheight%3AFloat64%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="render_frame(context:Gtk::StyleContext,cr:Cairo::Context,x:Float64,y:Float64,width:Float64,height:Float64):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>render_frame</strong>(context : <a href="Gtk/StyleContext.html">Gtk::StyleContext</a>, cr : <a href="Cairo/Context.html">Cairo::Context</a>, x : Float64, y : Float64, width : Float64, height : Float64) : Nil
+
+        <a class="method-permalink" href="#render_frame%28context%3AGtk%3A%3AStyleContext%2Ccr%3ACairo%3A%3AContext%2Cx%3AFloat64%2Cy%3AFloat64%2Cwidth%3AFloat64%2Cheight%3AFloat64%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="render_handle(context:Gtk::StyleContext,cr:Cairo::Context,x:Float64,y:Float64,width:Float64,height:Float64):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>render_handle</strong>(context : <a href="Gtk/StyleContext.html">Gtk::StyleContext</a>, cr : <a href="Cairo/Context.html">Cairo::Context</a>, x : Float64, y : Float64, width : Float64, height : Float64) : Nil
+
+        <a class="method-permalink" href="#render_handle%28context%3AGtk%3A%3AStyleContext%2Ccr%3ACairo%3A%3AContext%2Cx%3AFloat64%2Cy%3AFloat64%2Cwidth%3AFloat64%2Cheight%3AFloat64%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="render_icon(context:Gtk::StyleContext,cr:Cairo::Context,texture:Gdk::Texture,x:Float64,y:Float64):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>render_icon</strong>(context : <a href="Gtk/StyleContext.html">Gtk::StyleContext</a>, cr : <a href="Cairo/Context.html">Cairo::Context</a>, texture : <a href="Gdk/Texture.html">Gdk::Texture</a>, x : Float64, y : Float64) : Nil
+
+        <a class="method-permalink" href="#render_icon%28context%3AGtk%3A%3AStyleContext%2Ccr%3ACairo%3A%3AContext%2Ctexture%3AGdk%3A%3ATexture%2Cx%3AFloat64%2Cy%3AFloat64%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="render_layout(context:Gtk::StyleContext,cr:Cairo::Context,x:Float64,y:Float64,layout:Pango::Layout):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>render_layout</strong>(context : <a href="Gtk/StyleContext.html">Gtk::StyleContext</a>, cr : <a href="Cairo/Context.html">Cairo::Context</a>, x : Float64, y : Float64, layout : <a href="Pango/Layout.html">Pango::Layout</a>) : Nil
+
+        <a class="method-permalink" href="#render_layout%28context%3AGtk%3A%3AStyleContext%2Ccr%3ACairo%3A%3AContext%2Cx%3AFloat64%2Cy%3AFloat64%2Clayout%3APango%3A%3ALayout%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="render_line(context:Gtk::StyleContext,cr:Cairo::Context,x0:Float64,y0:Float64,x1:Float64,y1:Float64):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>render_line</strong>(context : <a href="Gtk/StyleContext.html">Gtk::StyleContext</a>, cr : <a href="Cairo/Context.html">Cairo::Context</a>, x0 : Float64, y0 : Float64, x1 : Float64, y1 : Float64) : Nil
+
+        <a class="method-permalink" href="#render_line%28context%3AGtk%3A%3AStyleContext%2Ccr%3ACairo%3A%3AContext%2Cx0%3AFloat64%2Cy0%3AFloat64%2Cx1%3AFloat64%2Cy1%3AFloat64%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="render_option(context:Gtk::StyleContext,cr:Cairo::Context,x:Float64,y:Float64,width:Float64,height:Float64):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>render_option</strong>(context : <a href="Gtk/StyleContext.html">Gtk::StyleContext</a>, cr : <a href="Cairo/Context.html">Cairo::Context</a>, x : Float64, y : Float64, width : Float64, height : Float64) : Nil
+
+        <a class="method-permalink" href="#render_option%28context%3AGtk%3A%3AStyleContext%2Ccr%3ACairo%3A%3AContext%2Cx%3AFloat64%2Cy%3AFloat64%2Cwidth%3AFloat64%2Cheight%3AFloat64%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="rgb_to_hsv(r:Float32,g:Float32,b:Float32,h:Float32,s:Float32,v:Float32):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>rgb_to_hsv</strong>(r : Float32, g : Float32, b : Float32, h : Float32, s : Float32, v : Float32) : Nil
+
+        <a class="method-permalink" href="#rgb_to_hsv%28r%3AFloat32%2Cg%3AFloat32%2Cb%3AFloat32%2Ch%3AFloat32%2Cs%3AFloat32%2Cv%3AFloat32%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="show_uri(parent:Gtk::Window?,uri:String,timestamp:UInt32):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>show_uri</strong>(parent : <a href="Gtk/Window.html">Gtk::Window</a>?, uri : String, timestamp : UInt32) : Nil
+
+        <a class="method-permalink" href="#show_uri%28parent%3AGtk%3A%3AWindow%3F%2Curi%3AString%2Ctimestamp%3AUInt32%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="show_uri_full(parent:Gtk::Window?,uri:String,timestamp:UInt32,cancellable:Gio::Cancellable?,callback:Pointer(Void)?,user_data:Pointer(Void)?):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>show_uri_full</strong>(parent : <a href="Gtk/Window.html">Gtk::Window</a>?, uri : String, timestamp : UInt32, cancellable : <a href="Gio/Cancellable.html">Gio::Cancellable</a>?, callback : Pointer(Void)?, user_data : Pointer(Void)?) : Nil
+
+        <a class="method-permalink" href="#show_uri_full%28parent%3AGtk%3A%3AWindow%3F%2Curi%3AString%2Ctimestamp%3AUInt32%2Ccancellable%3AGio%3A%3ACancellable%3F%2Ccallback%3APointer%28Void%29%3F%2Cuser_data%3APointer%28Void%29%3F%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="test_accessible_assertion_message_role(domain:String,file:String,line:Int32,func:String,expr:String,accessible:Gtk::Accessible,expected_role:Gtk::AccessibleRole,actual_role:Gtk::AccessibleRole):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>test_accessible_assertion_message_role</strong>(domain : String, file : String, line : Int32, func : String, expr : String, accessible : <a href="Gtk/Accessible.html">Gtk::Accessible</a>, expected_role : <a href="Gtk/AccessibleRole.html">Gtk::AccessibleRole</a>, actual_role : <a href="Gtk/AccessibleRole.html">Gtk::AccessibleRole</a>) : Nil
+
+        <a class="method-permalink" href="#test_accessible_assertion_message_role%28domain%3AString%2Cfile%3AString%2Cline%3AInt32%2Cfunc%3AString%2Cexpr%3AString%2Caccessible%3AGtk%3A%3AAccessible%2Cexpected_role%3AGtk%3A%3AAccessibleRole%2Cactual_role%3AGtk%3A%3AAccessibleRole%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="test_accessible_has_property(accessible:Gtk::Accessible,property:Gtk::AccessibleProperty):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>test_accessible_has_property</strong>(accessible : <a href="Gtk/Accessible.html">Gtk::Accessible</a>, property : <a href="Gtk/AccessibleProperty.html">Gtk::AccessibleProperty</a>) : Bool
+
+        <a class="method-permalink" href="#test_accessible_has_property%28accessible%3AGtk%3A%3AAccessible%2Cproperty%3AGtk%3A%3AAccessibleProperty%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="test_accessible_has_relation(accessible:Gtk::Accessible,relation:Gtk::AccessibleRelation):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>test_accessible_has_relation</strong>(accessible : <a href="Gtk/Accessible.html">Gtk::Accessible</a>, relation : <a href="Gtk/AccessibleRelation.html">Gtk::AccessibleRelation</a>) : Bool
+
+        <a class="method-permalink" href="#test_accessible_has_relation%28accessible%3AGtk%3A%3AAccessible%2Crelation%3AGtk%3A%3AAccessibleRelation%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="test_accessible_has_role(accessible:Gtk::Accessible,role:Gtk::AccessibleRole):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>test_accessible_has_role</strong>(accessible : <a href="Gtk/Accessible.html">Gtk::Accessible</a>, role : <a href="Gtk/AccessibleRole.html">Gtk::AccessibleRole</a>) : Bool
+
+        <a class="method-permalink" href="#test_accessible_has_role%28accessible%3AGtk%3A%3AAccessible%2Crole%3AGtk%3A%3AAccessibleRole%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="test_accessible_has_state(accessible:Gtk::Accessible,state:Gtk::AccessibleState):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>test_accessible_has_state</strong>(accessible : <a href="Gtk/Accessible.html">Gtk::Accessible</a>, state : <a href="Gtk/AccessibleState.html">Gtk::AccessibleState</a>) : Bool
+
+        <a class="method-permalink" href="#test_accessible_has_state%28accessible%3AGtk%3A%3AAccessible%2Cstate%3AGtk%3A%3AAccessibleState%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="test_list_all_types:Enumerable(UInt64)-class-method">
+      <div class="signature">
+        
+        def self.<strong>test_list_all_types</strong> : Enumerable(UInt64)
+
+        <a class="method-permalink" href="#test_list_all_types%3AEnumerable%28UInt64%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="test_register_all_types:Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>test_register_all_types</strong> : Nil
+
+        <a class="method-permalink" href="#test_register_all_types%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="test_widget_wait_for_draw(widget:Gtk::Widget):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>test_widget_wait_for_draw</strong>(widget : <a href="Gtk/Widget.html">Gtk::Widget</a>) : Nil
+
+        <a class="method-permalink" href="#test_widget_wait_for_draw%28widget%3AGtk%3A%3AWidget%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tree_create_row_drag_content(tree_model:Gtk::TreeModel,path:Gtk::TreePath):Gdk::ContentProvider-class-method">
+      <div class="signature">
+        
+        def self.<strong>tree_create_row_drag_content</strong>(tree_model : <a href="Gtk/TreeModel.html">Gtk::TreeModel</a>, path : <a href="Gtk/TreePath.html">Gtk::TreePath</a>) : <a href="Gdk/ContentProvider.html">Gdk::ContentProvider</a>
+
+        <a class="method-permalink" href="#tree_create_row_drag_content%28tree_model%3AGtk%3A%3ATreeModel%2Cpath%3AGtk%3A%3ATreePath%29%3AGdk%3A%3AContentProvider-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tree_get_row_drag_data(value:_):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>tree_get_row_drag_data</strong>(value : _) : Bool
+
+        <a class="method-permalink" href="#tree_get_row_drag_data%28value%3A_%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tree_row_reference_deleted(proxy:GObject::Object,path:Gtk::TreePath):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>tree_row_reference_deleted</strong>(proxy : <a href="GObject/Object.html">GObject::Object</a>, path : <a href="Gtk/TreePath.html">Gtk::TreePath</a>) : Nil
+
+        <a class="method-permalink" href="#tree_row_reference_deleted%28proxy%3AGObject%3A%3AObject%2Cpath%3AGtk%3A%3ATreePath%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tree_row_reference_inserted(proxy:GObject::Object,path:Gtk::TreePath):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>tree_row_reference_inserted</strong>(proxy : <a href="GObject/Object.html">GObject::Object</a>, path : <a href="Gtk/TreePath.html">Gtk::TreePath</a>) : Nil
+
+        <a class="method-permalink" href="#tree_row_reference_inserted%28proxy%3AGObject%3A%3AObject%2Cpath%3AGtk%3A%3ATreePath%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="value_dup_expression(value:_):Gtk::Expression?-class-method">
+      <div class="signature">
+        
+        def self.<strong>value_dup_expression</strong>(value : _) : <a href="Gtk/Expression.html">Gtk::Expression</a>?
+
+        <a class="method-permalink" href="#value_dup_expression%28value%3A_%29%3AGtk%3A%3AExpression%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="value_get_expression(value:_):Gtk::Expression?-class-method">
+      <div class="signature">
+        
+        def self.<strong>value_get_expression</strong>(value : _) : <a href="Gtk/Expression.html">Gtk::Expression</a>?
+
+        <a class="method-permalink" href="#value_get_expression%28value%3A_%29%3AGtk%3A%3AExpression%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="value_set_expression(value:_,expression:Gtk::Expression):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>value_set_expression</strong>(value : _, expression : <a href="Gtk/Expression.html">Gtk::Expression</a>) : Nil
+
+        <a class="method-permalink" href="#value_set_expression%28value%3A_%2Cexpression%3AGtk%3A%3AExpression%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="value_take_expression(value:_,expression:Gtk::Expression?):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>value_take_expression</strong>(value : _, expression : <a href="Gtk/Expression.html">Gtk::Expression</a>?) : Nil
+
+        <a class="method-permalink" href="#value_take_expression%28value%3A_%2Cexpression%3AGtk%3A%3AExpression%3F%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
 
 
 
@@ -13119,6 +14681,20 @@ in an idle job in the background.</p>
           <p>This is a convenience function for showing an application’s about box. The constructed dialog is associated with
 the parent window and NOT reused for future invocations of this function.</p>
         </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="show_uri_full_finish(parent:Gtk::Window,result:Gio::AsyncResult):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>show_uri_full_finish</strong>(parent : <a href="Gtk/Window.html">Gtk::Window</a>, result : <a href="Gio/AsyncResult.html">Gio::AsyncResult</a>) : Bool
+
+        <a class="method-permalink" href="#show_uri_full_finish%28parent%3AGtk%3A%3AWindow%2Cresult%3AGio%3A%3AAsyncResult%29%3ABool-instance-method">#</a>
+      </div>
       
       <br/>
       <div>

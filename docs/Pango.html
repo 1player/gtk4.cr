@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.3.0">
-<meta name="crystal_docs.project_version" content="0.5.0">
+<meta name="generator" content="Crystal Docs 1.3.2">
+<meta name="crystal_docs.project_version" content="0.7.0">
 <meta name="crystal_docs.project_name" content="GTK4.cr">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="js/doc.js"></script>
 
   <meta name="repository-name" content="GTK4.cr">
-  <title>Pango - GTK4.cr 0.5.0</title>
+  <title>Pango - GTK4.cr 0.7.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        0.5.0
+        0.7.0
       </span>
     </div>
   </div>
@@ -1145,6 +1145,11 @@
       <a href="GICrystal.html">GICrystal</a>
       
         <ul>
+  
+  <li class=" " data-id="GTK4.cr/GICrystal/ObjectCollectedError" data-name="gicrystal::objectcollectederror">
+      <a href="GICrystal/ObjectCollectedError.html">ObjectCollectedError</a>
+      
+    </li>
   
   <li class=" " data-id="GTK4.cr/GICrystal/Transfer" data-name="gicrystal::transfer">
       <a href="GICrystal/Transfer.html">Transfer</a>
@@ -5241,8 +5246,18 @@
       
     </li>
   
+  <li class=" " data-id="GTK4.cr/GObject/ParamSpecPool" data-name="gobject::paramspecpool">
+      <a href="GObject/ParamSpecPool.html">ParamSpecPool</a>
+      
+    </li>
+  
   <li class=" " data-id="GTK4.cr/GObject/ParamSpecString" data-name="gobject::paramspecstring">
       <a href="GObject/ParamSpecString.html">ParamSpecString</a>
+      
+    </li>
+  
+  <li class=" " data-id="GTK4.cr/GObject/ParamSpecTypeInfo" data-name="gobject::paramspectypeinfo">
+      <a href="GObject/ParamSpecTypeInfo.html">ParamSpecTypeInfo</a>
       
     </li>
   
@@ -11386,7 +11401,7 @@ points (as in &quot;12 point font&quot;), rather than pixels.</p>
       
     
       <dt class="entry-const" id="VERSION_MICRO">
-        <strong>VERSION_MICRO</strong> = <code><span class="n">6</span></code>
+        <strong>VERSION_MICRO</strong> = <code><span class="n">7</span></code>
       </dt>
       
       <dd class="entry-const-doc">
@@ -11404,7 +11419,7 @@ points (as in &quot;12 point font&quot;), rather than pixels.</p>
       
     
       <dt class="entry-const" id="VERSION_STRING">
-        <strong>VERSION_STRING</strong> = <code><span class="s">&quot;1.50.6&quot;</span></code>
+        <strong>VERSION_STRING</strong> = <code><span class="s">&quot;1.50.7&quot;</span></code>
       </dt>
       
       <dd class="entry-const-doc">
@@ -11418,7 +11433,501 @@ points (as in &quot;12 point font&quot;), rather than pixels.</p>
 
 
 
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#attr_allow_breaks_new%28allow_breaks%3ABool%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_allow_breaks_new</strong>(allow_breaks : Bool) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_background_alpha_new%28alpha%3AUInt16%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_background_alpha_new</strong>(alpha : UInt16) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_background_new%28red%3AUInt16%2Cgreen%3AUInt16%2Cblue%3AUInt16%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_background_new</strong>(red : UInt16, green : UInt16, blue : UInt16) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_baseline_shift_new%28shift%3AInt32%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_baseline_shift_new</strong>(shift : Int32) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_break%28text%3AString%2Clength%3AInt32%2Cattr_list%3APango%3A%3AAttrList%2Coffset%3AInt32%2Cattrs%3AEnumerable%28Pango%3A%3ALogAttr%29%29%3ANil-class-method" class="signature"><strong>.attr_break</strong>(text : String, length : Int32, attr_list : Pango::AttrList, offset : Int32, attrs : Enumerable(Pango::LogAttr)) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_fallback_new%28enable_fallback%3ABool%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_fallback_new</strong>(enable_fallback : Bool) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_family_new%28family%3AString%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_family_new</strong>(family : String) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_font_desc_new%28desc%3APango%3A%3AFontDescription%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_font_desc_new</strong>(desc : Pango::FontDescription) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_font_features_new%28features%3AString%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_font_features_new</strong>(features : String) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_font_scale_new%28scale%3APango%3A%3AFontScale%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_font_scale_new</strong>(scale : Pango::FontScale) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_foreground_alpha_new%28alpha%3AUInt16%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_foreground_alpha_new</strong>(alpha : UInt16) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_foreground_new%28red%3AUInt16%2Cgreen%3AUInt16%2Cblue%3AUInt16%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_foreground_new</strong>(red : UInt16, green : UInt16, blue : UInt16) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_gravity_hint_new%28hint%3APango%3A%3AGravityHint%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_gravity_hint_new</strong>(hint : Pango::GravityHint) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_gravity_new%28gravity%3APango%3A%3AGravity%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_gravity_new</strong>(gravity : Pango::Gravity) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_insert_hyphens_new%28insert_hyphens%3ABool%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_insert_hyphens_new</strong>(insert_hyphens : Bool) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_language_new%28language%3APango%3A%3ALanguage%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_language_new</strong>(language : Pango::Language) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_letter_spacing_new%28letter_spacing%3AInt32%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_letter_spacing_new</strong>(letter_spacing : Int32) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_line_height_new%28factor%3AFloat64%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_line_height_new</strong>(factor : Float64) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_line_height_new_absolute%28height%3AInt32%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_line_height_new_absolute</strong>(height : Int32) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_list_from_string%28text%3AString%29%3APango%3A%3AAttrList%3F-class-method" class="signature"><strong>.attr_list_from_string</strong>(text : String) : Pango::AttrList?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_overline_color_new%28red%3AUInt16%2Cgreen%3AUInt16%2Cblue%3AUInt16%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_overline_color_new</strong>(red : UInt16, green : UInt16, blue : UInt16) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_overline_new%28overline%3APango%3A%3AOverline%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_overline_new</strong>(overline : Pango::Overline) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_rise_new%28rise%3AInt32%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_rise_new</strong>(rise : Int32) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_scale_new%28scale_factor%3AFloat64%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_scale_new</strong>(scale_factor : Float64) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_sentence_new%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_sentence_new</strong> : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_shape_new%28ink_rect%3APango%3A%3ARectangle%2Clogical_rect%3APango%3A%3ARectangle%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_shape_new</strong>(ink_rect : Pango::Rectangle, logical_rect : Pango::Rectangle) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_shape_new_with_data%28ink_rect%3APango%3A%3ARectangle%2Clogical_rect%3APango%3A%3ARectangle%2Cdata%3APointer%28Void%29%3F%2Ccopy_func%3APointer%28Void%29%3F%2Cdestroy_func%3APointer%28Void%29%3F%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_shape_new_with_data</strong>(ink_rect : Pango::Rectangle, logical_rect : Pango::Rectangle, data : Pointer(Void)?, copy_func : Pointer(Void)?, destroy_func : Pointer(Void)?) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_show_new%28flags%3APango%3A%3AShowFlags%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_show_new</strong>(flags : Pango::ShowFlags) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_size_new%28size%3AInt32%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_size_new</strong>(size : Int32) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_size_new_absolute%28size%3AInt32%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_size_new_absolute</strong>(size : Int32) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_stretch_new%28stretch%3APango%3A%3AStretch%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_stretch_new</strong>(stretch : Pango::Stretch) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_strikethrough_color_new%28red%3AUInt16%2Cgreen%3AUInt16%2Cblue%3AUInt16%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_strikethrough_color_new</strong>(red : UInt16, green : UInt16, blue : UInt16) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_strikethrough_new%28strikethrough%3ABool%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_strikethrough_new</strong>(strikethrough : Bool) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_style_new%28style%3APango%3A%3AStyle%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_style_new</strong>(style : Pango::Style) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_text_transform_new%28transform%3APango%3A%3ATextTransform%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_text_transform_new</strong>(transform : Pango::TextTransform) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_type_get_name%28type%3APango%3A%3AAttrType%29%3AString%3F-class-method" class="signature"><strong>.attr_type_get_name</strong>(type : Pango::AttrType) : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_type_register%28name%3AString%29%3APango%3A%3AAttrType-class-method" class="signature"><strong>.attr_type_register</strong>(name : String) : Pango::AttrType</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_underline_color_new%28red%3AUInt16%2Cgreen%3AUInt16%2Cblue%3AUInt16%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_underline_color_new</strong>(red : UInt16, green : UInt16, blue : UInt16) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_underline_new%28underline%3APango%3A%3AUnderline%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_underline_new</strong>(underline : Pango::Underline) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_variant_new%28variant%3APango%3A%3AVariant%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_variant_new</strong>(variant : Pango::Variant) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_weight_new%28weight%3APango%3A%3AWeight%29%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_weight_new</strong>(weight : Pango::Weight) : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#attr_word_new%3APango%3A%3AAttribute-class-method" class="signature"><strong>.attr_word_new</strong> : Pango::Attribute</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bidi_type_for_unichar%28ch%3AUInt32%29%3APango%3A%3ABidiType-class-method" class="signature"><strong>.bidi_type_for_unichar</strong>(ch : UInt32) : Pango::BidiType</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#break%28text%3AString%2Clength%3AInt32%2Canalysis%3APango%3A%3AAnalysis%2Cattrs%3AEnumerable%28Pango%3A%3ALogAttr%29%29%3ANil-class-method" class="signature"><strong>.break</strong>(text : String, length : Int32, analysis : Pango::Analysis, attrs : Enumerable(Pango::LogAttr)) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#default_break%28text%3AString%2Clength%3AInt32%2Canalysis%3APango%3A%3AAnalysis%3F%2Cattrs%3APango%3A%3ALogAttr%2Cattrs_len%3AInt32%29%3ANil-class-method" class="signature"><strong>.default_break</strong>(text : String, length : Int32, analysis : Pango::Analysis?, attrs : Pango::LogAttr, attrs_len : Int32) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#extents_to_pixels%28inclusive%3APango%3A%3ARectangle%3F%2Cnearest%3APango%3A%3ARectangle%3F%29%3ANil-class-method" class="signature"><strong>.extents_to_pixels</strong>(inclusive : Pango::Rectangle?, nearest : Pango::Rectangle?) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#find_base_dir%28text%3AString%2Clength%3AInt32%29%3APango%3A%3ADirection-class-method" class="signature"><strong>.find_base_dir</strong>(text : String, length : Int32) : Pango::Direction</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#find_paragraph_boundary%28text%3AString%2Clength%3AInt32%2Cparagraph_delimiter_index%3AInt32%2Cnext_paragraph_start%3AInt32%29%3ANil-class-method" class="signature"><strong>.find_paragraph_boundary</strong>(text : String, length : Int32, paragraph_delimiter_index : Int32, next_paragraph_start : Int32) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#font_description_from_string%28str%3AString%29%3APango%3A%3AFontDescription-class-method" class="signature"><strong>.font_description_from_string</strong>(str : String) : Pango::FontDescription</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#gravity_get_for_matrix%28matrix%3APango%3A%3AMatrix%3F%29%3APango%3A%3AGravity-class-method" class="signature"><strong>.gravity_get_for_matrix</strong>(matrix : Pango::Matrix?) : Pango::Gravity</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#gravity_get_for_script%28script%3APango%3A%3AScript%2Cbase_gravity%3APango%3A%3AGravity%2Chint%3APango%3A%3AGravityHint%29%3APango%3A%3AGravity-class-method" class="signature"><strong>.gravity_get_for_script</strong>(script : Pango::Script, base_gravity : Pango::Gravity, hint : Pango::GravityHint) : Pango::Gravity</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#gravity_get_for_script_and_width%28script%3APango%3A%3AScript%2Cwide%3ABool%2Cbase_gravity%3APango%3A%3AGravity%2Chint%3APango%3A%3AGravityHint%29%3APango%3A%3AGravity-class-method" class="signature"><strong>.gravity_get_for_script_and_width</strong>(script : Pango::Script, wide : Bool, base_gravity : Pango::Gravity, hint : Pango::GravityHint) : Pango::Gravity</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#gravity_to_rotation%28gravity%3APango%3A%3AGravity%29%3AFloat64-class-method" class="signature"><strong>.gravity_to_rotation</strong>(gravity : Pango::Gravity) : Float64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#is_zero_width%28ch%3AUInt32%29%3ABool-class-method" class="signature"><strong>.is_zero_width</strong>(ch : UInt32) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#itemize%28context%3APango%3A%3AContext%2Ctext%3AString%2Cstart_index%3AInt32%2Clength%3AInt32%2Cattrs%3APango%3A%3AAttrList%2Ccached_iter%3APango%3A%3AAttrIterator%3F%29%3AGLib%3A%3AList-class-method" class="signature"><strong>.itemize</strong>(context : Pango::Context, text : String, start_index : Int32, length : Int32, attrs : Pango::AttrList, cached_iter : Pango::AttrIterator?) : GLib::List</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#itemize_with_base_dir%28context%3APango%3A%3AContext%2Cbase_dir%3APango%3A%3ADirection%2Ctext%3AString%2Cstart_index%3AInt32%2Clength%3AInt32%2Cattrs%3APango%3A%3AAttrList%2Ccached_iter%3APango%3A%3AAttrIterator%3F%29%3AGLib%3A%3AList-class-method" class="signature"><strong>.itemize_with_base_dir</strong>(context : Pango::Context, base_dir : Pango::Direction, text : String, start_index : Int32, length : Int32, attrs : Pango::AttrList, cached_iter : Pango::AttrIterator?) : GLib::List</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#language_from_string%28language%3AString%3F%29%3APango%3A%3ALanguage%3F-class-method" class="signature"><strong>.language_from_string</strong>(language : String?) : Pango::Language?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#language_get_default%3APango%3A%3ALanguage-class-method" class="signature"><strong>.language_get_default</strong> : Pango::Language</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#language_get_preferred%3APango%3A%3ALanguage%3F-class-method" class="signature"><strong>.language_get_preferred</strong> : Pango::Language?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#layout_deserialize_error_quark%3AUInt32-class-method" class="signature"><strong>.layout_deserialize_error_quark</strong> : UInt32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#log2vis_get_embedding_levels%28text%3AString%2Clength%3AInt32%2Cpbase_dir%3APango%3A%3ADirection%29%3APointer%28UInt8%29-class-method" class="signature"><strong>.log2vis_get_embedding_levels</strong>(text : String, length : Int32, pbase_dir : Pango::Direction) : Pointer(UInt8)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#log_attrs%28text%3AString%2Clength%3AInt32%2Clevel%3AInt32%2Clanguage%3APango%3A%3ALanguage%2Cattrs%3AEnumerable%28Pango%3A%3ALogAttr%29%29%3ANil-class-method" class="signature"><strong>.log_attrs</strong>(text : String, length : Int32, level : Int32, language : Pango::Language, attrs : Enumerable(Pango::LogAttr)) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#markup_parser_new%28accel_marker%3AUInt32%29%3AGLib%3A%3AMarkupParseContext-class-method" class="signature"><strong>.markup_parser_new</strong>(accel_marker : UInt32) : GLib::MarkupParseContext</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mirror_char%28ch%3AUInt32%2Cmirrored_ch%3APointer%28UInt32%29%29%3ABool-class-method" class="signature"><strong>.mirror_char</strong>(ch : UInt32, mirrored_ch : Pointer(UInt32)) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#parse_enum%28type%3AUInt64%2Cstr%3AString%3F%2Cwarn%3ABool%29%3ABool-class-method" class="signature"><strong>.parse_enum</strong>(type : UInt64, str : String?, warn : Bool) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#parse_stretch%28str%3AString%2Cstretch%3APango%3A%3AStretch%2Cwarn%3ABool%29%3ABool-class-method" class="signature"><strong>.parse_stretch</strong>(str : String, stretch : Pango::Stretch, warn : Bool) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#parse_style%28str%3AString%2Cstyle%3APango%3A%3AStyle%2Cwarn%3ABool%29%3ABool-class-method" class="signature"><strong>.parse_style</strong>(str : String, style : Pango::Style, warn : Bool) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#parse_variant%28str%3AString%2Cvariant%3APango%3A%3AVariant%2Cwarn%3ABool%29%3ABool-class-method" class="signature"><strong>.parse_variant</strong>(str : String, variant : Pango::Variant, warn : Bool) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#parse_weight%28str%3AString%2Cweight%3APango%3A%3AWeight%2Cwarn%3ABool%29%3ABool-class-method" class="signature"><strong>.parse_weight</strong>(str : String, weight : Pango::Weight, warn : Bool) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#quantize_line_geometry%28thickness%3AInt32%2Cposition%3AInt32%29%3ANil-class-method" class="signature"><strong>.quantize_line_geometry</strong>(thickness : Int32, position : Int32) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#read_line%28stream%3APointer%28Void%29%3F%2Cstr%3AGLib%3A%3AString%29%3AInt32-class-method" class="signature"><strong>.read_line</strong>(stream : Pointer(Void)?, str : GLib::String) : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reorder_items%28items%3AGLib%3A%3AList%29%3AGLib%3A%3AList-class-method" class="signature"><strong>.reorder_items</strong>(items : GLib::List) : GLib::List</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#scan_int%28pos%3AString%2Cout_out%3AInt32%29%3ABool-class-method" class="signature"><strong>.scan_int</strong>(pos : String, out _out : Int32) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#scan_string%28pos%3AString%2Cout_out%3AGLib%3A%3AString%29%3ABool-class-method" class="signature"><strong>.scan_string</strong>(pos : String, out _out : GLib::String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#scan_word%28pos%3AString%2Cout_out%3AGLib%3A%3AString%29%3ABool-class-method" class="signature"><strong>.scan_word</strong>(pos : String, out _out : GLib::String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#script_for_unichar%28ch%3AUInt32%29%3APango%3A%3AScript-class-method" class="signature"><strong>.script_for_unichar</strong>(ch : UInt32) : Pango::Script</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#script_get_sample_language%28script%3APango%3A%3AScript%29%3APango%3A%3ALanguage%3F-class-method" class="signature"><strong>.script_get_sample_language</strong>(script : Pango::Script) : Pango::Language?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#shape%28text%3AString%2Clength%3AInt32%2Canalysis%3APango%3A%3AAnalysis%2Cglyphs%3APango%3A%3AGlyphString%29%3ANil-class-method" class="signature"><strong>.shape</strong>(text : String, length : Int32, analysis : Pango::Analysis, glyphs : Pango::GlyphString) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#shape_full%28item_text%3AString%2Citem_length%3AInt32%2Cparagraph_text%3AString%3F%2Cparagraph_length%3AInt32%2Canalysis%3APango%3A%3AAnalysis%2Cglyphs%3APango%3A%3AGlyphString%29%3ANil-class-method" class="signature"><strong>.shape_full</strong>(item_text : String, item_length : Int32, paragraph_text : String?, paragraph_length : Int32, analysis : Pango::Analysis, glyphs : Pango::GlyphString) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#shape_item%28item%3APango%3A%3AItem%2Cparagraph_text%3AString%3F%2Cparagraph_length%3AInt32%2Clog_attrs%3APango%3A%3ALogAttr%3F%2Cglyphs%3APango%3A%3AGlyphString%2Cflags%3APango%3A%3AShapeFlags%29%3ANil-class-method" class="signature"><strong>.shape_item</strong>(item : Pango::Item, paragraph_text : String?, paragraph_length : Int32, log_attrs : Pango::LogAttr?, glyphs : Pango::GlyphString, flags : Pango::ShapeFlags) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#shape_with_flags%28item_text%3AString%2Citem_length%3AInt32%2Cparagraph_text%3AString%3F%2Cparagraph_length%3AInt32%2Canalysis%3APango%3A%3AAnalysis%2Cglyphs%3APango%3A%3AGlyphString%2Cflags%3APango%3A%3AShapeFlags%29%3ANil-class-method" class="signature"><strong>.shape_with_flags</strong>(item_text : String, item_length : Int32, paragraph_text : String?, paragraph_length : Int32, analysis : Pango::Analysis, glyphs : Pango::GlyphString, flags : Pango::ShapeFlags) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#skip_space%28pos%3AString%29%3ABool-class-method" class="signature"><strong>.skip_space</strong>(pos : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#split_file_list%28str%3AString%29%3AEnumerable%28String%29-class-method" class="signature"><strong>.split_file_list</strong>(str : String) : Enumerable(String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tab_array_from_string%28text%3AString%29%3APango%3A%3ATabArray%3F-class-method" class="signature"><strong>.tab_array_from_string</strong>(text : String) : Pango::TabArray?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tailor_break%28text%3AString%2Clength%3AInt32%2Canalysis%3APango%3A%3AAnalysis%2Coffset%3AInt32%2Cattrs%3AEnumerable%28Pango%3A%3ALogAttr%29%29%3ANil-class-method" class="signature"><strong>.tailor_break</strong>(text : String, length : Int32, analysis : Pango::Analysis, offset : Int32, attrs : Enumerable(Pango::LogAttr)) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#trim_string%28str%3AString%29%3AString-class-method" class="signature"><strong>.trim_string</strong>(str : String) : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unichar_direction%28ch%3AUInt32%29%3APango%3A%3ADirection-class-method" class="signature"><strong>.unichar_direction</strong>(ch : UInt32) : Pango::Direction</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#units_from_double%28d%3AFloat64%29%3AInt32-class-method" class="signature"><strong>.units_from_double</strong>(d : Float64) : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#units_to_double%28i%3AInt32%29%3AFloat64-class-method" class="signature"><strong>.units_to_double</strong>(i : Int32) : Float64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#version%3AInt32-class-method" class="signature"><strong>.version</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#version_check%28required_major%3AInt32%2Crequired_minor%3AInt32%2Crequired_micro%3AInt32%29%3AString%3F-class-method" class="signature"><strong>.version_check</strong>(required_major : Int32, required_minor : Int32, required_micro : Int32) : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#version_string%3AString-class-method" class="signature"><strong>.version_string</strong> : String</a>
+        
+      </li>
+    
+  </ul>
 
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#markup_parser_finish%28context%3AGLib%3A%3AMarkupParseContext%29%3ABool-instance-method" class="signature"><strong>#markup_parser_finish</strong>(context : GLib::MarkupParseContext) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#parse_markup%28markup_text%3AString%2Clength%3AInt32%2Caccel_marker%3AUInt32%29%3ABool-instance-method" class="signature"><strong>#parse_markup</strong>(markup_text : String, length : Int32, accel_marker : UInt32) : Bool</a>
+        
+      </li>
+    
+  </ul>
 
 
 
@@ -11431,7 +11940,1343 @@ points (as in &quot;12 point font&quot;), rather than pixels.</p>
 
 
 
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="attr_allow_breaks_new(allow_breaks:Bool):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_allow_breaks_new</strong>(allow_breaks : Bool) : <a href="Pango/Attribute.html">Pango::Attribute</a>
 
+        <a class="method-permalink" href="#attr_allow_breaks_new%28allow_breaks%3ABool%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_background_alpha_new(alpha:UInt16):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_background_alpha_new</strong>(alpha : UInt16) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_background_alpha_new%28alpha%3AUInt16%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_background_new(red:UInt16,green:UInt16,blue:UInt16):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_background_new</strong>(red : UInt16, green : UInt16, blue : UInt16) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_background_new%28red%3AUInt16%2Cgreen%3AUInt16%2Cblue%3AUInt16%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_baseline_shift_new(shift:Int32):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_baseline_shift_new</strong>(shift : Int32) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_baseline_shift_new%28shift%3AInt32%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_break(text:String,length:Int32,attr_list:Pango::AttrList,offset:Int32,attrs:Enumerable(Pango::LogAttr)):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_break</strong>(text : String, length : Int32, attr_list : <a href="Pango/AttrList.html">Pango::AttrList</a>, offset : Int32, attrs : Enumerable(<a href="Pango/LogAttr.html">Pango::LogAttr</a>)) : Nil
+
+        <a class="method-permalink" href="#attr_break%28text%3AString%2Clength%3AInt32%2Cattr_list%3APango%3A%3AAttrList%2Coffset%3AInt32%2Cattrs%3AEnumerable%28Pango%3A%3ALogAttr%29%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_fallback_new(enable_fallback:Bool):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_fallback_new</strong>(enable_fallback : Bool) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_fallback_new%28enable_fallback%3ABool%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_family_new(family:String):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_family_new</strong>(family : String) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_family_new%28family%3AString%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_font_desc_new(desc:Pango::FontDescription):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_font_desc_new</strong>(desc : <a href="Pango/FontDescription.html">Pango::FontDescription</a>) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_font_desc_new%28desc%3APango%3A%3AFontDescription%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_font_features_new(features:String):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_font_features_new</strong>(features : String) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_font_features_new%28features%3AString%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_font_scale_new(scale:Pango::FontScale):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_font_scale_new</strong>(scale : <a href="Pango/FontScale.html">Pango::FontScale</a>) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_font_scale_new%28scale%3APango%3A%3AFontScale%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_foreground_alpha_new(alpha:UInt16):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_foreground_alpha_new</strong>(alpha : UInt16) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_foreground_alpha_new%28alpha%3AUInt16%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_foreground_new(red:UInt16,green:UInt16,blue:UInt16):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_foreground_new</strong>(red : UInt16, green : UInt16, blue : UInt16) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_foreground_new%28red%3AUInt16%2Cgreen%3AUInt16%2Cblue%3AUInt16%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_gravity_hint_new(hint:Pango::GravityHint):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_gravity_hint_new</strong>(hint : <a href="Pango/GravityHint.html">Pango::GravityHint</a>) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_gravity_hint_new%28hint%3APango%3A%3AGravityHint%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_gravity_new(gravity:Pango::Gravity):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_gravity_new</strong>(gravity : <a href="Pango/Gravity.html">Pango::Gravity</a>) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_gravity_new%28gravity%3APango%3A%3AGravity%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_insert_hyphens_new(insert_hyphens:Bool):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_insert_hyphens_new</strong>(insert_hyphens : Bool) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_insert_hyphens_new%28insert_hyphens%3ABool%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_language_new(language:Pango::Language):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_language_new</strong>(language : <a href="Pango/Language.html">Pango::Language</a>) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_language_new%28language%3APango%3A%3ALanguage%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_letter_spacing_new(letter_spacing:Int32):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_letter_spacing_new</strong>(letter_spacing : Int32) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_letter_spacing_new%28letter_spacing%3AInt32%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_line_height_new(factor:Float64):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_line_height_new</strong>(factor : Float64) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_line_height_new%28factor%3AFloat64%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_line_height_new_absolute(height:Int32):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_line_height_new_absolute</strong>(height : Int32) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_line_height_new_absolute%28height%3AInt32%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_list_from_string(text:String):Pango::AttrList?-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_list_from_string</strong>(text : String) : <a href="Pango/AttrList.html">Pango::AttrList</a>?
+
+        <a class="method-permalink" href="#attr_list_from_string%28text%3AString%29%3APango%3A%3AAttrList%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_overline_color_new(red:UInt16,green:UInt16,blue:UInt16):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_overline_color_new</strong>(red : UInt16, green : UInt16, blue : UInt16) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_overline_color_new%28red%3AUInt16%2Cgreen%3AUInt16%2Cblue%3AUInt16%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_overline_new(overline:Pango::Overline):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_overline_new</strong>(overline : <a href="Pango/Overline.html">Pango::Overline</a>) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_overline_new%28overline%3APango%3A%3AOverline%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_rise_new(rise:Int32):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_rise_new</strong>(rise : Int32) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_rise_new%28rise%3AInt32%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_scale_new(scale_factor:Float64):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_scale_new</strong>(scale_factor : Float64) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_scale_new%28scale_factor%3AFloat64%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_sentence_new:Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_sentence_new</strong> : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_sentence_new%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_shape_new(ink_rect:Pango::Rectangle,logical_rect:Pango::Rectangle):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_shape_new</strong>(ink_rect : <a href="Pango/Rectangle.html">Pango::Rectangle</a>, logical_rect : <a href="Pango/Rectangle.html">Pango::Rectangle</a>) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_shape_new%28ink_rect%3APango%3A%3ARectangle%2Clogical_rect%3APango%3A%3ARectangle%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_shape_new_with_data(ink_rect:Pango::Rectangle,logical_rect:Pango::Rectangle,data:Pointer(Void)?,copy_func:Pointer(Void)?,destroy_func:Pointer(Void)?):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_shape_new_with_data</strong>(ink_rect : <a href="Pango/Rectangle.html">Pango::Rectangle</a>, logical_rect : <a href="Pango/Rectangle.html">Pango::Rectangle</a>, data : Pointer(Void)?, copy_func : Pointer(Void)?, destroy_func : Pointer(Void)?) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_shape_new_with_data%28ink_rect%3APango%3A%3ARectangle%2Clogical_rect%3APango%3A%3ARectangle%2Cdata%3APointer%28Void%29%3F%2Ccopy_func%3APointer%28Void%29%3F%2Cdestroy_func%3APointer%28Void%29%3F%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_show_new(flags:Pango::ShowFlags):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_show_new</strong>(flags : <a href="Pango/ShowFlags.html">Pango::ShowFlags</a>) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_show_new%28flags%3APango%3A%3AShowFlags%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_size_new(size:Int32):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_size_new</strong>(size : Int32) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_size_new%28size%3AInt32%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_size_new_absolute(size:Int32):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_size_new_absolute</strong>(size : Int32) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_size_new_absolute%28size%3AInt32%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_stretch_new(stretch:Pango::Stretch):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_stretch_new</strong>(stretch : <a href="Pango/Stretch.html">Pango::Stretch</a>) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_stretch_new%28stretch%3APango%3A%3AStretch%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_strikethrough_color_new(red:UInt16,green:UInt16,blue:UInt16):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_strikethrough_color_new</strong>(red : UInt16, green : UInt16, blue : UInt16) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_strikethrough_color_new%28red%3AUInt16%2Cgreen%3AUInt16%2Cblue%3AUInt16%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_strikethrough_new(strikethrough:Bool):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_strikethrough_new</strong>(strikethrough : Bool) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_strikethrough_new%28strikethrough%3ABool%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_style_new(style:Pango::Style):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_style_new</strong>(style : <a href="Pango/Style.html">Pango::Style</a>) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_style_new%28style%3APango%3A%3AStyle%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_text_transform_new(transform:Pango::TextTransform):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_text_transform_new</strong>(transform : <a href="Pango/TextTransform.html">Pango::TextTransform</a>) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_text_transform_new%28transform%3APango%3A%3ATextTransform%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_type_get_name(type:Pango::AttrType):String?-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_type_get_name</strong>(type : <a href="Pango/AttrType.html">Pango::AttrType</a>) : String?
+
+        <a class="method-permalink" href="#attr_type_get_name%28type%3APango%3A%3AAttrType%29%3AString%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_type_register(name:String):Pango::AttrType-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_type_register</strong>(name : String) : <a href="Pango/AttrType.html">Pango::AttrType</a>
+
+        <a class="method-permalink" href="#attr_type_register%28name%3AString%29%3APango%3A%3AAttrType-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_underline_color_new(red:UInt16,green:UInt16,blue:UInt16):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_underline_color_new</strong>(red : UInt16, green : UInt16, blue : UInt16) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_underline_color_new%28red%3AUInt16%2Cgreen%3AUInt16%2Cblue%3AUInt16%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_underline_new(underline:Pango::Underline):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_underline_new</strong>(underline : <a href="Pango/Underline.html">Pango::Underline</a>) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_underline_new%28underline%3APango%3A%3AUnderline%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_variant_new(variant:Pango::Variant):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_variant_new</strong>(variant : <a href="Pango/Variant.html">Pango::Variant</a>) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_variant_new%28variant%3APango%3A%3AVariant%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_weight_new(weight:Pango::Weight):Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_weight_new</strong>(weight : <a href="Pango/Weight.html">Pango::Weight</a>) : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_weight_new%28weight%3APango%3A%3AWeight%29%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="attr_word_new:Pango::Attribute-class-method">
+      <div class="signature">
+        
+        def self.<strong>attr_word_new</strong> : <a href="Pango/Attribute.html">Pango::Attribute</a>
+
+        <a class="method-permalink" href="#attr_word_new%3APango%3A%3AAttribute-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bidi_type_for_unichar(ch:UInt32):Pango::BidiType-class-method">
+      <div class="signature">
+        
+        def self.<strong>bidi_type_for_unichar</strong>(ch : UInt32) : <a href="Pango/BidiType.html">Pango::BidiType</a>
+
+        <a class="method-permalink" href="#bidi_type_for_unichar%28ch%3AUInt32%29%3APango%3A%3ABidiType-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="break(text:String,length:Int32,analysis:Pango::Analysis,attrs:Enumerable(Pango::LogAttr)):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>break</strong>(text : String, length : Int32, analysis : <a href="Pango/Analysis.html">Pango::Analysis</a>, attrs : Enumerable(<a href="Pango/LogAttr.html">Pango::LogAttr</a>)) : Nil
+
+        <a class="method-permalink" href="#break%28text%3AString%2Clength%3AInt32%2Canalysis%3APango%3A%3AAnalysis%2Cattrs%3AEnumerable%28Pango%3A%3ALogAttr%29%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="default_break(text:String,length:Int32,analysis:Pango::Analysis?,attrs:Pango::LogAttr,attrs_len:Int32):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>default_break</strong>(text : String, length : Int32, analysis : <a href="Pango/Analysis.html">Pango::Analysis</a>?, attrs : <a href="Pango/LogAttr.html">Pango::LogAttr</a>, attrs_len : Int32) : Nil
+
+        <a class="method-permalink" href="#default_break%28text%3AString%2Clength%3AInt32%2Canalysis%3APango%3A%3AAnalysis%3F%2Cattrs%3APango%3A%3ALogAttr%2Cattrs_len%3AInt32%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="extents_to_pixels(inclusive:Pango::Rectangle?,nearest:Pango::Rectangle?):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>extents_to_pixels</strong>(inclusive : <a href="Pango/Rectangle.html">Pango::Rectangle</a>?, nearest : <a href="Pango/Rectangle.html">Pango::Rectangle</a>?) : Nil
+
+        <a class="method-permalink" href="#extents_to_pixels%28inclusive%3APango%3A%3ARectangle%3F%2Cnearest%3APango%3A%3ARectangle%3F%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="find_base_dir(text:String,length:Int32):Pango::Direction-class-method">
+      <div class="signature">
+        
+        def self.<strong>find_base_dir</strong>(text : String, length : Int32) : <a href="Pango/Direction.html">Pango::Direction</a>
+
+        <a class="method-permalink" href="#find_base_dir%28text%3AString%2Clength%3AInt32%29%3APango%3A%3ADirection-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="find_paragraph_boundary(text:String,length:Int32,paragraph_delimiter_index:Int32,next_paragraph_start:Int32):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>find_paragraph_boundary</strong>(text : String, length : Int32, paragraph_delimiter_index : Int32, next_paragraph_start : Int32) : Nil
+
+        <a class="method-permalink" href="#find_paragraph_boundary%28text%3AString%2Clength%3AInt32%2Cparagraph_delimiter_index%3AInt32%2Cnext_paragraph_start%3AInt32%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="font_description_from_string(str:String):Pango::FontDescription-class-method">
+      <div class="signature">
+        
+        def self.<strong>font_description_from_string</strong>(str : String) : <a href="Pango/FontDescription.html">Pango::FontDescription</a>
+
+        <a class="method-permalink" href="#font_description_from_string%28str%3AString%29%3APango%3A%3AFontDescription-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="gravity_get_for_matrix(matrix:Pango::Matrix?):Pango::Gravity-class-method">
+      <div class="signature">
+        
+        def self.<strong>gravity_get_for_matrix</strong>(matrix : <a href="Pango/Matrix.html">Pango::Matrix</a>?) : <a href="Pango/Gravity.html">Pango::Gravity</a>
+
+        <a class="method-permalink" href="#gravity_get_for_matrix%28matrix%3APango%3A%3AMatrix%3F%29%3APango%3A%3AGravity-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="gravity_get_for_script(script:Pango::Script,base_gravity:Pango::Gravity,hint:Pango::GravityHint):Pango::Gravity-class-method">
+      <div class="signature">
+        
+        def self.<strong>gravity_get_for_script</strong>(script : <a href="Pango/Script.html">Pango::Script</a>, base_gravity : <a href="Pango/Gravity.html">Pango::Gravity</a>, hint : <a href="Pango/GravityHint.html">Pango::GravityHint</a>) : <a href="Pango/Gravity.html">Pango::Gravity</a>
+
+        <a class="method-permalink" href="#gravity_get_for_script%28script%3APango%3A%3AScript%2Cbase_gravity%3APango%3A%3AGravity%2Chint%3APango%3A%3AGravityHint%29%3APango%3A%3AGravity-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="gravity_get_for_script_and_width(script:Pango::Script,wide:Bool,base_gravity:Pango::Gravity,hint:Pango::GravityHint):Pango::Gravity-class-method">
+      <div class="signature">
+        
+        def self.<strong>gravity_get_for_script_and_width</strong>(script : <a href="Pango/Script.html">Pango::Script</a>, wide : Bool, base_gravity : <a href="Pango/Gravity.html">Pango::Gravity</a>, hint : <a href="Pango/GravityHint.html">Pango::GravityHint</a>) : <a href="Pango/Gravity.html">Pango::Gravity</a>
+
+        <a class="method-permalink" href="#gravity_get_for_script_and_width%28script%3APango%3A%3AScript%2Cwide%3ABool%2Cbase_gravity%3APango%3A%3AGravity%2Chint%3APango%3A%3AGravityHint%29%3APango%3A%3AGravity-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="gravity_to_rotation(gravity:Pango::Gravity):Float64-class-method">
+      <div class="signature">
+        
+        def self.<strong>gravity_to_rotation</strong>(gravity : <a href="Pango/Gravity.html">Pango::Gravity</a>) : Float64
+
+        <a class="method-permalink" href="#gravity_to_rotation%28gravity%3APango%3A%3AGravity%29%3AFloat64-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="is_zero_width(ch:UInt32):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>is_zero_width</strong>(ch : UInt32) : Bool
+
+        <a class="method-permalink" href="#is_zero_width%28ch%3AUInt32%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="itemize(context:Pango::Context,text:String,start_index:Int32,length:Int32,attrs:Pango::AttrList,cached_iter:Pango::AttrIterator?):GLib::List-class-method">
+      <div class="signature">
+        
+        def self.<strong>itemize</strong>(context : <a href="Pango/Context.html">Pango::Context</a>, text : String, start_index : Int32, length : Int32, attrs : <a href="Pango/AttrList.html">Pango::AttrList</a>, cached_iter : <a href="Pango/AttrIterator.html">Pango::AttrIterator</a>?) : <a href="GLib/List.html">GLib::List</a>
+
+        <a class="method-permalink" href="#itemize%28context%3APango%3A%3AContext%2Ctext%3AString%2Cstart_index%3AInt32%2Clength%3AInt32%2Cattrs%3APango%3A%3AAttrList%2Ccached_iter%3APango%3A%3AAttrIterator%3F%29%3AGLib%3A%3AList-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="itemize_with_base_dir(context:Pango::Context,base_dir:Pango::Direction,text:String,start_index:Int32,length:Int32,attrs:Pango::AttrList,cached_iter:Pango::AttrIterator?):GLib::List-class-method">
+      <div class="signature">
+        
+        def self.<strong>itemize_with_base_dir</strong>(context : <a href="Pango/Context.html">Pango::Context</a>, base_dir : <a href="Pango/Direction.html">Pango::Direction</a>, text : String, start_index : Int32, length : Int32, attrs : <a href="Pango/AttrList.html">Pango::AttrList</a>, cached_iter : <a href="Pango/AttrIterator.html">Pango::AttrIterator</a>?) : <a href="GLib/List.html">GLib::List</a>
+
+        <a class="method-permalink" href="#itemize_with_base_dir%28context%3APango%3A%3AContext%2Cbase_dir%3APango%3A%3ADirection%2Ctext%3AString%2Cstart_index%3AInt32%2Clength%3AInt32%2Cattrs%3APango%3A%3AAttrList%2Ccached_iter%3APango%3A%3AAttrIterator%3F%29%3AGLib%3A%3AList-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="language_from_string(language:String?):Pango::Language?-class-method">
+      <div class="signature">
+        
+        def self.<strong>language_from_string</strong>(language : String?) : <a href="Pango/Language.html">Pango::Language</a>?
+
+        <a class="method-permalink" href="#language_from_string%28language%3AString%3F%29%3APango%3A%3ALanguage%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="language_get_default:Pango::Language-class-method">
+      <div class="signature">
+        
+        def self.<strong>language_get_default</strong> : <a href="Pango/Language.html">Pango::Language</a>
+
+        <a class="method-permalink" href="#language_get_default%3APango%3A%3ALanguage-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="language_get_preferred:Pango::Language?-class-method">
+      <div class="signature">
+        
+        def self.<strong>language_get_preferred</strong> : <a href="Pango/Language.html">Pango::Language</a>?
+
+        <a class="method-permalink" href="#language_get_preferred%3APango%3A%3ALanguage%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="layout_deserialize_error_quark:UInt32-class-method">
+      <div class="signature">
+        
+        def self.<strong>layout_deserialize_error_quark</strong> : UInt32
+
+        <a class="method-permalink" href="#layout_deserialize_error_quark%3AUInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="log2vis_get_embedding_levels(text:String,length:Int32,pbase_dir:Pango::Direction):Pointer(UInt8)-class-method">
+      <div class="signature">
+        
+        def self.<strong>log2vis_get_embedding_levels</strong>(text : String, length : Int32, pbase_dir : <a href="Pango/Direction.html">Pango::Direction</a>) : Pointer(UInt8)
+
+        <a class="method-permalink" href="#log2vis_get_embedding_levels%28text%3AString%2Clength%3AInt32%2Cpbase_dir%3APango%3A%3ADirection%29%3APointer%28UInt8%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="log_attrs(text:String,length:Int32,level:Int32,language:Pango::Language,attrs:Enumerable(Pango::LogAttr)):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>log_attrs</strong>(text : String, length : Int32, level : Int32, language : <a href="Pango/Language.html">Pango::Language</a>, attrs : Enumerable(<a href="Pango/LogAttr.html">Pango::LogAttr</a>)) : Nil
+
+        <a class="method-permalink" href="#log_attrs%28text%3AString%2Clength%3AInt32%2Clevel%3AInt32%2Clanguage%3APango%3A%3ALanguage%2Cattrs%3AEnumerable%28Pango%3A%3ALogAttr%29%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="markup_parser_new(accel_marker:UInt32):GLib::MarkupParseContext-class-method">
+      <div class="signature">
+        
+        def self.<strong>markup_parser_new</strong>(accel_marker : UInt32) : <a href="GLib/MarkupParseContext.html">GLib::MarkupParseContext</a>
+
+        <a class="method-permalink" href="#markup_parser_new%28accel_marker%3AUInt32%29%3AGLib%3A%3AMarkupParseContext-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mirror_char(ch:UInt32,mirrored_ch:Pointer(UInt32)):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>mirror_char</strong>(ch : UInt32, mirrored_ch : Pointer(UInt32)) : Bool
+
+        <a class="method-permalink" href="#mirror_char%28ch%3AUInt32%2Cmirrored_ch%3APointer%28UInt32%29%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="parse_enum(type:UInt64,str:String?,warn:Bool):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>parse_enum</strong>(type : UInt64, str : String?, warn : Bool) : Bool
+
+        <a class="method-permalink" href="#parse_enum%28type%3AUInt64%2Cstr%3AString%3F%2Cwarn%3ABool%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="parse_stretch(str:String,stretch:Pango::Stretch,warn:Bool):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>parse_stretch</strong>(str : String, stretch : <a href="Pango/Stretch.html">Pango::Stretch</a>, warn : Bool) : Bool
+
+        <a class="method-permalink" href="#parse_stretch%28str%3AString%2Cstretch%3APango%3A%3AStretch%2Cwarn%3ABool%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="parse_style(str:String,style:Pango::Style,warn:Bool):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>parse_style</strong>(str : String, style : <a href="Pango/Style.html">Pango::Style</a>, warn : Bool) : Bool
+
+        <a class="method-permalink" href="#parse_style%28str%3AString%2Cstyle%3APango%3A%3AStyle%2Cwarn%3ABool%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="parse_variant(str:String,variant:Pango::Variant,warn:Bool):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>parse_variant</strong>(str : String, variant : <a href="Pango/Variant.html">Pango::Variant</a>, warn : Bool) : Bool
+
+        <a class="method-permalink" href="#parse_variant%28str%3AString%2Cvariant%3APango%3A%3AVariant%2Cwarn%3ABool%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="parse_weight(str:String,weight:Pango::Weight,warn:Bool):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>parse_weight</strong>(str : String, weight : <a href="Pango/Weight.html">Pango::Weight</a>, warn : Bool) : Bool
+
+        <a class="method-permalink" href="#parse_weight%28str%3AString%2Cweight%3APango%3A%3AWeight%2Cwarn%3ABool%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="quantize_line_geometry(thickness:Int32,position:Int32):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>quantize_line_geometry</strong>(thickness : Int32, position : Int32) : Nil
+
+        <a class="method-permalink" href="#quantize_line_geometry%28thickness%3AInt32%2Cposition%3AInt32%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="read_line(stream:Pointer(Void)?,str:GLib::String):Int32-class-method">
+      <div class="signature">
+        
+        def self.<strong>read_line</strong>(stream : Pointer(Void)?, str : GLib::String) : Int32
+
+        <a class="method-permalink" href="#read_line%28stream%3APointer%28Void%29%3F%2Cstr%3AGLib%3A%3AString%29%3AInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reorder_items(items:GLib::List):GLib::List-class-method">
+      <div class="signature">
+        
+        def self.<strong>reorder_items</strong>(items : <a href="GLib/List.html">GLib::List</a>) : <a href="GLib/List.html">GLib::List</a>
+
+        <a class="method-permalink" href="#reorder_items%28items%3AGLib%3A%3AList%29%3AGLib%3A%3AList-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="scan_int(pos:String,out_out:Int32):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>scan_int</strong>(pos : String, out _out : Int32) : Bool
+
+        <a class="method-permalink" href="#scan_int%28pos%3AString%2Cout_out%3AInt32%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="scan_string(pos:String,out_out:GLib::String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>scan_string</strong>(pos : String, out _out : GLib::String) : Bool
+
+        <a class="method-permalink" href="#scan_string%28pos%3AString%2Cout_out%3AGLib%3A%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="scan_word(pos:String,out_out:GLib::String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>scan_word</strong>(pos : String, out _out : GLib::String) : Bool
+
+        <a class="method-permalink" href="#scan_word%28pos%3AString%2Cout_out%3AGLib%3A%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="script_for_unichar(ch:UInt32):Pango::Script-class-method">
+      <div class="signature">
+        
+        def self.<strong>script_for_unichar</strong>(ch : UInt32) : <a href="Pango/Script.html">Pango::Script</a>
+
+        <a class="method-permalink" href="#script_for_unichar%28ch%3AUInt32%29%3APango%3A%3AScript-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="script_get_sample_language(script:Pango::Script):Pango::Language?-class-method">
+      <div class="signature">
+        
+        def self.<strong>script_get_sample_language</strong>(script : <a href="Pango/Script.html">Pango::Script</a>) : <a href="Pango/Language.html">Pango::Language</a>?
+
+        <a class="method-permalink" href="#script_get_sample_language%28script%3APango%3A%3AScript%29%3APango%3A%3ALanguage%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="shape(text:String,length:Int32,analysis:Pango::Analysis,glyphs:Pango::GlyphString):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>shape</strong>(text : String, length : Int32, analysis : <a href="Pango/Analysis.html">Pango::Analysis</a>, glyphs : <a href="Pango/GlyphString.html">Pango::GlyphString</a>) : Nil
+
+        <a class="method-permalink" href="#shape%28text%3AString%2Clength%3AInt32%2Canalysis%3APango%3A%3AAnalysis%2Cglyphs%3APango%3A%3AGlyphString%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="shape_full(item_text:String,item_length:Int32,paragraph_text:String?,paragraph_length:Int32,analysis:Pango::Analysis,glyphs:Pango::GlyphString):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>shape_full</strong>(item_text : String, item_length : Int32, paragraph_text : String?, paragraph_length : Int32, analysis : <a href="Pango/Analysis.html">Pango::Analysis</a>, glyphs : <a href="Pango/GlyphString.html">Pango::GlyphString</a>) : Nil
+
+        <a class="method-permalink" href="#shape_full%28item_text%3AString%2Citem_length%3AInt32%2Cparagraph_text%3AString%3F%2Cparagraph_length%3AInt32%2Canalysis%3APango%3A%3AAnalysis%2Cglyphs%3APango%3A%3AGlyphString%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="shape_item(item:Pango::Item,paragraph_text:String?,paragraph_length:Int32,log_attrs:Pango::LogAttr?,glyphs:Pango::GlyphString,flags:Pango::ShapeFlags):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>shape_item</strong>(item : <a href="Pango/Item.html">Pango::Item</a>, paragraph_text : String?, paragraph_length : Int32, log_attrs : <a href="Pango/LogAttr.html">Pango::LogAttr</a>?, glyphs : <a href="Pango/GlyphString.html">Pango::GlyphString</a>, flags : <a href="Pango/ShapeFlags.html">Pango::ShapeFlags</a>) : Nil
+
+        <a class="method-permalink" href="#shape_item%28item%3APango%3A%3AItem%2Cparagraph_text%3AString%3F%2Cparagraph_length%3AInt32%2Clog_attrs%3APango%3A%3ALogAttr%3F%2Cglyphs%3APango%3A%3AGlyphString%2Cflags%3APango%3A%3AShapeFlags%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="shape_with_flags(item_text:String,item_length:Int32,paragraph_text:String?,paragraph_length:Int32,analysis:Pango::Analysis,glyphs:Pango::GlyphString,flags:Pango::ShapeFlags):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>shape_with_flags</strong>(item_text : String, item_length : Int32, paragraph_text : String?, paragraph_length : Int32, analysis : <a href="Pango/Analysis.html">Pango::Analysis</a>, glyphs : <a href="Pango/GlyphString.html">Pango::GlyphString</a>, flags : <a href="Pango/ShapeFlags.html">Pango::ShapeFlags</a>) : Nil
+
+        <a class="method-permalink" href="#shape_with_flags%28item_text%3AString%2Citem_length%3AInt32%2Cparagraph_text%3AString%3F%2Cparagraph_length%3AInt32%2Canalysis%3APango%3A%3AAnalysis%2Cglyphs%3APango%3A%3AGlyphString%2Cflags%3APango%3A%3AShapeFlags%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="skip_space(pos:String):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>skip_space</strong>(pos : String) : Bool
+
+        <a class="method-permalink" href="#skip_space%28pos%3AString%29%3ABool-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="split_file_list(str:String):Enumerable(String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>split_file_list</strong>(str : String) : Enumerable(String)
+
+        <a class="method-permalink" href="#split_file_list%28str%3AString%29%3AEnumerable%28String%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tab_array_from_string(text:String):Pango::TabArray?-class-method">
+      <div class="signature">
+        
+        def self.<strong>tab_array_from_string</strong>(text : String) : <a href="Pango/TabArray.html">Pango::TabArray</a>?
+
+        <a class="method-permalink" href="#tab_array_from_string%28text%3AString%29%3APango%3A%3ATabArray%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tailor_break(text:String,length:Int32,analysis:Pango::Analysis,offset:Int32,attrs:Enumerable(Pango::LogAttr)):Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>tailor_break</strong>(text : String, length : Int32, analysis : <a href="Pango/Analysis.html">Pango::Analysis</a>, offset : Int32, attrs : Enumerable(<a href="Pango/LogAttr.html">Pango::LogAttr</a>)) : Nil
+
+        <a class="method-permalink" href="#tailor_break%28text%3AString%2Clength%3AInt32%2Canalysis%3APango%3A%3AAnalysis%2Coffset%3AInt32%2Cattrs%3AEnumerable%28Pango%3A%3ALogAttr%29%29%3ANil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="trim_string(str:String):String-class-method">
+      <div class="signature">
+        
+        def self.<strong>trim_string</strong>(str : String) : String
+
+        <a class="method-permalink" href="#trim_string%28str%3AString%29%3AString-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unichar_direction(ch:UInt32):Pango::Direction-class-method">
+      <div class="signature">
+        
+        def self.<strong>unichar_direction</strong>(ch : UInt32) : <a href="Pango/Direction.html">Pango::Direction</a>
+
+        <a class="method-permalink" href="#unichar_direction%28ch%3AUInt32%29%3APango%3A%3ADirection-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="units_from_double(d:Float64):Int32-class-method">
+      <div class="signature">
+        
+        def self.<strong>units_from_double</strong>(d : Float64) : Int32
+
+        <a class="method-permalink" href="#units_from_double%28d%3AFloat64%29%3AInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="units_to_double(i:Int32):Float64-class-method">
+      <div class="signature">
+        
+        def self.<strong>units_to_double</strong>(i : Int32) : Float64
+
+        <a class="method-permalink" href="#units_to_double%28i%3AInt32%29%3AFloat64-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="version:Int32-class-method">
+      <div class="signature">
+        
+        def self.<strong>version</strong> : Int32
+
+        <a class="method-permalink" href="#version%3AInt32-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="version_check(required_major:Int32,required_minor:Int32,required_micro:Int32):String?-class-method">
+      <div class="signature">
+        
+        def self.<strong>version_check</strong>(required_major : Int32, required_minor : Int32, required_micro : Int32) : String?
+
+        <a class="method-permalink" href="#version_check%28required_major%3AInt32%2Crequired_minor%3AInt32%2Crequired_micro%3AInt32%29%3AString%3F-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="version_string:String-class-method">
+      <div class="signature">
+        
+        def self.<strong>version_string</strong> : String
+
+        <a class="method-permalink" href="#version_string%3AString-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="markup_parser_finish(context:GLib::MarkupParseContext):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>markup_parser_finish</strong>(context : <a href="GLib/MarkupParseContext.html">GLib::MarkupParseContext</a>) : Bool
+
+        <a class="method-permalink" href="#markup_parser_finish%28context%3AGLib%3A%3AMarkupParseContext%29%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="parse_markup(markup_text:String,length:Int32,accel_marker:UInt32):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>parse_markup</strong>(markup_text : String, length : Int32, accel_marker : UInt32) : Bool
+
+        <a class="method-permalink" href="#parse_markup%28markup_text%3AString%2Clength%3AInt32%2Caccel_marker%3AUInt32%29%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
 
 
 
